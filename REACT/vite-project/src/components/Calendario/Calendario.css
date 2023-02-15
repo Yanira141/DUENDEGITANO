@@ -1,0 +1,10 @@
+ol{
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.horario{
+    color: rgba(254, 185, 0, 0.8);
+    font-size: 18px;
+}

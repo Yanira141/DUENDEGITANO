@@ -1,0 +1,46 @@
+.cardcursos{
+    width: 18rem;
+
+}
+i{
+    color: rgba(254, 185, 0, 0.8);
+}
+.btn-get-started {
+    font-family: var(--font-primary);
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 12px 40px;
+    border-radius: 50px;
+    transition: 0.5s;
+    margin: 10px;
+    color: black;
+    border: 2px solid var(--color-primary);
+}
+
+.btn-get-started:hover {
+    background: var(--color-primary);
+  }
+Link{
+   
+    text-decoration-color: none ;
+}
+  
+Link:visited{
+    color: black!important;
+    text-decoration: none!important;
+    
+}
+
+
+Link:active{
+
+    color: black!important;
+    text-decoration: none!important;
+}
+
+Link:hover{
+    color: black!important;
+    text-decoration: none!important;
+}
