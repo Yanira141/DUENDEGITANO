@@ -7,6 +7,7 @@ export default function FormProxActuaciones() {
     lugar: "",
     hora: "",
     descripcion: "",
+    direccion: "",
   });
   function handleInput(e) {
     e.preventDefault();
@@ -51,6 +52,7 @@ export default function FormProxActuaciones() {
       fecha: "",
       descripcion: "",
       lugar: "",
+      direccion: "",
     });
   }
   return (
@@ -60,7 +62,7 @@ export default function FormProxActuaciones() {
           <div className="row justify-content-between gy-4">
             <div className="col-lg-6 d-flex align-items-center" data-aos="fade-up">
               <div className="content">
-                <h3>Próximas actuaciones</h3>
+                <h3>Actuaciones</h3>
 
                 <p>
                 Tendrás la posibilidad de conocernos y vernos actuar en persona.
@@ -113,6 +115,19 @@ export default function FormProxActuaciones() {
                       required
                     />
                   </div>
+
+                  <div className="col-md-12 ">
+                    <input
+                      type="text"
+                      className="form-control"
+                      name="direccion"
+                      placeholder="Dirección exacta"
+                      value={newActuacion.direccion}
+                      onChange={handleInput}
+                      required
+                    />
+                  </div>
+
 
 
                   

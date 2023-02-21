@@ -19,8 +19,9 @@
 /* Colors */
 :root {
   --color-default: #364d59;
-  --color-primary: #feb900;
+  --color-primary: rgb(148, 16, 16);
   --color-secondary: #52565e;
+  --color-hoover: rgb(80, 5, 5);
 }
 
 /* Smooth scroll behavior */
@@ -43,7 +44,7 @@ a {
 }
 
 a:hover {
-  color: #ffc732;
+  color: rgb(148, 16, 16);
   text-decoration: none;
 }
 
@@ -188,7 +189,7 @@ section {
 }
 
 .scroll-top:hover {
-  background: #ffc732;
+  background:rgb(148, 16, 16);
   color: #fff;
 }
 
@@ -668,7 +669,7 @@ section {
 }
 
 .get-started .php-email-form button[type=submit]:hover {
-  background: rgba(254, 185, 0, 0.8);
+  background:rgb(80, 5, 5);
 }
 
 @-webkit-keyframes animate-loading {
@@ -1044,13 +1045,13 @@ section {
 }
 
 .testimonials .testimonial-item .stars i {
-  color: #ffc107;
+  color:rgb(148, 16, 16);
   margin: 0 1px;
 }
 
 .testimonials .testimonial-item .quote-icon-left,
 .testimonials .testimonial-item .quote-icon-right {
-  color: #ffd565;
+  color:rgb(148, 16, 16);
   font-size: 26px;
   line-height: 0;
 }
@@ -1514,7 +1515,7 @@ section {
 }
 
 .project-details .portfolio-info .btn-visit:hover {
-  background: #ffc019;
+  background: (--color-hoover);
 }
 
 .project-details .portfolio-description h2 {
@@ -1559,7 +1560,7 @@ section {
 
 .project-details .portfolio-description .testimonial-item .quote-icon-left,
 .project-details .portfolio-description .testimonial-item .quote-icon-right {
-  color: #ffd565;
+  color:rgb(148, 16, 16);
   font-size: 26px;
   line-height: 0;
 }
@@ -1666,7 +1667,7 @@ section {
   line-height: 0;
   color: var(--color-primary);
   border-radius: 50%;
-  border: 2px dotted #ffd565;
+  border: 2px dotted rgb(148, 16, 16);
 }
 
 .contact .info-item h3 {
@@ -1766,7 +1767,7 @@ section {
 }
 
 .contact .php-email-form button[type=submit]:hover {
-  background: rgba(254, 185, 0, 0.8);
+  background: (--color-hoover);
 }
 
 @keyframes animate-loading {
@@ -2367,7 +2368,7 @@ section {
 }
 
 .blog .sidebar .search-form form button:hover {
-  background: rgba(254, 185, 0, 0.8);
+  background:rgb(148, 16, 16);
 }
 
 .blog .sidebar .categories ul {
@@ -2545,7 +2546,7 @@ section {
 
 .blog .comments .reply-form input:focus {
   box-shadow: none;
-  border-color: rgba(254, 185, 0, 0.8);
+  border-color: rgb(148, 16, 16);
 }
 
 .blog .comments .reply-form textarea {
@@ -2556,7 +2557,7 @@ section {
 
 .blog .comments .reply-form textarea:focus {
   box-shadow: none;
-  border-color: rgba(254, 185, 0, 0.8);
+  border-color: rgb(148, 16, 16);
 }
 
 .blog .comments .reply-form .form-group {
@@ -2580,7 +2581,7 @@ section {
 --------------------------------------------------------------*/
 .footer {
   color: #fff;
-  background: url("src/assets/fotos/taconesnegros.jpg") top center no-repeat;
+  background: url("/fotos/taconesnegros.jpg") top center no-repeat;
   background-size: cover;
   font-size: 14px;
   padding: 80px 0 60px 0;
@@ -2690,23 +2691,23 @@ section {
 }
 
 .carrusel1{
-  background-image: url(src/assets/imagenes/cristinagallo.jpeg);
+  background-image: url(/imagenes/cristinagallo.jpeg);
 }
 
 .carrusel2{
-  background-image: url(src/assets/imagenes/bata-de-cola.jpeg);
+  background-image: url(/imagenes/bata-de-cola.jpeg);
 }
 
 .carrusel3{
-  background-image: url(src/assets/fotos/faldamarilla.jpeg);
+  background-image: url(/fotos/faldamarilla.jpeg);
 }
 
 .carrusel4{
-  background-image: url(src/assets/fotos/medianas.jpeg);
+  background-image: url(/fotos/medianas.jpeg);
 }
 
 .carrusel5{
-  background-image: url(src/assets/fotos/castañuelas.jfif);
+  background-image: url(/fotos/castañuelas.jfif);
 }
 
 Link{
@@ -2714,12 +2715,12 @@ Link{
 }
 
 .breadfoto{
-  background-image: url(src/assets/fotos/cristinagallo.jpeg);
+  background-image: url(/fotos/cristinagallo.jpeg);
 
 }
 
 .linkcopy{
-  color:rgba(254, 185, 0, 0.8);
+  color:rgb(148, 16, 16);
  
 }
 
@@ -2730,19 +2731,19 @@ Link{
 
 
 .imagenalumna1{
-  background-image: url(src/assets/fotos/carmen-garcia.png);
+  background-image: url(/fotos/carmen-garcia.png);
 }
 
 .imagenalumna2{
-  background-image: url(src/assets/fotos/ana-claudia.png);
+  background-image: url(/fotos/ana-claudia.png);
 }
 
 .imagenalumna3{
-  background-image: url(src/assets/fotos/pilu-triana.png);
+  background-image: url(/fotos/pilu-triana.png);
 }
 
 .imagenalumna4{
-  background-image: url(src/assets/fotos/yanira.png);
+  background-image: url(/fotos/yanira.png);
 }
 
 
@@ -2754,5 +2755,24 @@ Link{
 
 
 .imagencursodetalle{
-  background-image: url(src/assets/imagenes/curso-compas.jpeg);
+  background-image: url(/imagenes/curso-compas.jpeg);
+}
+
+
+
+.samuel{
+  background-image: url(/fotos/samuel-bailando.jpeg);
+}
+
+.cristi{
+  background-image: url(/imagenes/cristina-torrox.jpeg);
+}
+
+.cristina{
+  background-image: url(/imagenes/cristina-bailando-grupo.jpeg);
+}
+
+
+.imagengrupodetalle{
+  background-image: url(/imagenes/grupos.jpeg);
 }

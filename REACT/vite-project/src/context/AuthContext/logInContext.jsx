@@ -18,6 +18,7 @@ export function LogInContextProvider({ children }) {
       id: null,
       email: null,
       rol: null,
+      
     }
   );
   const [errorMessage, setErrorMessage] = useState(null);

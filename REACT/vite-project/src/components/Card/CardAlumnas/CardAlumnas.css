@@ -1,10 +1,10 @@
 
 #cards_landscape_wrap-2{
     text-align: center;
-    background: #F7F7F7;
+   
   }
   #cards_landscape_wrap-2 .container{
-    padding-top: 80px; 
+    padding-top: 18px; 
     padding-bottom: 100px;
   }
   #cards_landscape_wrap-2 a{
@@ -40,7 +40,7 @@
     padding: 30px 18px;
   }
   #cards_landscape_wrap-2 .card-flyer{
-    background: #FFFFFF;
+    
     margin-top: 50px;
     -webkit-transition: all 0.2s ease-in;
     -moz-transition: all 0.2s ease-in;

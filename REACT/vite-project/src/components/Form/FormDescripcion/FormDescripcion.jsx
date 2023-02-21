@@ -95,12 +95,9 @@ export default function FormDescripcion({ descripcion }) {
 
                 <p>
                   ¿Qué significa el baile para ti?, ¿qué sientes cuando subes al
-                  escenario? ...
+                  escenario?, ¿cómo te sientes en la academia?...
                 </p>
-                <p>
-                  ¡Ten en cuenta que lo que nos cuentes, aparecerá en nuestra
-                  página web!
-                </p>
+                
               </div>
             </div>
           </div>

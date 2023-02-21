@@ -20,7 +20,7 @@ export default function FormCursos() {
 
   function registrar(e) {
     e.preventDefault();
-    fetch("http://localhost:3000/curso", {
+    fetch("http://localhost:3000/cursos", {
       method: "POST",
       headers: { "content-Type": "application/json" },
       body: JSON.stringify(newCurso),
@@ -152,14 +152,9 @@ export default function FormCursos() {
 
   <div className="col-lg-6 d-flex align-items-center" data-aos="fade-up">
               <div className="content">
-                <h3>Bailar nunca fue tan fácil</h3>
+                <h3>Cursos y talleres</h3>
 
-                <p>
-                Bailar nunca fue tan fácil... ¡y más con nuestros cursos para reforzar los conocimientos!
-                </p>
-                <p>
-                  Aprende a bailar con nosotros paso a paso.
-                </p>
+              
               </div>
             </div>
 

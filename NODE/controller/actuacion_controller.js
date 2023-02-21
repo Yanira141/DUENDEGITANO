@@ -5,9 +5,9 @@ const controller = {};
 
 
 controller.addActuacion = async (req, res) => {
-    const {  hora, fecha ,descripcion, lugar } = req.body;
+    const {  hora, fecha ,descripcion, lugar, direccion } = req.body;
     // Si no alguno de estos campos recibidos por el body devolvemos un 400 (bad request)
-    if (!hora || !fecha || !descripcion || !lugar)
+    if (!hora || !fecha || !descripcion || !lugar || !direccion)
       return res.status(400).send("Error al recibir el body");
     // Buscamos el usuario en la base de datos
     try {
@@ -87,6 +87,26 @@ controller.deleteActuacion = async (req, res) => {
     }
   };
   
+
+
+  controller.deleteActuaciones = async (req, res) => {
+
+    let dataObj={ eliminado: "1"}
+    const { id } = req.params;
+    // Si no existe el token enviamos un 401 (unauthorized)
+    if (!id) return res.sendStatus(401);
+  
+    try {
+      // Actualizamos el usuario
+      await dao.deleteActuaciones(id, dataObj);
+      // Devolvemos la respuesta
+      return res.send(`Actuacion con id ${id} modificada`);
+    } catch (e) {
+      console.log(e.message);
+    }
+  };
+
+
 
 
 

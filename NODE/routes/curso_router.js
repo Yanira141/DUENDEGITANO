@@ -7,5 +7,7 @@ cursoRouter.post("/", cursoController.addCurso);
 cursoRouter.get("/all", cursoController.getCurso)
 cursoRouter.get("/:id", cursoController.getCursoId);
 cursoRouter.post("/cursosdetalle/:id", cursoController.cursosDetalle)
+cursoRouter.delete("/borrarcursodetalle/:id", cursoController.deleteCursoDetalle)
+cursoRouter.patch("/borrar/:id", cursoController.deleteCurso);
 
 export default cursoRouter;

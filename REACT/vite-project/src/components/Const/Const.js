@@ -11,3 +11,4 @@ export const cursodetalle = [{ texto: "Detalles del curso", path: "cursodetalle"
 export const galeria = [{ texto: "Galería", path: "/galeria" }];
 export const paneladministrador =[{texto:"Panel administrador", path: "/paneladministrador"}]
 export const panelusuario =[{texto:"Panel usuario", path: "/panelusuario"}]
+export const grupos = [{texto:"Grupos", path: "/grupos"}]

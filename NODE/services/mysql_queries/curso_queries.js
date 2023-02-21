@@ -67,7 +67,7 @@ cursoQueries.getCursoId = async (id) => {
   try {
     conn = await db.createConnection();
     return await db.query(
-      "SELECT * FROM curso WHERE id = ?",
+      "SELECT * FROM curso WHERE id = ? AND eliminado='0'",
       id,
       "select",
       conn
@@ -85,7 +85,7 @@ cursoQueries.getCurso = async () => {
   try {
     conn = await db.createConnection();
     return await db.query(
-      "SELECT * FROM curso ",
+      "SELECT * FROM curso  WHERE eliminado='0' ",
       [],
 
       "select",
@@ -97,5 +97,56 @@ cursoQueries.getCurso = async () => {
     conn && (await conn.end());
   }
 };
+
+
+
+
+cursoQueries.deleteCursoDetalle = async (id, idusuario) => {
+  // Conectamos con la base de datos y eliminamos el usuario por su id.
+  let conn = null
+  try {
+      conn = await db.createConnection()
+      return await db.query('DELETE FROM cursosdetalle WHERE idusuario = ? AND idcurso = ?',[idusuario, id], 'delete', conn)         
+  } catch (e) {
+      throw new Error(e)
+  } finally {
+      conn && await conn.end();
+  }
+};
+
+
+
+
+
+
+
+
+cursoQueries.deleteCurso = async (id, dataObj) => {
+  // Conectamos con la base de datos y eliminamos el usuario por su id.
+  let conn = null;
+  try {
+    conn = await db.createConnection();
+    return await db.query(
+      "UPDATE curso SET ? WHERE id = ?",
+      [dataObj, id],
+      "update",
+      conn
+    );
+  } catch (e) {
+    throw new Error(e);
+  } finally {
+    conn && (await conn.end());
+  }
+};
+
+
+
+
+
+
+
+
+
+
 
 export default cursoQueries;

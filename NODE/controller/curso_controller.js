@@ -21,6 +21,7 @@ controller.addCurso = async (req, res) => {
   }
 };
 
+
 controller.getCurso = async (req, res) => {
   try {
     const curso = await dao.getCurso(req.params.id);
@@ -78,26 +79,76 @@ controller.deleteCurso = async (req, res) => {
 };
 
 controller.cursosDetalle = async (req, res) => {
-  const { idcurso } = req.body;
+  const { idusuario } = req.body;
   const {id}=req.params
   console.log(req.body);
 
-  if (!id || !idcurso)
+  if (!idusuario || !id)
     return res.status(400).send("Error al recibir el body");
   try {
     const idObj = {
-      idcurso: idcurso,
-      idusuario: id,
+      idcurso: id,
+      idusuario,
     };
-    console.log(idObj);
-    const addCurso = await dao.cursosDetalle(idObj);
-    if (addCurso)
+  
+    const curso = await dao.cursosDetalle(idObj);
+    if (curso)
       return res.send(
-        `Usuario con id: ${id} apuntado en curso con id: ${idcurso}`
+        `Usuario con id: ${idusuario} apuntado en curso con id: ${id}`
       );
   } catch (e) {
     console.log(e.message);
   }
 };
+
+
+
+
+
+controller.deleteCursoDetalle = async (req, res) => {
+  const { idusuario } = req.body;
+  if (!idusuario)
+  return res.status(400).send("Error al recibir el body");
+ try {
+ 
+
+
+   // Si existe, eliminamos el usuario por el id
+   await dao.deleteCursoDetalle(req.params.id, idusuario);
+   // Devolvemos la respuesta
+   return res.send(`Usuario con id ${req.params.id} eliminado`);
+ } catch (e) {
+   console.log(e.message);
+ }
+};
+
+
+
+
+
+
+controller.deleteCurso = async (req, res) => {
+
+  let dataObj={ eliminado: "1"}
+  const { id } = req.params;
+  // Si no existe el token enviamos un 401 (unauthorized)
+  if (!id) return res.sendStatus(401);
+
+  try {
+    // Actualizamos el usuario
+    await dao.deleteCurso(id, dataObj);
+    // Devolvemos la respuesta
+    return res.send(`Curso con id ${id} modificado`);
+  } catch (e) {
+    console.log(e.message);
+  }
+};
+
+
+
+
+
+
+
 
 export default controller;

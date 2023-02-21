@@ -34,6 +34,7 @@ actuacionQueries.addActuacion = async (actuacionData) => {
       fecha: actuacionData.fecha,
       descripcion: actuacionData.descripcion,
       lugar: actuacionData.lugar,
+      direccion: actuacionData.direccion,
     };
     return await db.query(
       "INSERT INTO actuaciones SET ? ",
@@ -56,7 +57,7 @@ actuacionQueries.getActuacionById = async (id) => {
     try {
       conn = await db.createConnection();
       return await db.query(
-        "SELECT * FROM actuaciones WHERE id = ?",
+        "SELECT * FROM actuaciones WHERE id = ? AND eliminado='0'",
         id,
         "select",
         conn
@@ -76,7 +77,7 @@ actuacionQueries.getActuacion = async () => {
     try {
       conn = await db.createConnection();
       return await db.query(
-        "SELECT * FROM actuaciones ",[],
+        "SELECT * FROM actuaciones WHERE eliminado='0'",[],
         
         "select",
         conn
@@ -88,5 +89,30 @@ actuacionQueries.getActuacion = async () => {
     }
   };
   
+
+
+
+
+  actuacionQueries.deleteActuaciones = async (id, dataObj) => {
+    // Conectamos con la base de datos y eliminamos el usuario por su id.
+    let conn = null;
+    try {
+      conn = await db.createConnection();
+      return await db.query(
+        "UPDATE actuaciones SET ? WHERE id = ?",
+        [dataObj, id],
+        "update",
+        conn
+      );
+    } catch (e) {
+      throw new Error(e);
+    } finally {
+      conn && (await conn.end());
+    }
+  };
+
+
+
+
 
 export default actuacionQueries;

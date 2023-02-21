@@ -10,7 +10,7 @@ export default function Hero() {
             <div className="row justify-content-center">
               <div className="col-lg-6 text-center">
                 <h2 data-aos="fade-down">
-                  Bienvenid@s a la Academía de Danza <span>Duende Gitano</span>
+                  Bienvenid@s a la Academia de Danza <span>Duende Gitano</span>
                 </h2>
                 <p data-aos="fade-up">
                   Tengo claro que quiero empezar a bailar,

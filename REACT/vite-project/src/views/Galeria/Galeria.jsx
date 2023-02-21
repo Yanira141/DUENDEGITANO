@@ -18,6 +18,14 @@ export default function Galería(){
     return(
         <>
         <Breadcrumbs title={"Galeria"} link={"Galeria"}/>
+        <section id="constructions" className="constructions">
+        <div className="container" data-aos="fade-up">
+          <div className="section-header">
+            <h2>Galería de Fotos</h2>
+           
+            <h6>
+               Si tu sueño es bailar, deja de soñar y hazlo.</h6>
+          </div>  </div>
         <div className="d-flex flex-wrap d-grip gap-5 container">
         {imagenes.map((imagenes, index) => (
             <div key={index}>
@@ -25,6 +33,7 @@ export default function Galería(){
             </div>
           ))}
           </div>
+          </section>
         </>
     )
 }

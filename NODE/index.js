@@ -7,6 +7,7 @@ import fileUpload from "express-fileupload";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
 
+
 import productRouter from "./routes/product_router.js";
 
 import userRouter from "./routes/user_router.js";
@@ -14,6 +15,7 @@ import actuacionRouter from "./routes/actuacion_router.js"
 import db from "./services/mysql.js";
 import cursoRouter from "./routes/curso_router.js";
 import imagenesRouter from "./routes/imagenes_router.js";
+import grupoRouter from "./routes/grupo_router.js";
 // Añadimos el método config de dotenv para utilizar las variables de entorno
 dotenv.config();
 
@@ -50,6 +52,11 @@ app.use("/product", productRouter);
 app.use("/cursos", cursoRouter);
 app.use("/actuacion", actuacionRouter)
 app.use("/imagenes", imagenesRouter)
+app.use("/grupo", grupoRouter)
+
+
+
+
 
 await db.createConnection();
 

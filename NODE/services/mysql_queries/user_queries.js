@@ -69,6 +69,39 @@ userQueries.addUser = async (userData) => {
   }
 };
 
+
+
+
+userQueries.email = async (userData) => {
+  // Conectamos con la base de datos y añadimos el usuario.
+  let conn = null;
+  try {
+    conn = await db.createConnection();
+    // Creamos un objeto con los datos del usuario a guardar en la base de datos.
+    // Encriptamos la password con md5 y usamos la libreria momentjs para registrar la fecha actual
+    let userObj = {
+      nombre: userData.nombre,
+      email: userData.email,
+      mensaje: userData.mensaje,
+     
+      //    tsAlta: moment().format("YYYY-MM-DD HH:mm:ss") comentado por que mi tsalta se genera automaticamente con el current
+    };
+    return await db.query(
+      "INSERT INTO consultas SET ? ",
+      userObj,
+      "insert",
+      conn
+    );
+  } catch (e) {
+    throw new Error(e);
+  } finally {
+    conn && (await conn.end());
+  }
+};
+
+
+
+
 userQueries.deleteUser = async (id, dataObj) => {
   // Conectamos con la base de datos y eliminamos el usuario por su id.
   let conn = null;
@@ -119,5 +152,31 @@ userQueries.updateUser = async (id, userData) => {
     conn && (await conn.end());
   }
 };
+
+
+
+
+userQueries.getUser = async () => {
+  // Conectamos con la base de datos y buscamos si existe la imagen por el id.
+  let conn = null;
+  try {
+    conn = await db.createConnection();
+    return await db.query(
+      "SELECT descripcion FROM usuarios ",
+      [],
+
+      "select",
+      conn
+    );
+  } catch (e) {
+    throw new Error(e);
+  } finally {
+    conn && (await conn.end());
+  }
+};
+
+
+
+
 
 export default userQueries;

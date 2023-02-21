@@ -29,17 +29,13 @@ export default function FormLogin() {
           <div className="row justify-content-between gy-4">
             <div className="col-lg-6 d-flex align-items-center" data-aos="fade-up">
               <div className="content">
-                <h3>¿Ya te has decidido?</h3>
+                <h3>Iniciar sesión</h3>
 
                 <p>
            
-                  Rellena los campos del formulario de inscripción para darte de
-                  alta como alumno en tu escuela de danza.{" "}
+                  Inicia sesión en tu cuenta y mantén tus datos actualizados.
                 </p>
-                <p>
-                  Te recomendamos acercarte a la escuela para completar la
-                  inscripción y formalizar el pago.
-                </p>
+                
               </div>
             </div>
 

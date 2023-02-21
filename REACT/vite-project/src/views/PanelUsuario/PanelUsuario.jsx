@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import FormDelete from "../../components/Form/FormDelete/FormDelete";
 import FormDescripcion from "../../components/Form/FormDescripcion/FormDescripcion";
+import Eventos from "../../components/Eventos/Eventos";
 
 
 
@@ -29,23 +30,12 @@ export default function PanelUsuario() {
       <FormDescripcion/>
       <div>
         {usuarios ? (
-          <FormCambio nombre={usuarios.nombre} apellido={usuarios.apellido} telefono={usuarios.telefono} email={usuarios.email} password={"*****"} />
+          <FormCambio usuarios={usuarios} setUsuarios={setUsuarios} nombre={usuarios.nombre} apellido={usuarios.apellido} telefono={usuarios.telefono} email={usuarios.email} password={"*****"} />
         ) : (
           <p>Cargando...</p>
         )}
       </div>
-      <section id="constructions" className="constructions">
-        <div className="container" data-aos="fade-up">
-          <div className="section-header">
-            <h2>Próximos eventos</h2>
-            <p>Estos son los cursos a los que vas a asistir</p>
-          </div>
-          <div>
-
-          </div>
-          </div>
-          </section>
-      
+<Eventos/>
       <FormDelete/>
     </>
   );

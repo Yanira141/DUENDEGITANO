@@ -17,15 +17,26 @@ export default function Cursos() {
   return (
     <>
       <Breadcrumbs title={"Cursos"} link={"Cursos"} />
-      <div className="container">
-        <div className="d-flex flex-wrap d-grip gap-5">
+      <section id="constructions" className="constructions">
+        <div className="container" data-aos="fade-up">
+          <div className="section-header">
+            <h2>Talleres</h2>
+           
+            <p>
+                Bailar nunca fue tan fácil... ¡y más con nuestros cursos para reforzar los conocimientos!
+                </p>
+                <h6>
+                  Aprende a bailar con nosotros paso a paso.
+                </h6>
+          </div>  </div>
+     
           {cursos.map((curso, index) => (
             <div key={index}>
               <CardCursos curso={curso} />
             </div>
           ))}
-        </div>
-      </div>
+        
+      </section>
     </>
   );
 }

@@ -1,5 +1,6 @@
 import { useAuthContext } from "../../context/AuthContext/logInContext";
 import { useParams } from "react-router-dom";
+import Swal from 'sweetalert2';
 
 export default function CardCursoDetalle({ cursos }) {
   const params = useParams();
@@ -10,11 +11,11 @@ export default function CardCursoDetalle({ cursos }) {
     e.preventDefault();
 
     const response = await fetch(
-      `http://localhost:3000/cursos/cursosdetalle/${authorization.id}`,
+      `http://localhost:3000/cursos/cursosdetalle/${idcurso}`,
       {
-        method: "post",
+        method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(idcurso),
+        body: JSON.stringify({idusuario: authorization.id}),
       }
     );
 
@@ -27,9 +28,50 @@ export default function CardCursoDetalle({ cursos }) {
         timer: 1500,
       });
     } else {
-      alert("No te has podido apuntar en el curso");
+      Swal.fire({
+        position: "top-end",
+        icon: "info",
+        title: "Regístrate o inicia sesión para apuntarte",
+        showConfirmButton: false,
+        timer: 1500,
+      });
     }
   }
+
+
+  async function borrarCurso(e){
+    e.preventDefault();
+  
+      const response = await fetch(
+        `http://localhost:3000/cursos/borrarcursodetalle/${idcurso}`,
+        {
+          method: "DELETE",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({idusuario: authorization.id}),
+        }
+      );
+  console.log(response.status);
+      if (response.status === 200) {
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Borrado del curso correctamente",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      } else {
+        Swal.fire({
+          position: "top-end",
+          icon: "info",
+          title: "ERROR",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      }
+  }
+
+
+
   return (
     <>
       <section id="about" className="about">
@@ -45,6 +87,14 @@ export default function CardCursoDetalle({ cursos }) {
                   className="btn-get-started text-dark text-decoration-none"
                 >
                   ¡Apuntarme!
+                </button>
+
+                
+                <button
+                  onClick={borrarCurso}
+                  className="btn-get-started text-dark text-decoration-none"
+                >
+                  ¡Borrarme!
                 </button>
 
                 <p className="pt-5">{cursos.descripcion}</p>

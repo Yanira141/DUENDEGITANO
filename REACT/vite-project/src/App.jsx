@@ -3,8 +3,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout/Layout";
 import Home from "../src/views/Home/Home";
 import Contacto from "../src/views/Contacto/Contacto";
-import ConocenosProfesores from "../src/views/ConocenosProfesores/ConocenosProfesores";
-import ConocenosAlumnos from "../src/views/ConocenosAlumnos/ConocenosAlumnos";
 import Cursos from "../src/views/Cursos/Cursos";
 import CursoDetalle from "./views/CursoDetalle/CursoDetalle";
 import Escuela from "./views/Escuela/Escuela";
@@ -16,6 +14,11 @@ import { LogInContextProvider } from "./context/AuthContext/logInContext";
 import "./assets/css/main.css";
 import PublicRoute from "./components/PublicRoute/PublicRoute";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+import Grupos from "./views/Grupos/Grupos";
+import GrupoDetalle from "./views/GrupoDetalle/GrupoDetalle";
+import CristinaMarquez from "./views/CristinaMarquez/CristinaMarquez";
+import CristinaGallo from "./views/CristinaGallo/CristinaGallo";
+import SamuelGallo from "./views/SamuelGallo/SamuelGallo";
 
 const ROLES = {
   Admin: 1,
@@ -30,12 +33,15 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
               <Route path="contacto" element={<Contacto />} />
-              <Route path="conocenosprofesores" element={<ConocenosProfesores />}/>
-              <Route path="conocenosalumnos" element={<ConocenosAlumnos />}/>
+              <Route path="grupos" element={<Grupos/>}/>
               <Route path="cursos" element={<Cursos />} />
+              <Route path="grupos/:idgrupo" element={<GrupoDetalle/>}/>
               <Route path="cursos/:idcurso" element={<CursoDetalle />} />
               <Route path="escuela" element={<Escuela />} />
               <Route path="galeria" element={<Galeria />} />
+              <Route path="cristinagallo" element={<CristinaGallo/>}/>
+              <Route path="cristinamarquez" element={<CristinaMarquez/>}/>
+              <Route path="samuelgallo" element={<SamuelGallo/>}/>
             <Route element={<PublicRoute />}>
               <Route path="login" element={<IniciaSesion />} />
             </Route>

@@ -19,11 +19,12 @@ export default function CursoDetalle (){
   
       fetchCursos();
     }, []);
+    
     return(
         <>
         <Breadcrumbs title={"Detalles del curso"} link={"Detalles del curso"}/>
        
-        <div  >
+        <div className="pb-5" >
         {cursos ? (
           <CardCursoDetalle
             cursos={cursos}
