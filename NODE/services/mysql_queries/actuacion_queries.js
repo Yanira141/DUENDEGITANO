@@ -51,7 +51,7 @@ actuacionQueries.addActuacion = async (actuacionData) => {
 
 
 
-actuacionQueries.getActuacionById = async (id) => {
+actuacionQueries.getActuacionId = async (id) => {
     // Conectamos con la base de datos y buscamos si existe el usuario por el email.
     let conn = null;
     try {
@@ -111,6 +111,40 @@ actuacionQueries.getActuacion = async () => {
     }
   };
 
+
+
+// Modificar un usuario por su id
+actuacionQueries.updateActuacion = async (id, actuacionData) => {
+
+  // Conectamos con la base de datos y añadimos el usuario.
+  let conn = null;
+  try {
+    conn = await db.createConnection();
+    // Creamos un objeto con los datos que nos puede llegar del usuario a modificar en la base de datos.
+    // Encriptamos la password con md5 si nos llega por el body, sino la declaramos como undefined
+    // y usamos la libreria momentjs para actualizar la fecha.
+    let actuacionObj = {
+      hora: actuacionData.hora,
+      lugar: actuacionData.lugar,
+      fecha: actuacionData.fecha,
+      descripcion: actuacionData.descripcion,
+      direccion: actuacionData.direccion,
+    };
+    // Eliminamos los campos que no se van a modificar (no llegan por el body)
+
+
+    return await db.query(
+      "UPDATE actuaciones SET ? WHERE id = ?",
+      [actuacionObj, id],
+      "insert",
+      conn
+    );
+  } catch (e) {
+    throw new Error(e);
+  } finally {
+    conn && (await conn.end());
+  }
+};
 
 
 

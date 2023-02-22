@@ -19,6 +19,8 @@ import GrupoDetalle from "./views/GrupoDetalle/GrupoDetalle";
 import CristinaMarquez from "./views/CristinaMarquez/CristinaMarquez";
 import CristinaGallo from "./views/CristinaGallo/CristinaGallo";
 import SamuelGallo from "./views/SamuelGallo/SamuelGallo";
+import EditActu from "./views/EditActu/EditActu";
+import ScrollToTop from "./ScrollToTop";
 
 const ROLES = {
   Admin: 1,
@@ -29,19 +31,24 @@ function App() {
   return (
     <LogInContextProvider>
       <BrowserRouter>
+      <ScrollToTop />
         <Routes>
+ 
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
-              <Route path="contacto" element={<Contacto />} />
-              <Route path="grupos" element={<Grupos/>}/>
-              <Route path="cursos" element={<Cursos />} />
-              <Route path="grupos/:idgrupo" element={<GrupoDetalle/>}/>
-              <Route path="cursos/:idcurso" element={<CursoDetalle />} />
-              <Route path="escuela" element={<Escuela />} />
-              <Route path="galeria" element={<Galeria />} />
-              <Route path="cristinagallo" element={<CristinaGallo/>}/>
-              <Route path="cristinamarquez" element={<CristinaMarquez/>}/>
-              <Route path="samuelgallo" element={<SamuelGallo/>}/>
+            <Route path="contacto" element={<Contacto />} />
+            <Route path="grupos" element={<Grupos />} />
+            <Route path="cursos" element={<Cursos />} />
+            <Route path="grupos/:idgrupo" element={<GrupoDetalle />} />
+            <Route path="cursos/:idcurso" element={<CursoDetalle />} />
+            <Route path="escuela" element={<Escuela />} />
+            <Route path="galeria" element={<Galeria />} />
+            <Route path="cristinagallo" element={<CristinaGallo />} />
+            <Route path="cristinamarquez" element={<CristinaMarquez />} />
+            <Route path="samuelgallo" element={<SamuelGallo />} />
+            <Route path="editactu/:id" element={<EditActu />} />
+            {/* <Route path="editcurso/:id" element={<EditCurso/>}/> */}
+            {/* <Route path="editgrupo/:id" element={<EditGrupo/>}/> */}
             <Route element={<PublicRoute />}>
               <Route path="login" element={<IniciaSesion />} />
             </Route>
@@ -49,9 +56,7 @@ function App() {
               element={
                 <PrivateRoute allowedRoles={[ROLES.Admin, ROLES.User]} />
               }
-            >
-              
-            </Route>
+            ></Route>
             <Route element={<PrivateRoute allowedRoles={[ROLES.Admin]} />}>
               <Route
                 path="paneladministrador/:id"

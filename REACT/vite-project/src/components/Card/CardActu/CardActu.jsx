@@ -1,5 +1,6 @@
 import "./CardActu.css"
 import { useAuthContext } from "../../../context/AuthContext/logInContext";
+import { Link } from "react-router-dom";
 
 
 export default function CardActu({ actuacion, deleteActuacion }){
@@ -7,6 +8,7 @@ export default function CardActu({ actuacion, deleteActuacion }){
 
     return(
         <>
+
         <div className="container pt-5">
 		<div className="row row-striped">
 			<div className="col-2 text-right">
@@ -32,9 +34,14 @@ export default function CardActu({ actuacion, deleteActuacion }){
           </div>
 		  <div className="d-flex row">
               {authorization.rol === 1 && (
-            <button  className="btn-get-started text-dark text-decoration-none">
+            <Link
+            data-aos="fade-up"
+            data-aos-delay="200"
+            to={`/editactu/${actuacion.id}`}
+            className="btn-get-started text-dark text-decoration-none text-center"
+          >
               Editar
-            </button>
+            </Link>
           )}
           </div>
           	</div>

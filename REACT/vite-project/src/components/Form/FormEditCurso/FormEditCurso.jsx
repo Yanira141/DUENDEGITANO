@@ -1,63 +1,7 @@
-import { useState } from "react";
-import "../../assets/css/main.css";
-import Swal from "sweetalert2";
-export default function FormCursos() {
-  const [newCurso, setNewCurso] = useState({
-    nombre: "",
-    precio: "",
-    hora: "",
-    fecha: "",
-    descripcion: "",
-  });
-  function handleInput(e) {
-    e.preventDefault();
-    const newRegistro = {
-      ...newCurso,
-      [e.target.name]: e.target.value,
-    };
-    setNewCurso(newRegistro);
-  }
-
-  function registrar(e) {
-    e.preventDefault();
-    fetch("http://localhost:3000/cursos", {
-      method: "POST",
-      headers: { "content-Type": "application/json" },
-      body: JSON.stringify(newCurso),
-    }).then((response) => {
-      console.log(response.status);
-      if (response.status === 400) {
-        alert("error al recibir el body");
-      } else if (response.status === 200) {
-        Swal.fire({
-          position: "top-end",
-          icon: "success",
-          title: "Curso registrado correctamente",
-          showConfirmButton: false,
-          timer: 1500,
-        });
-      } else if (response.status === 409) {
-        Swal.fire({
-          position: "top-end",
-          icon: "error",
-          title: "Curso ya registrado",
-          showConfirmButton: false,
-          timer: 1500,
-        });
-      }
-    });
-    setNewCurso({
-      nombre: "",
-      precio: "",
-      hora: "",
-      fecha: "",
-      descripcion: "",
-      profesor: "",
-    });
-  }
-  return (
-    <>
-      <section id="get-started" className="get-started section-bg">
+export default function FormEditActu(){
+    return(
+        <>
+          <section id="get-started" className="get-started section-bg">
         <div className="container">
           <div className="row justify-content-between gy-4">
             <div className="col-lg-5" data-aos="fade">
@@ -158,6 +102,6 @@ export default function FormCursos() {
           </div>
         </div>
       </section>
-    </>
-  );
+        </>
+    )
 }

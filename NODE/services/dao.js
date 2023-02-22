@@ -46,9 +46,10 @@ dao.buttonDeleteCurso = async (id, idusuario) => await cursoQueries.buttonDelete
 
 dao.getActuacionByLugar = async (lugar) => await actuacionQueries.getActuacionByLugar(lugar);
 dao.addActuacion = async (actuacionData) => await actuacionQueries.addActuacion(actuacionData);
-dao.getActuacionbyId = async (id) => await actuacionQueries.getActuacionByLugar(id);
+dao.getActuacionId = async (id) => await actuacionQueries.getActuacionId(id);
 dao.getActuacion = async () => await actuacionQueries.getActuacion();
 dao.deleteActuaciones = async (id, actuacionData) => await actuacionQueries.deleteActuaciones(id, actuacionData)
+dao.updateActuacion = async (id, actuacionData) => await actuacionQueries.updateActuacion(id, actuacionData);
 
 
 //dao imagenes
@@ -66,5 +67,7 @@ dao.grupoDetalle = async (grupoData) => await grupoQueries.grupoDetalle(grupoDat
 dao.deleteGrupoDetalle = async (id, idusuario) => await grupoQueries.deleteGrupoDetalle(id,idusuario)
 dao.buttonDeleteGrupo = async (id, idusuario) => await grupoQueries.buttonDeleteGrupo(id, idusuario)
 dao.deleteGrupo = async (id, grupoData) => await grupoQueries.deleteGrupo(id, grupoData)
+
+
 
 export default dao;

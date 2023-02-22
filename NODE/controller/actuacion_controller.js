@@ -46,7 +46,7 @@ controller.addActuacion = async (req, res) => {
      
       const actuacion = await dao.getActuacionId(req.params.id);
       
-      if (curso.length <= 0) return res.status(404).send("La actuacion no existe");
+      if (actuacion.length <= 0) return res.status(404).send("La actuacion no existe");
   
       return res.send(actuacion[0] );
     } catch (e) {
@@ -107,7 +107,25 @@ controller.deleteActuacion = async (req, res) => {
   };
 
 
+// Controlador para modificar un usuario por su id
+controller.updateActuacion = async (req, res) => {
+  const { id } = req.params;
+  // Si no existe el token enviamos un 401 (unauthorized)
+  if (!id) return res.sendStatus(401);
 
+  try {
+    // Si no nos llega ningún campo por el body devolvemos un 400 (bad request)
+    if (Object.entries(req.body).length === 0)
+      return res.status(400).send("Error al recibir el body");
+    // Actualizamos el usuario
+    await dao.updateActuacion(id, req.body);
+    const actuacion = await dao.getActuacionId(id)
+    // Devolvemos la respuesta
+    return res.send(actuacion[0]);
+  } catch (e) {
+    console.log(e.message);
+  }
+};
 
 
 
