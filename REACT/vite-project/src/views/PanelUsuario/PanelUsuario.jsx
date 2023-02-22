@@ -32,7 +32,11 @@ export default function PanelUsuario() {
         {usuarios ? (
           <FormCambio usuarios={usuarios} setUsuarios={setUsuarios} nombre={usuarios.nombre} apellido={usuarios.apellido} telefono={usuarios.telefono} email={usuarios.email} password={"*****"} />
         ) : (
-          <p>Cargando...</p>
+          <div className="text-center">
+          <div className="spinner-border" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </div>
+        </div>
         )}
       </div>
 <Eventos/>

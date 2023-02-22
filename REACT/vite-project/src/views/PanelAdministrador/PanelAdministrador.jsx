@@ -176,7 +176,11 @@ export default function PanelAdministrador() {
             password={"*****"}
           />
         ) : (
-          <p>Cargando...</p>
+          <div className="text-center">
+          <div className="spinner-border" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </div>
+        </div>
         )}
       </div>
       {/* <section id="constructions" className="constructions">
