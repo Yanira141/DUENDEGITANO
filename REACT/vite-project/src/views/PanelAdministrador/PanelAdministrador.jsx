@@ -176,7 +176,7 @@ export default function PanelAdministrador() {
             email={usuarios.email}
             password={"*****"}
             setUsuarios={setUsuarios}
-           
+
           />
         ) : (
           <div className="text-center">
