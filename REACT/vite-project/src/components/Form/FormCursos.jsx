@@ -66,7 +66,7 @@ export default function FormCursos() {
                 className="php-email-form"
                 onSubmit={(event) => registrar(event, newCurso)}
               >
-                <h3><i class="bi bi-journals"></i> Añade un nuevo curso</h3>
+                <h3><i className="bi bi-journals"></i> Añade un nuevo curso</h3>
 
                 <div className="row gy-3">
                   <div className="col-md-12 ">

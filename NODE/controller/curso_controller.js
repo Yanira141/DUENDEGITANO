@@ -146,6 +146,21 @@ controller.deleteCurso = async (req, res) => {
 
 
 
+controller.buttonDeleteCurso = async (req, res) => {
+
+  const {id, idusuario}=req.params
+  
+  try {
+    const curso = await dao.getCursoId(req.params.id);
+    const buttoncurso = await dao.buttonDeleteCurso(id, idusuario);
+    if(buttoncurso<=0) return res.status(404).send("Usuario no apuntado")
+    if (curso.length <= 0) return res.status(404).send("El curso no existe");
+
+    return res.send(curso[0]);
+  } catch (e) {
+    console.log(e.message);
+  }
+};
 
 
 

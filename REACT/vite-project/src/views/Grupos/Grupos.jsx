@@ -23,8 +23,8 @@ export default function Grupos() {
           <div className="section-header">
             <h2>Clases grupales</h2>
 
-            <p>Hay atajos para la felicidad, y el baile es uno de ellos.</p>
-            <p>"Vicki Baum"</p>
+            <h6>Hay atajos para la felicidad, y el baile es uno de ellos.</h6>
+            <h6>"Vicki Baum"</h6>
           </div>{" "}
         </div>
 

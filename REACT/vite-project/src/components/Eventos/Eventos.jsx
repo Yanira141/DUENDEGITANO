@@ -5,7 +5,7 @@ export default function Eventos (){
         <div className="container" data-aos="fade-up">
           <div className="section-header">
             <h2>Próximos eventos</h2>
-            <p>Estos son los cursos a los que vas a asistir</p>
+            <h6>Estos son los cursos a los que vas a asistir</h6>
           </div>
           <div>
 

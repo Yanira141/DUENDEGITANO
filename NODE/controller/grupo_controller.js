@@ -98,6 +98,7 @@ controller.deleteGrupoDetalle = async (req, res) => {
 
 
   
+
 controller.buttonDeleteGrupo = async (req, res) => {
 
   const {id, idusuario}=req.params

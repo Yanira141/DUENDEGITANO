@@ -145,6 +145,22 @@ cursoQueries.deleteCurso = async (id, dataObj) => {
 
 
 
+cursoQueries.buttonDeleteCurso = async (id, idusuario) => {
+  // Conectamos con la base de datos y eliminamos el usuario por su id.
+  let conn = null
+  try {
+      conn = await db.createConnection()
+      return await db.query('SELECT * FROM cursosdetalle WHERE idusuario = ? AND idcurso = ?',[idusuario, id], 'select', conn)         
+  } catch (e) {
+      throw new Error(e)
+  } finally {
+      conn && await conn.end();
+  }
+};
+
+
+
+
 
 
 

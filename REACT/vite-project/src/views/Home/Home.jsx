@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
 import Hero from "../../components/Hero/Hero";
 import FormRegister from "../../components/Form/FormInscribete";
-import HistoriaAlumnos from "../../components/HistoriaAlumnos/HistoriaAlumnos";
+
 
 import { useAuthContext } from "../../context/AuthContext/logInContext";
 
 import CardProfes from "../../components/Card/CardProfes/CardProfes";
 
 import CardActu from "../../components/Card/CardActu/CardActu";
+import Reviews from "../../components/Reviews/Reviews";
+
 
 
 export default function Home() {
@@ -28,8 +30,9 @@ export default function Home() {
     
       <div>
         <Hero />
-     
-   
+    
+
+
           <section id="constructions" className="constructions">
         <div className="container" data-aos="fade-up">
           <div className="section-header">
@@ -42,7 +45,18 @@ export default function Home() {
         <div className="container d-flex justify-content-around">
        <CardProfes/>
        </div></div></section>
-        <HistoriaAlumnos/>
+       <section id="constructions" className="constructions">
+        <div className="container" data-aos="fade-up">
+          <div className="section-header">
+            <h2>Reseñas de Google</h2>
+           
+            <h6>
+     
+                </h6>
+          </div>
+        <div className="container d-flex justify-content-around">
+       <Reviews/>
+       </div></div></section>
         <section id="constructions" className="constructions">
         <div className="container" data-aos="fade-up">
           <div className="section-header">
@@ -59,7 +73,7 @@ export default function Home() {
               </div>
           ))}
           </div></div></section>
-   
+
         {!authorization.email ? (
         <FormRegister/>
         ): (<div></div>)}

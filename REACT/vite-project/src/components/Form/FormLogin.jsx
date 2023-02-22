@@ -31,10 +31,10 @@ export default function FormLogin() {
               <div className="content">
                 <h3>Iniciar sesión</h3>
 
-                <p>
+                <h6>
            
                   Inicia sesión en tu cuenta y mantén tus datos actualizados.
-                </p>
+                </h6>
                 
               </div>
             </div>

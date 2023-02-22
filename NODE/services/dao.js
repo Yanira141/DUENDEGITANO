@@ -40,6 +40,7 @@ dao.getCursoId = async (id) => await cursoQueries.getCursoId(id);
 dao.cursosDetalle = async (cursoData) => await cursoQueries.cursosDetalle(cursoData);
 dao.deleteCursoDetalle = async (id, idusuario) => await cursoQueries.deleteCursoDetalle(id,idusuario)
 dao.deleteCurso = async (id, cursoData) => await cursoQueries.deleteCurso(id, cursoData)
+dao.buttonDeleteCurso = async (id, idusuario) => await cursoQueries.buttonDeleteCurso(id, idusuario)
 
 //DAO DE ACTUACIONES
 

@@ -2,7 +2,7 @@ import { useAuthContext } from "../../context/AuthContext/logInContext";
 import { useParams } from "react-router-dom";
 import Swal from 'sweetalert2';
 
-export default function CardCursoDetalle({ cursos }) {
+export default function CardCursoDetalle({ cursos, existeCurso, setExisteCurso }) {
   const params = useParams();
   const { authorization } = useAuthContext();
   const { idcurso } = params;
@@ -20,6 +20,7 @@ export default function CardCursoDetalle({ cursos }) {
     );
 
     if (response.status === 200) {
+      setExisteCurso(true)
       Swal.fire({
         position: "top-end",
         icon: "success",
@@ -52,6 +53,8 @@ export default function CardCursoDetalle({ cursos }) {
       );
   console.log(response.status);
       if (response.status === 200) {
+setExisteCurso(false)
+
         Swal.fire({
           position: "top-end",
           icon: "success",
@@ -83,19 +86,13 @@ export default function CardCursoDetalle({ cursos }) {
               <h2>{cursos.nombre}</h2>
               <div className="our-story">
                 <button
-                  onClick={apuntarCurso}
+                  onClick={existeCurso ? borrarCurso : apuntarCurso}
                   className="btn-get-started text-dark text-decoration-none"
                 >
-                  ¡Apuntarme!
+                 {existeCurso ? "Borrarme" : "Apuntarme"}
                 </button>
 
-                
-                <button
-                  onClick={borrarCurso}
-                  className="btn-get-started text-dark text-decoration-none"
-                >
-                  ¡Borrarme!
-                </button>
+               
 
                 <p className="pt-5">{cursos.descripcion}</p>
                 <ul>

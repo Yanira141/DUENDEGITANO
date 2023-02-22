@@ -64,9 +64,9 @@ export default function FormProxActuaciones() {
               <div className="content">
                 <h3>Actuaciones</h3>
 
-                <p>
+                <h6>
                 Tendrás la posibilidad de conocernos y vernos actuar en persona.
-                </p>
+                </h6>
                 
               </div>
             </div>
@@ -76,7 +76,7 @@ export default function FormProxActuaciones() {
                 className="php-email-form"
                 onSubmit={(event) => registrar(event, newActuacion)}
               >
-                <h3><i class="bi bi-calendar-plus"></i> Añade una próxima actuación</h3>
+                <h3><i className="bi bi-calendar-plus"></i> Añade una próxima actuación</h3>
 
                 <div className="row gy-3">
                   <div className="col-md-12 ">

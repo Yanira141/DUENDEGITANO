@@ -63,15 +63,15 @@ export default function FormRegister() {
               <div className="content">
                 <h3>¿Ya te has decidido?</h3>
 
-                <p>
+                <h6>
                   {" "}
                   Rellena los campos del formulario de inscripción para darte de
                   alta como alumno en tu escuela de danza.{" "}
-                </p>
-                <p>
+                </h6>
+                <h6>
                   Te recomendamos acercarte a la escuela para completar la
                   inscripción y formalizar el pago.
-                </p>
+                </h6>
               </div>
             </div>
 

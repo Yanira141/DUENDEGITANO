@@ -17,21 +17,21 @@ export default function SamuelGallo() {
               <div className="our-story">
                 <p className="pt-5">
                   {" "}
-                  Desde pequeño nunca quise bailar flamenco y por eso nunca
-                  baile en la academia, porque antes estaba más enfocada a
-                  flamenco, asi que mis padres me apuntaron en la conocida
+                  Desde pequeño nunca quiso bailar flamenco y por eso nunca
+                  bailo en la academia, porque antes estaba más enfocada a
+                  flamenco, asi que sus padres le apuntaron en la conocida
                   escuela de Hip-Hop D-flow Studios, donde desde muy pequeño
-                  estuve presentandome en castings de grupos de campeonato y con
-                  mi grupo de Hip-Hop también he bailado en varios campeonatos
+                  estuvo presentandose en castings de grupos de campeonato y con
+                  su grupo de Hip-Hop. </p><p>También ha bailado en varios campeonatos
                   tanto a nivel nacional como internacional, ganando varios
-                  premios. Más adelante empece con mi formación de guitarra en
-                  el conservatorio, pero mi familia me animo a que me apuntara
-                  en el conservatorio de danza para estudiar y conocer mas el
-                  mundo ya que quería dedicarme a esto, escogí la especialidad
+                  premios. </p><p>Más adelante empezo con su formación de guitarra en
+                  el conservatorio, pero su familia le animo a que se apuntara
+                  en el conservatorio de danza para estudiar y conocer más el
+                  mundo ya que quería dedicarse a esto.</p><p> Escogio la especialidad
                   de danza contemporanea, ya que era lo mas ralacionado con lo
-                  que me gusta que es el Hip-Hop. A día de hoy pertenezco a una
-                  compañía de Gibraltar, hace poco recibí un premio con mención
-                  al mejor bailarín, junto a una beca para irme a Italia a
+                  que le gusta que es el Hip-Hop.</p><p> A día de hoy pertenezce a una
+                  compañía de Gibraltar, hace poco recibio un premio con mención
+                  al mejor bailarín, junto a una beca para irse a Italia a
                   estudiar en verano.
                 </p>
 

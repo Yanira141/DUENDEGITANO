@@ -62,7 +62,7 @@ export default function FormAddGrupo() {
                 className="php-email-form"
                 onSubmit={(event) => registrar(event, newGrupo)}
               >
-                <h3><i class="bi bi-journals"></i> Añade un nuevo grupo</h3>
+                <h3><i className="bi bi-journals"></i> Añade un nuevo grupo</h3>
 
                 <div className="row gy-3">
                   <div className="col-md-12 ">

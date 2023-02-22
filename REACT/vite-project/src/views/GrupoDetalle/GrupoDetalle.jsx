@@ -1,13 +1,12 @@
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
 import CardGrupoDetalle from "../../components/Card/CardGrupoDetalle/CardGrupoDetalle";
 import { useAuthContext } from "../../context/AuthContext/logInContext";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 export default function GrupoDetalle() {
   const [existeGrupo, setExisteGrupo] = useState(false);
   const { authorization } = useAuthContext();
-  const [buttonDelete, setButtonDelete] = useState([]);
   const [grupos, setGrupos] = useState(null);
   const params = useParams();
 
@@ -31,9 +30,11 @@ export default function GrupoDetalle() {
       );
       if (response.status === 404) {
         setExisteGrupo(false);
+      }else{
+        setExisteGrupo(true);
       }
 
-      setExisteGrupo(true);
+
     }
 
     fetchGrupos();

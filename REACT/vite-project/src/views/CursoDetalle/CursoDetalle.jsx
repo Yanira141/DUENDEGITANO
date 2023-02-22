@@ -1,12 +1,15 @@
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
 import CardCursoDetalle from "../../components/Card/CardCursoDetalle";
-
+import { useAuthContext } from "../../context/AuthContext/logInContext";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 export default function CursoDetalle (){
+  const [existeCurso, setExisteCurso]= useState(false)
+  const { authorization } = useAuthContext();
     const [cursos, setCursos] = useState(null);
     const params = useParams();
+
     useEffect(function () {
       async function fetchCursos() {
         const response = await fetch(
@@ -19,6 +22,27 @@ export default function CursoDetalle (){
   
       fetchCursos();
     }, []);
+
+
+    useEffect(function () {
+      const { idcurso } = params;
+      async function fetchCurso() {
+        const response = await fetch(
+          `http://localhost:3000/cursos/buttondeletecurso/${idcurso}/${authorization.id}`
+        );
+        if (response.status === 404) {
+          setExisteCurso(false);
+        }else{
+          setExisteCurso(true);
+        }
+  
+  
+      }
+  
+      fetchCurso();
+    }, []);
+  
+
     
     return(
         <>
@@ -28,6 +52,8 @@ export default function CursoDetalle (){
         {cursos ? (
           <CardCursoDetalle
             cursos={cursos}
+            setExisteCurso={setExisteCurso}
+            existeCurso={existeCurso}
           />
         ) : (
           <p>Cargando...</p>

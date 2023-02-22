@@ -22,9 +22,9 @@ export default function Cursos() {
           <div className="section-header">
             <h2>Talleres</h2>
            
-            <p>
+            <h6>
                 Bailar nunca fue tan fácil... ¡y más con nuestros cursos para reforzar los conocimientos!
-                </p>
+                </h6>
                 <h6>
                   Aprende a bailar con nosotros paso a paso.
                 </h6>

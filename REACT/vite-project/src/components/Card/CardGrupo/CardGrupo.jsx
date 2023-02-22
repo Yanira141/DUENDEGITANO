@@ -46,11 +46,11 @@ export default function CardGrupo({ grupos, deleteGrupo}) {
 
   return (
 <>
-<div class="container pt-5">
-<div class="row row-striped">
+<div className="container pt-5">
+<div className="row row-striped">
 
-<div class="col-10">
-<h3 class="text-uppercase"><strong>{grupos.nombre}</strong></h3>
+<div className="col-10">
+<h3 className="text-uppercase"><strong>{grupos.nombre}</strong></h3>
 
 <p>{grupos.descripcion}</p>
 
@@ -62,12 +62,17 @@ export default function CardGrupo({ grupos, deleteGrupo}) {
                   to={`/grupos/${grupos.id}`}
                   className="btn-get-started text-dark text-decoration-none text-center" 
                 >
-                  + INFO
+                  + Info
                 </Link>
   </div>
   <div className="d-flex row">
   {(authorization.rol === 1) &&(
-                <button onClick={()=>deleteGrupo(grupos.id)} className="btn-get-started text-dark text-decoration-none">BORRAR</button>
+                <button onClick={()=>deleteGrupo(grupos.id)} className="btn-get-started text-dark text-decoration-none">Borrar</button>
+                )}
+  </div>
+  <div className="d-flex row">
+  {(authorization.rol === 1) &&(
+                <button className="btn-get-started text-dark text-decoration-none">Editar</button>
                 )}
   </div>
     </div>
