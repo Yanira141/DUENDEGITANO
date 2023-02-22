@@ -30,12 +30,12 @@ export default function FormDelete() {
         logout();
       } else if (response.status === 409) {
         Swal.fire({
-          position: 'top-end',
-          icon: 'warning',
-          title: 'Usuario ya eliminado',
+          position: "top-end",
+          icon: "warning",
+          title: "Usuario ya eliminado",
           showConfirmButton: false,
-          timer: 1500
-        })
+          timer: 1500,
+        });
       }
     });
 
@@ -43,13 +43,7 @@ export default function FormDelete() {
     actions.resetForm();
   }
 
-  const {
-  
-    isSubmitting,
-    handleBlur,
-    handleChange,
-    handleSubmit,
-  } = useFormik({
+  const { isSubmitting, handleBlur, handleChange, handleSubmit } = useFormik({
     initialValues: {
       descripcion: "",
     },

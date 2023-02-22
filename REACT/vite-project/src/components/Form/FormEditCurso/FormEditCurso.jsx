@@ -4,7 +4,6 @@ import { useAuthContext } from "../../../context/AuthContext/logInContext";
 import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 
-
 export default function FormEditActu({
   hora,
   fecha,
@@ -12,7 +11,7 @@ export default function FormEditActu({
   descripcion,
   nombre,
   precio,
- 
+
   setCurso,
 }) {
   const { authorization } = useAuthContext();
@@ -38,7 +37,7 @@ export default function FormEditActu({
         });
         response.json().then((data) => {
           setCurso(data);
-        })
+        });
       } else if (response.status === 409) {
         Swal.fire({
           position: "top-end",
@@ -76,16 +75,13 @@ export default function FormEditActu({
     onSubmit,
   });
 
-    return(
-        <>
-          <section id="get-started" className="get-started section-bg">
+  return (
+    <>
+      <section id="get-started" className="get-started section-bg">
         <div className="container">
           <div className="row justify-content-between gy-4">
             <div className="col-lg-5" data-aos="fade">
-              <form
-                className="php-email-form"
-                onSubmit={handleSubmit}
-              >
+              <form className="php-email-form" onSubmit={handleSubmit}>
                 <h3>
                   <i className="bi bi-journals"></i> Añade un nuevo curso
                 </h3>
@@ -94,7 +90,6 @@ export default function FormEditActu({
                   <div className="col-md-12 ">
                     <input
                       type="text"
-                     
                       name="nombre"
                       placeholder={nombre}
                       value={values.nombre}
@@ -114,7 +109,6 @@ export default function FormEditActu({
                   <div className="col-md-12 ">
                     <input
                       type="text"
-                
                       name="precio"
                       placeholder={precio}
                       value={values.precio}
@@ -134,7 +128,6 @@ export default function FormEditActu({
                   <div className="col-md-12 ">
                     <input
                       type="text"
-                 
                       name="hora"
                       placeholder={hora}
                       value={values.hora}
@@ -154,7 +147,6 @@ export default function FormEditActu({
                   <div className="col-md-12 ">
                     <input
                       type="text"
-                 
                       name="fecha"
                       placeholder={fecha}
                       value={values.fecha}
@@ -174,7 +166,6 @@ export default function FormEditActu({
                   <div className="col-md-12 ">
                     <input
                       type="text"
-                 
                       name="profesor"
                       placeholder={profesor}
                       value={values.profesor}
@@ -194,7 +185,6 @@ export default function FormEditActu({
                   <div className="col-md-12 ">
                     <input
                       type="text"
-                      
                       name="descripcion"
                       placeholder={descripcion}
                       value={values.descripcion}
@@ -211,7 +201,9 @@ export default function FormEditActu({
                     )}
                   </div>
 
-                  <button type="submit" disabled={isSubmitting}>Añadir curso</button>
+                  <button type="submit" disabled={isSubmitting}>
+                    Añadir curso
+                  </button>
                 </div>
               </form>
             </div>
@@ -227,6 +219,6 @@ export default function FormEditActu({
           </div>
         </div>
       </section>
-        </>
-    )
+    </>
+  );
 }

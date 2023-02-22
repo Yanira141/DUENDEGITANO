@@ -58,19 +58,19 @@ export default function CardProfesores() {
             <p className="card-text">
               Desde pequeño nunca quise bailar flamenco y por eso nunca baile en
               la academia, porque antes estaba más enfocada a flamenco, asi que
-              mis padres me apuntaron en la conocida escuela de Hip-Hop D-flow Studios,
-              donde desde muy pequeño estuve presentandome en castings de grupos
-              de campeonato y con mi grupo de Hip-Hop también he bailado en
-              varios campeonatos tanto a nivel nacional como internacional,
-              ganando varios premios. Más adelante empece con mi formación de
-              guitarra en el conservatorio, pero mi familia me animo a que me
-              apuntara en el conservatorio de danza para estudiar y conocer mas
-              el mundo ya que quería dedicarme a esto, escogí la especialidad de
-              danza contemporanea, ya que era lo mas ralacionado con lo que me
-              gusta que es el Hip-Hop. A día de hoy pertenezco a una compañía de
-              Gibraltar, hace poco recibí un premio con mención al mejor
-              bailarín, junto a una beca para irme a Italia a estudiar en
-              verano.
+              mis padres me apuntaron en la conocida escuela de Hip-Hop D-flow
+              Studios, donde desde muy pequeño estuve presentandome en castings
+              de grupos de campeonato y con mi grupo de Hip-Hop también he
+              bailado en varios campeonatos tanto a nivel nacional como
+              internacional, ganando varios premios. Más adelante empece con mi
+              formación de guitarra en el conservatorio, pero mi familia me
+              animo a que me apuntara en el conservatorio de danza para estudiar
+              y conocer mas el mundo ya que quería dedicarme a esto, escogí la
+              especialidad de danza contemporanea, ya que era lo mas ralacionado
+              con lo que me gusta que es el Hip-Hop. A día de hoy pertenezco a
+              una compañía de Gibraltar, hace poco recibí un premio con mención
+              al mejor bailarín, junto a una beca para irme a Italia a estudiar
+              en verano.
             </p>
           </div>
         </div>

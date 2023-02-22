@@ -1,6 +1,6 @@
 import { createContext, useContext, useState } from "react";
 import jwt_decode from "jwt-decode";
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
 
 const CheckLogInContext = createContext({
   authorization: { email: null, rol: null },
@@ -18,13 +18,11 @@ export function LogInContextProvider({ children }) {
       id: null,
       email: null,
       rol: null,
-      
     }
   );
   const [errorMessage, setErrorMessage] = useState(null);
 
   async function login(e, credentials) {
-   
     e.preventDefault();
     const response = await fetch("http://localhost:3000/user/login", {
       method: "POST",
@@ -43,12 +41,12 @@ export function LogInContextProvider({ children }) {
       setErrorMessage(null);
     } else {
       Swal.fire({
-        position: 'top-end',
-        icon: 'error',
-        title: 'Email o contraseña incorrecta',
+        position: "top-end",
+        icon: "error",
+        title: "Email o contraseña incorrecta",
         showConfirmButton: false,
-        timer: 1500
-      })
+        timer: 1500,
+      });
     }
   }
 

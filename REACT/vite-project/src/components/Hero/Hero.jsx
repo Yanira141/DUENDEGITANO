@@ -13,14 +13,13 @@ export default function Hero() {
                   Bienvenid@s a la Academia de Danza <span>Duende Gitano</span>
                 </h2>
                 <p data-aos="fade-up">
-                  Tengo claro que quiero empezar a bailar,
-                  ¿por dónde empiezo?
+                  Tengo claro que quiero empezar a bailar, ¿por dónde empiezo?
                 </p>
                 <Link
                   data-aos="fade-up"
                   data-aos-delay="200"
                   to="contacto"
-                  className="btn-get-started text-decoration-none" 
+                  className="btn-get-started text-decoration-none"
                 >
                   ¡Pregúntanos!
                 </Link>

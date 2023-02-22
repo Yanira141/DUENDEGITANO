@@ -94,7 +94,7 @@ export default function FormContacto() {
                 </div>
 
                 <div className="col-lg-6">
-                  <form                   
+                  <form
                     className="php-email-form"
                     onSubmit={(event) => contactar(event, newEmail)}
                   >
@@ -127,7 +127,7 @@ export default function FormContacto() {
                       <textarea
                         className="form-control"
                         name="mensaje"
-                       type="text"
+                        type="text"
                         placeholder="¿Cómo te podemos ayudar?"
                         value={newEmail.mensaje}
                         onChange={handleInput}
@@ -140,9 +140,8 @@ export default function FormContacto() {
                         ¡Tu mensaje ha sido enviado, gracias!
                       </div>
                     </div>
-                  
-                      <button type="submit">Enviar mensaje</button>
-                  
+
+                    <button type="submit">Enviar mensaje</button>
                   </form>
                 </div>
               </div>

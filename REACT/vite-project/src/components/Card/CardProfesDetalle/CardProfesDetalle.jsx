@@ -1,4 +1,4 @@
-export default function CardProfesDetalle({ descripcion,imagen }) {
+export default function CardProfesDetalle({ descripcion, imagen }) {
   return (
     <>
       <section id="about" className="about">

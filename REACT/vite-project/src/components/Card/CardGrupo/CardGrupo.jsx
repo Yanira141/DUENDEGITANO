@@ -3,8 +3,7 @@ import { useAuthContext } from "../../../context/AuthContext/logInContext";
 import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 
-
-export default function CardGrupo({ grupos, deleteGrupo}) {
+export default function CardGrupo({ grupos, deleteGrupo }) {
   const params = useParams();
   const { authorization } = useAuthContext();
   const { idgrupo } = params;
@@ -40,64 +39,51 @@ export default function CardGrupo({ grupos, deleteGrupo}) {
     }
   }
 
-
-  
-
-
   return (
-<>
-<div className="container pt-5">
-<div className="row row-striped">
+    <>
+      <div className="container pt-5">
+        <div className="row row-striped">
+          <div className="col-10">
+            <h3 className="text-uppercase">
+              <strong>{grupos.nombre}</strong>
+            </h3>
 
-<div className="col-10">
-<h3 className="text-uppercase"><strong>{grupos.nombre}</strong></h3>
-
-<p>{grupos.descripcion}</p>
-
-    </div>
-    <div className="d-flex row">
-    <Link
-                  data-aos="fade-up"
-                  data-aos-delay="200"
-                  to={`/grupos/${grupos.id}`}
-                  className="btn-get-started text-dark text-decoration-none text-center" 
-                >
-                  + Info
-                </Link>
-  </div>
-  <div className="d-flex row">
-  {(authorization.rol === 1) &&(
-                <button onClick={()=>deleteGrupo(grupos.id)} className="btn-get-started text-dark text-decoration-none">Borrar</button>
-                )}
-  </div>
-  <div className="d-flex row">
-          {(authorization.rol === 1) &&(
-                <Link
+            <p>{grupos.descripcion}</p>
+          </div>
+          <div className="d-flex row">
+            <Link
+              data-aos="fade-up"
+              data-aos-delay="200"
+              to={`/grupos/${grupos.id}`}
+              className="btn-get-started text-dark text-decoration-none text-center"
+            >
+              + Info
+            </Link>
+          </div>
+          <div className="d-flex row">
+            {authorization.rol === 1 && (
+              <button
+                onClick={() => deleteGrupo(grupos.id)}
+                className="btn-get-started text-dark text-decoration-none"
+              >
+                Borrar
+              </button>
+            )}
+          </div>
+          <div className="d-flex row">
+            {authorization.rol === 1 && (
+              <Link
                 data-aos="fade-up"
                 data-aos-delay="200"
                 to={`/editgrupo/${grupos.id}`}
                 className="btn-get-started text-dark text-decoration-none text-center"
-              >Editar</Link>
-                )}
-             </div>
-    </div>
-</div>
-</>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+              >
+                Editar
+              </Link>
+            )}
+          </div>
+        </div>
+      </div>
+    </>
   );
 }

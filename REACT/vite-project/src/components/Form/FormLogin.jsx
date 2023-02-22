@@ -17,7 +17,6 @@ export default function FormLogin() {
   }
 
   useEffect(() => {
-  
     if (authorization.email) {
       navigate("/");
     }
@@ -25,21 +24,22 @@ export default function FormLogin() {
 
   return (
     <section id="get-started" className="get-started section-bg">
-        <div className="container">
-          <div className="row justify-content-between gy-4">
-            <div className="col-lg-6 d-flex align-items-center" data-aos="fade-up">
-              <div className="content">
-                <h3>Iniciar sesión</h3>
+      <div className="container">
+        <div className="row justify-content-between gy-4">
+          <div
+            className="col-lg-6 d-flex align-items-center"
+            data-aos="fade-up"
+          >
+            <div className="content">
+              <h3>Iniciar sesión</h3>
 
-                <h6>
-           
-                  Inicia sesión en tu cuenta y mantén tus datos actualizados.
-                </h6>
-                
-              </div>
+              <h6>
+                Inicia sesión en tu cuenta y mantén tus datos actualizados.
+              </h6>
             </div>
+          </div>
 
-            <div className="col-lg-5" data-aos="fade">
+          <div className="col-lg-5" data-aos="fade">
             <form
               className="php-email-form"
               onSubmit={(e) => login(e, credentials)}

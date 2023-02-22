@@ -33,9 +33,8 @@ function App() {
   return (
     <LogInContextProvider>
       <BrowserRouter>
-      <ScrollToTop />
+        <ScrollToTop />
         <Routes>
- 
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="contacto" element={<Contacto />} />
@@ -49,8 +48,8 @@ function App() {
             <Route path="cristinamarquez" element={<CristinaMarquez />} />
             <Route path="samuelgallo" element={<SamuelGallo />} />
             <Route path="editactu/:id" element={<EditActu />} />
-            <Route path="editcurso/:id" element={<EditCurso/>}/>
-            <Route path="editgrupo/:id" element={<EditGrupo/>}/>
+            <Route path="editcurso/:id" element={<EditCurso />} />
+            <Route path="editgrupo/:id" element={<EditGrupo />} />
             <Route element={<PublicRoute />}>
               <Route path="login" element={<IniciaSesion />} />
             </Route>

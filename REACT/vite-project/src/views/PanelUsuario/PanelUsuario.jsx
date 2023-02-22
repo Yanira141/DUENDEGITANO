@@ -7,8 +7,6 @@ import FormDelete from "../../components/Form/FormDelete/FormDelete";
 import FormDescripcion from "../../components/Form/FormDescripcion/FormDescripcion";
 import Eventos from "../../components/Eventos/Eventos";
 
-
-
 export default function PanelUsuario() {
   const [usuarios, setUsuarios] = useState(null);
   const params = useParams();
@@ -27,20 +25,28 @@ export default function PanelUsuario() {
   return (
     <>
       <Breadcrumbs title={"Panel usuario"} link={"Panel usuario"} />
-      <FormDescripcion/>
+      <FormDescripcion />
       <div>
         {usuarios ? (
-          <FormCambio usuarios={usuarios} setUsuarios={setUsuarios} nombre={usuarios.nombre} apellido={usuarios.apellido} telefono={usuarios.telefono} email={usuarios.email} password={"*****"} />
+          <FormCambio
+            usuarios={usuarios}
+            setUsuarios={setUsuarios}
+            nombre={usuarios.nombre}
+            apellido={usuarios.apellido}
+            telefono={usuarios.telefono}
+            email={usuarios.email}
+            password={"*****"}
+          />
         ) : (
           <div className="text-center">
-          <div className="spinner-border" role="status">
-            <span className="visually-hidden">Loading...</span>
+            <div className="spinner-border" role="status">
+              <span className="visually-hidden">Loading...</span>
+            </div>
           </div>
-        </div>
         )}
       </div>
-<Eventos/>
-      <FormDelete/>
+      <Eventos />
+      <FormDelete />
     </>
   );
 }

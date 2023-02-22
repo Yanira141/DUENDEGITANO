@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "../../assets/css/main.css";
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
 export default function FormRegister() {
   const [newUsuario, setNewUsuario] = useState({
     nombre: "",
@@ -30,20 +30,20 @@ export default function FormRegister() {
         alert("error al recibir el body");
       } else if (response.status === 200) {
         Swal.fire({
-          position: 'top-end',
-          icon: 'success',
-          title: 'Usuario registrado correctamente',
+          position: "top-end",
+          icon: "success",
+          title: "Usuario registrado correctamente",
           showConfirmButton: false,
-          timer: 1500
-        })
+          timer: 1500,
+        });
       } else if (response.status === 409) {
         Swal.fire({
-          position: 'top-end',
-          icon: 'error',
-          title: 'Usuario ya registrado',
+          position: "top-end",
+          icon: "error",
+          title: "Usuario ya registrado",
           showConfirmButton: false,
-          timer: 1500
-        })
+          timer: 1500,
+        });
       }
     });
     setNewUsuario({
@@ -59,7 +59,10 @@ export default function FormRegister() {
       <section id="get-started" className="get-started section-bg">
         <div className="container">
           <div className="row justify-content-between gy-4">
-            <div className="col-lg-6 d-flex align-items-center" data-aos="fade-up">
+            <div
+              className="col-lg-6 d-flex align-items-center"
+              data-aos="fade-up"
+            >
               <div className="content">
                 <h3>¿Ya te has decidido?</h3>
 

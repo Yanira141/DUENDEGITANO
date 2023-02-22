@@ -36,7 +36,7 @@ export default function FormEditActu({
         });
         response.json().then((data) => {
           setActuacion(data);
-        })
+        });
       } else if (response.status === 409) {
         Swal.fire({
           position: "top-end",
@@ -75,7 +75,6 @@ export default function FormEditActu({
 
   return (
     <>
-   
       <section id="get-started" className="get-started section-bg">
         <div className="container">
           <div className="row justify-content-between gy-4">
@@ -87,7 +86,7 @@ export default function FormEditActu({
                 <h3>Actuaciones</h3>
 
                 <h6>
-                 Necesitas cambiar algún dato de la actuación, editala aquí.
+                  Necesitas cambiar algún dato de la actuación, editala aquí.
                 </h6>
               </div>
             </div>

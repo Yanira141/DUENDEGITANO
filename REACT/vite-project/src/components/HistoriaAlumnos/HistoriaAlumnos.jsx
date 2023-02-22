@@ -31,12 +31,9 @@ export default function HistoriaAlumnos() {
                       de nuestro interior. Siempre está dispuesta a todo y
                       utiliza el baile para conectar con su interior y poder ser
                       ella misma. Es SU momento, donde ella deja su vida fuera y
-                      se centra en sacar sus sentimientos. 
-                      Y que bonito que está
-                      sea la casa donde ella es feliz. Gracias por todo flamenca...
-                      
-                      
-                      {" "}
+                      se centra en sacar sus sentimientos. Y que bonito que está
+                      sea la casa donde ella es feliz. Gracias por todo
+                      flamenca...{" "}
                     </p>
                   </div>
                 </div>

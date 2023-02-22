@@ -11,7 +11,6 @@ export default function FormCambio({
   email,
   password,
   setUsuarios,
-
 }) {
   const { authorization } = useAuthContext();
   const params = useParams();
@@ -27,7 +26,6 @@ export default function FormCambio({
       if (response.status === 400) {
         alert("Error al recibir el body");
       } else if (response.status === 200) {
-
         Swal.fire({
           position: "top-end",
           icon: "success",
@@ -35,9 +33,9 @@ export default function FormCambio({
           showConfirmButton: false,
           timer: 1500,
         });
-      response.json().then((data) => {
-        setUsuarios(data);
-      })
+        response.json().then((data) => {
+          setUsuarios(data);
+        });
       } else if (response.status === 409) {
         Swal.fire({
           position: "top-end",

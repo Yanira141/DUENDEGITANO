@@ -28,13 +28,12 @@ export default function Grupos() {
           </div>{" "}
         </div>
 
-
-      {grupos.map((grupos, index) => (
-        <div className="pb-5" key={index}>
-          <CardGrupo grupos={grupos} />
-        </div>
-      ))}
-            </section>
+        {grupos.map((grupos, index) => (
+          <div className="pb-5" key={index}>
+            <CardGrupo grupos={grupos} />
+          </div>
+        ))}
+      </section>
     </>
   );
 }

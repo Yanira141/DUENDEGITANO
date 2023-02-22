@@ -9,7 +9,6 @@ export default function Mapa() {
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
       ></iframe>
-
     </>
   );
 }

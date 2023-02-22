@@ -30,11 +30,9 @@ export default function GrupoDetalle() {
       );
       if (response.status === 404) {
         setExisteGrupo(false);
-      }else{
+      } else {
         setExisteGrupo(true);
       }
-
-
     }
 
     fetchGrupos();
@@ -53,10 +51,10 @@ export default function GrupoDetalle() {
           />
         ) : (
           <div className="text-center">
-          <div className="spinner-border" role="status">
-            <span className="visually-hidden">Loading...</span>
+            <div className="spinner-border" role="status">
+              <span className="visually-hidden">Loading...</span>
+            </div>
           </div>
-        </div>
         )}
       </div>
     </>

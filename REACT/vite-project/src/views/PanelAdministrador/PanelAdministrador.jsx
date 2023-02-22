@@ -3,15 +3,15 @@ import FormCursos from "../../components/Form/FormCursos";
 import FormProxActuaciones from "../../components/Form/FormProxActuaciones";
 import FormCambio from "../../components/Form/FormCambio/FormCambio";
 import CardCursos from "../../components/Card/CardCursos/CardCursos";
-
 import CardGrupo from "../../components/Card/CardGrupo/CardGrupo";
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 import FormAddGrupo from "../../components/Form/FormAddGrupo/FormAddGrupo";
-import CardOpiniones from "../../components/Card/CardOpiniones/CardOpiniones";
-import { useAuthContext } from "../../context/AuthContext/logInContext";
 import CardActu from "../../components/Card/CardActu/CardActu";
 import SubirImages from "../../components/SubirImages/SubirImages";
+
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { useAuthContext } from "../../context/AuthContext/logInContext";
+
 export default function PanelAdministrador() {
   const { authorization } = useAuthContext();
   const [usuarios, setUsuarios] = useState(null);
@@ -176,14 +176,13 @@ export default function PanelAdministrador() {
             email={usuarios.email}
             password={"*****"}
             setUsuarios={setUsuarios}
-
           />
         ) : (
           <div className="text-center">
-          <div className="spinner-border" role="status">
-            <span className="visually-hidden">Loading...</span>
+            <div className="spinner-border" role="status">
+              <span className="visually-hidden">Loading...</span>
+            </div>
           </div>
-        </div>
         )}
       </div>
       {/* <section id="constructions" className="constructions">
@@ -192,28 +191,25 @@ export default function PanelAdministrador() {
             <h2>Algunos comentarios anónimos de nuestros alumnos</h2>
 
             <div> */}
-              {/* <CardOpiniones descripcion={usuarios.descripcion} /> */}
-            {/* </div>
+      {/* <CardOpiniones descripcion={usuarios.descripcion} /> */}
+      {/* </div>
           </div>
         </div>
       </section> */}
-      
+
       <FormCursos />
-     
-          {cursos.map((curso, index) => (
-            <div key={index} className="pb-5">
-              <CardCursos curso={curso} deleteCurso={deleteCurso} />
-            </div>
-          ))}
-      
+
+      {cursos.map((curso, index) => (
+        <div key={index} className="pb-5">
+          <CardCursos curso={curso} deleteCurso={deleteCurso} />
+        </div>
+      ))}
+
       <FormProxActuaciones />
       <div className="d-flex flex-column container pb-5">
         {actuacion.map((actuacion, index) => (
           <div key={index}>
-         <CardActu
-              actuacion={actuacion}
-              deleteActuacion={deleteActuacion}
-            />
+            <CardActu actuacion={actuacion} deleteActuacion={deleteActuacion} />
           </div>
         ))}
       </div>
@@ -225,7 +221,7 @@ export default function PanelAdministrador() {
           <CardGrupo grupos={grupos} deleteGrupo={deleteGrupo} />
         </div>
       ))}
-      <SubirImages/>
+      <SubirImages />
     </>
   );
 }

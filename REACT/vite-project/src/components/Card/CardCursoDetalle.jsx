@@ -1,8 +1,12 @@
 import { useAuthContext } from "../../context/AuthContext/logInContext";
 import { useParams } from "react-router-dom";
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
 
-export default function CardCursoDetalle({ cursos, existeCurso, setExisteCurso }) {
+export default function CardCursoDetalle({
+  cursos,
+  existeCurso,
+  setExisteCurso,
+}) {
   const params = useParams();
   const { authorization } = useAuthContext();
   const { idcurso } = params;
@@ -15,12 +19,12 @@ export default function CardCursoDetalle({ cursos, existeCurso, setExisteCurso }
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({idusuario: authorization.id}),
+        body: JSON.stringify({ idusuario: authorization.id }),
       }
     );
 
     if (response.status === 200) {
-      setExisteCurso(true)
+      setExisteCurso(true);
       Swal.fire({
         position: "top-end",
         icon: "success",
@@ -39,41 +43,38 @@ export default function CardCursoDetalle({ cursos, existeCurso, setExisteCurso }
     }
   }
 
-
-  async function borrarCurso(e){
+  async function borrarCurso(e) {
     e.preventDefault();
-  
-      const response = await fetch(
-        `http://localhost:3000/cursos/borrarcursodetalle/${idcurso}`,
-        {
-          method: "DELETE",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({idusuario: authorization.id}),
-        }
-      );
-  console.log(response.status);
-      if (response.status === 200) {
-setExisteCurso(false)
 
-        Swal.fire({
-          position: "top-end",
-          icon: "success",
-          title: "Borrado del curso correctamente",
-          showConfirmButton: false,
-          timer: 1500,
-        });
-      } else {
-        Swal.fire({
-          position: "top-end",
-          icon: "info",
-          title: "ERROR",
-          showConfirmButton: false,
-          timer: 1500,
-        });
+    const response = await fetch(
+      `http://localhost:3000/cursos/borrarcursodetalle/${idcurso}`,
+      {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ idusuario: authorization.id }),
       }
+    );
+    console.log(response.status);
+    if (response.status === 200) {
+      setExisteCurso(false);
+
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Borrado del curso correctamente",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    } else {
+      Swal.fire({
+        position: "top-end",
+        icon: "info",
+        title: "ERROR",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    }
   }
-
-
 
   return (
     <>
@@ -89,10 +90,8 @@ setExisteCurso(false)
                   onClick={existeCurso ? borrarCurso : apuntarCurso}
                   className="btn-get-started text-dark text-decoration-none"
                 >
-                 {existeCurso ? "Borrarme" : "Apuntarme"}
+                  {existeCurso ? "Borrarme" : "Apuntarme"}
                 </button>
-
-               
 
                 <p className="pt-5">{cursos.descripcion}</p>
                 <ul>

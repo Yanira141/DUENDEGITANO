@@ -1,15 +1,17 @@
 import { useAuthContext } from "../../../context/AuthContext/logInContext";
 import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
-import { useState } from "react";
 
-export default function CardGrupoDetalle({ grupos,existeGrupo, setExisteGrupo }) {
+
+export default function CardGrupoDetalle({
+  grupos,
+  existeGrupo,
+  setExisteGrupo,
+}) {
   const params = useParams();
   const { authorization } = useAuthContext();
   const { idgrupo } = params;
 
-
-  
   async function apuntarGrupo(e) {
     e.preventDefault();
 
@@ -24,7 +26,6 @@ export default function CardGrupoDetalle({ grupos,existeGrupo, setExisteGrupo })
 
     if (response.status === 200) {
       setExisteGrupo(true);
-   
 
       Swal.fire({
         position: "top-end",
@@ -42,9 +43,7 @@ export default function CardGrupoDetalle({ grupos,existeGrupo, setExisteGrupo })
         timer: 1500,
       });
     }
-    
   }
-;
   async function borrarGrupo(e) {
     e.preventDefault();
 
@@ -58,8 +57,7 @@ export default function CardGrupoDetalle({ grupos,existeGrupo, setExisteGrupo })
     );
     console.log(response.status);
     if (response.status === 200) {
-
-      setExisteGrupo(false)
+      setExisteGrupo(false);
 
       Swal.fire({
         position: "top-end",
@@ -77,9 +75,8 @@ export default function CardGrupoDetalle({ grupos,existeGrupo, setExisteGrupo })
         timer: 1500,
       });
     }
-   
   }
-  
+
   return (
     <>
       <section id="about" className="about ">
@@ -90,16 +87,13 @@ export default function CardGrupoDetalle({ grupos,existeGrupo, setExisteGrupo })
             <div className="col-lg-7">
               <h2>{grupos.nombre}</h2>
               <div className="our-story">
-               
-                  <button
+                <button
+                  onClick={existeGrupo ? borrarGrupo : apuntarGrupo}
+                  className="btn-get-started text-dark text-decoration-none"
+                >
+                  {existeGrupo ? "Borrarme" : "Apuntarme"}
+                </button>
 
-                    onClick={existeGrupo ? borrarGrupo : apuntarGrupo}
-                    className="btn-get-started text-dark text-decoration-none"
-                  >
-                   {existeGrupo ? "Borrarme" : "Apuntarme"}
-                  </button>
-          
-              
                 <p className="pt-5">{grupos.descripcion}</p>
                 <ul>
                   <li>

@@ -4,12 +4,11 @@ import { useAuthContext } from "../../../context/AuthContext/logInContext";
 import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 
-
 export default function FormEditGrupo({
   nombre,
   descripcion,
   horario,
- 
+
   setGrupo,
 }) {
   const { authorization } = useAuthContext();
@@ -35,7 +34,7 @@ export default function FormEditGrupo({
         });
         response.json().then((data) => {
           setGrupo(data);
-        })
+        });
       } else if (response.status === 409) {
         Swal.fire({
           position: "top-end",
@@ -75,10 +74,7 @@ export default function FormEditGrupo({
         <div className="container">
           <div className="row justify-content-between gy-4">
             <div className="col-lg-5" data-aos="fade">
-              <form
-                className="php-email-form"
-                onSubmit={handleSubmit}
-              >
+              <form className="php-email-form" onSubmit={handleSubmit}>
                 <h3>
                   <i className="bi bi-journals"></i> Añade un nuevo grupo
                 </h3>
@@ -87,7 +83,6 @@ export default function FormEditGrupo({
                   <div className="col-md-12 ">
                     <input
                       type="text"
-                 
                       name="nombre"
                       placeholder={nombre}
                       value={values.nombre}
@@ -107,7 +102,6 @@ export default function FormEditGrupo({
                   <div className="col-md-12 ">
                     <input
                       type="text"
-                  
                       name="horario"
                       placeholder={horario}
                       value={values.horario}
@@ -127,7 +121,6 @@ export default function FormEditGrupo({
                   <div className="col-md-12 ">
                     <input
                       type="text"
-                  
                       name="descripcion"
                       placeholder={descripcion}
                       value={values.descripcion}
@@ -144,7 +137,9 @@ export default function FormEditGrupo({
                     )}
                   </div>
 
-                  <button type="submit" disabled={isSubmitting}>Añadir grupo</button>
+                  <button type="submit" disabled={isSubmitting}>
+                    Añadir grupo
+                  </button>
                 </div>
               </form>
             </div>

@@ -21,21 +21,20 @@ export default function Cursos() {
         <div className="container" data-aos="fade-up">
           <div className="section-header">
             <h2>Talleres</h2>
-           
+
             <h6>
-                Bailar nunca fue tan fácil... ¡y más con nuestros cursos para reforzar los conocimientos!
-                </h6>
-                <h6>
-                  Aprende a bailar con nosotros paso a paso.
-                </h6>
-          </div>  </div>
-     
-          {cursos.map((curso, index) => (
-            <div key={index}>
-              <CardCursos curso={curso} />
-            </div>
-          ))}
-        
+              Bailar nunca fue tan fácil... ¡y más con nuestros cursos para
+              reforzar los conocimientos!
+            </h6>
+            <h6>Aprende a bailar con nosotros paso a paso.</h6>
+          </div>{" "}
+        </div>
+
+        {cursos.map((curso, index) => (
+          <div key={index}>
+            <CardCursos curso={curso} />
+          </div>
+        ))}
       </section>
     </>
   );
