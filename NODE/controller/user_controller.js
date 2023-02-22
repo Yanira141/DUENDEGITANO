@@ -19,9 +19,9 @@ controller.addUser = async (req, res) => {
     if (addUser) {
       // Para enviar email cuando se registre
       await transporter.sendMail({
-        from: '"Academía Duende Gitano" <yaniragonru@gmail.com>', // sender address
+        from: '"Academia Duende Gitano" <academiaduendegitano1@gmail.com>', // sender address
         to: email,
-        subject: "Bienvenid@ a Academía Duende Gitano", // Subject line
+        subject: "Bienvenid@ a Academia Duende Gitano", // Subject line
         // text: "Hello world?", // plain text body
         html: "<b>Bienvenido a Duende Gitano,espero disfrutes de esta nueva experiencia, te recordamos que debes pasar por la escuela a formalizar el pago, para cualquier consulta contactanos, !gracias por registrarte!", // html body
       });
@@ -45,9 +45,9 @@ controller.email = async (req, res) => {
     if (emaildao) {
       // Para enviar email cuando se registre
       await transporter.sendMail({
-        from: '"Academía Duende Gitano" <yaniragonru@gmail.com>', // sender address
-        to: "<yaniragonru@gmail.com>",
-        subject: "Academía Duende Gitano", // Subject line
+        from: '"Academia Duende Gitano" <academiaduendegitano1@gmail.com>', // sender address
+        to: "<academiaduendegitano1@gmail.com>",
+        subject: "Academia Duende Gitano", // Subject line
         // text: "Hello world?", // plain text body
         html: `
         <table id="u_body" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;min-width: 320px;Margin: 0 auto;background-color: #d6e2ea;width:100%" cellpadding="0" cellspacing="0">
