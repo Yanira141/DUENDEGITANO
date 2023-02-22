@@ -11,5 +11,8 @@ grupoRouter.post("/grupodetalle/:id", grupoController.grupoDetalle)
 grupoRouter.delete("/borrargrupodetalle/:id", grupoController.deleteGrupoDetalle)
 grupoRouter.get("/buttondeletegrupo/:id/:idusuario", grupoController.buttonDeleteGrupo)
 grupoRouter.patch("/borrar/:id", grupoController.deleteGrupo);
+grupoRouter.patch("/actualizar/:id", grupoController.updateGrupo);
+
+
 
 export default grupoRouter;

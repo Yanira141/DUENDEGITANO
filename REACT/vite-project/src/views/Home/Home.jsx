@@ -54,7 +54,7 @@ export default function Home() {
      
                 </h6>
           </div>
-        <div className="container d-flex justify-content-around">
+        <div className="container d-flex justify-content-around pb-5">
        <Reviews/>
        </div></div></section>
         <section id="constructions" className="constructions">

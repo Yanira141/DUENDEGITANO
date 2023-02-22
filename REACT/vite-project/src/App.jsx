@@ -20,6 +20,8 @@ import CristinaMarquez from "./views/CristinaMarquez/CristinaMarquez";
 import CristinaGallo from "./views/CristinaGallo/CristinaGallo";
 import SamuelGallo from "./views/SamuelGallo/SamuelGallo";
 import EditActu from "./views/EditActu/EditActu";
+import EditCurso from "./views/EditCurso/EditCurso";
+import EditGrupo from "./views/EditGrupo/EditGrupo";
 import ScrollToTop from "./ScrollToTop";
 
 const ROLES = {
@@ -47,8 +49,8 @@ function App() {
             <Route path="cristinamarquez" element={<CristinaMarquez />} />
             <Route path="samuelgallo" element={<SamuelGallo />} />
             <Route path="editactu/:id" element={<EditActu />} />
-            {/* <Route path="editcurso/:id" element={<EditCurso/>}/> */}
-            {/* <Route path="editgrupo/:id" element={<EditGrupo/>}/> */}
+            <Route path="editcurso/:id" element={<EditCurso/>}/>
+            <Route path="editgrupo/:id" element={<EditGrupo/>}/>
             <Route element={<PublicRoute />}>
               <Route path="login" element={<IniciaSesion />} />
             </Route>

@@ -1,5 +1,5 @@
 import db from "../mysql.js";
-
+import utils from "../../utils/utils.js";
 const cursoQueries = {};
 
 cursoQueries.getCursoByNombre = async (nombre) => {
@@ -160,6 +160,39 @@ cursoQueries.buttonDeleteCurso = async (id, idusuario) => {
 
 
 
+
+// Modificar un usuario por su id
+cursoQueries.updateCurso = async (id, cursoData) => {
+  cursoData = await utils.removeUndefinedKeys(cursoData);
+  // Conectamos con la base de datos y añadimos el usuario.
+  let conn = null;
+  try {
+    conn = await db.createConnection();
+    // Creamos un objeto con los datos que nos puede llegar del usuario a modificar en la base de datos.
+    // Encriptamos la password con md5 si nos llega por el body, sino la declaramos como undefined
+    // y usamos la libreria momentjs para actualizar la fecha.
+    let cursoObj = {
+      nombre: cursoData.nombre,
+      precio: cursoData.precio,
+      fecha: cursoData.fecha,
+      descripcion: cursoData.descripcion,
+      hora: cursoData.hora,
+    };
+    // Eliminamos los campos que no se van a modificar (no llegan por el body)
+
+    cursoObj = await utils.removeUndefinedKeys(cursoObj);
+    return await db.query(
+      "UPDATE curso SET ? WHERE id = ?",
+      [cursoObj, id],
+      "insert",
+      conn
+    );
+  } catch (e) {
+    throw new Error(e);
+  } finally {
+    conn && (await conn.end());
+  }
+};
 
 
 

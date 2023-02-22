@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import FormEditActu from "../../components/Form/FormEditActu/FormEditActu";
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
 import { useParams } from "react-router-dom";
+
+
 export default function EditActu() {
   const [actuacion, setActuacion] = useState(null);
   const params = useParams();

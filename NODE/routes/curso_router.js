@@ -10,6 +10,6 @@ cursoRouter.post("/cursosdetalle/:id", cursoController.cursosDetalle)
 cursoRouter.delete("/borrarcursodetalle/:id", cursoController.deleteCursoDetalle)
 cursoRouter.patch("/borrar/:id", cursoController.deleteCurso);
 cursoRouter.get("/buttondeletecurso/:id/:idusuario", cursoController.buttonDeleteCurso)
-
+cursoRouter.patch("/actualizar/:id", cursoController.updateCurso);
 
 export default cursoRouter;

@@ -69,7 +69,7 @@ export default function FormEditActu({
 
     onSubmit,
   });
-  console.log(actuacion, "holaaaa");
+
   return (
     <>
    
@@ -84,8 +84,7 @@ export default function FormEditActu({
                 <h3>Actuaciones</h3>
 
                 <h6>
-                  Tendrás la posibilidad de conocernos y vernos actuar en
-                  persona.
+                 Necesitas cambiar algún dato de la actuación, editala aquí.
                 </h6>
               </div>
             </div>
@@ -93,8 +92,7 @@ export default function FormEditActu({
             <div className="col-lg-5" data-aos="fade">
               <form className="php-email-form" onSubmit={handleSubmit}>
                 <h3>
-                  <i className="bi bi-calendar-plus"></i> Añade una próxima
-                  actuación
+                  <i className="bi bi-calendar-plus"></i> Edita esta actuación
                 </h3>
 
                 <div className="row gy-3">

@@ -71,10 +71,15 @@ export default function CardGrupo({ grupos, deleteGrupo}) {
                 )}
   </div>
   <div className="d-flex row">
-  {(authorization.rol === 1) &&(
-                <button className="btn-get-started text-dark text-decoration-none">Editar</button>
+          {(authorization.rol === 1) &&(
+                <Link
+                data-aos="fade-up"
+                data-aos-delay="200"
+                to={`/editgrupo/${grupos.id}`}
+                className="btn-get-started text-dark text-decoration-none text-center"
+              >Editar</Link>
                 )}
-  </div>
+             </div>
     </div>
 </div>
 </>

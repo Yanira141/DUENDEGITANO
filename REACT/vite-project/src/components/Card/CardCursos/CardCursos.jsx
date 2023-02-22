@@ -44,7 +44,12 @@ export default function CardCursos({ curso, deleteCurso }) {
              </div>
              <div className="d-flex row">
           {(authorization.rol === 1) &&(
-                <button  className="btn-get-started text-dark text-decoration-none">Editar</button>
+                <Link
+                data-aos="fade-up"
+                data-aos-delay="200"
+                to={`/editcurso/${curso.id}`}
+                className="btn-get-started text-dark text-decoration-none text-center"
+              >Editar</Link>
                 )}
              </div>
           	</div>

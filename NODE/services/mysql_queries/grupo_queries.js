@@ -1,5 +1,5 @@
 import db from "../mysql.js";
-
+import utils from "../../utils/utils.js";
 const grupoQueries = {};
 
 grupoQueries.getGrupobyId = async (nombre) => {
@@ -149,6 +149,37 @@ grupoQueries.deleteGrupo = async (id, dataObj) => {
 };
 
 
+
+// Modificar un usuario por su id
+grupoQueries.updateGrupo = async (id, grupoData) => {
+  grupoData = await utils.removeUndefinedKeys(grupoData);
+  // Conectamos con la base de datos y añadimos el usuario.
+  let conn = null;
+  try {
+    conn = await db.createConnection();
+    // Creamos un objeto con los datos que nos puede llegar del usuario a modificar en la base de datos.
+    // Encriptamos la password con md5 si nos llega por el body, sino la declaramos como undefined
+    // y usamos la libreria momentjs para actualizar la fecha.
+    let grupoObj = {
+      nombre: grupoData.nombre,
+      descripcion: grupoData.descripcion,
+      horario: grupoData.horario,
+    };
+    // Eliminamos los campos que no se van a modificar (no llegan por el body)
+
+    grupoObj = await utils.removeUndefinedKeys(grupoObj);
+    return await db.query(
+      "UPDATE grupos SET ? WHERE id = ?",
+      [grupoObj, id],
+      "insert",
+      conn
+    );
+  } catch (e) {
+    throw new Error(e);
+  } finally {
+    conn && (await conn.end());
+  }
+};
 
 
 

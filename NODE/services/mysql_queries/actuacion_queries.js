@@ -1,5 +1,5 @@
 import db from "../mysql.js";
-
+import utils from "../../utils/utils.js";
 const actuacionQueries = {};
 
 actuacionQueries.getActuacionByLugar = async (lugar) => {
@@ -115,7 +115,7 @@ actuacionQueries.getActuacion = async () => {
 
 // Modificar un usuario por su id
 actuacionQueries.updateActuacion = async (id, actuacionData) => {
-
+  actuacionData = await utils.removeUndefinedKeys(actuacionData);
   // Conectamos con la base de datos y añadimos el usuario.
   let conn = null;
   try {
@@ -132,7 +132,7 @@ actuacionQueries.updateActuacion = async (id, actuacionData) => {
     };
     // Eliminamos los campos que no se van a modificar (no llegan por el body)
 
-
+    actuacionObj = await utils.removeUndefinedKeys(actuacionObj);
     return await db.query(
       "UPDATE actuaciones SET ? WHERE id = ?",
       [actuacionObj, id],

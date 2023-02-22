@@ -1,4 +1,78 @@
-export default function FormEditActu(){
+import { useFormik } from "formik";
+import { BasicFormSchema } from "./BasicFormSchema";
+import { useAuthContext } from "../../../context/AuthContext/logInContext";
+import { useParams } from "react-router-dom";
+import Swal from "sweetalert2";
+
+
+export default function FormEditActu({
+  hora,
+  fecha,
+  profesor,
+  descripcion,
+  nombre,
+  precio,
+  curso,
+  setCurso,
+}) {
+  const { authorization } = useAuthContext();
+  const params = useParams();
+  async function onSubmit(values, actions) {
+    fetch(`http://localhost:3000/cursos/actualizar/${params.id}`, {
+      method: "PATCH",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(values, authorization),
+    }).then((response) => {
+      console.log(values);
+      if (response.status === 400) {
+        alert("Error al recibir el body");
+      } else if (response.status === 200) {
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Datos cambiados correctamente",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      } else if (response.status === 409) {
+        Swal.fire({
+          position: "top-end",
+          icon: "warning",
+          title: "Actuación ya modificada",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      }
+    });
+
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+    actions.resetForm();
+  }
+
+  const {
+    values,
+    errors,
+    touched,
+    isSubmitting,
+    handleBlur,
+    handleChange,
+    handleSubmit,
+  } = useFormik({
+    initialValues: {
+      hora: "",
+      fecha: "",
+      precio: "",
+      profesor: "",
+      nombre: "",
+      descripcion: "",
+    },
+    validationSchema: BasicFormSchema,
+
+    onSubmit,
+  });
+
     return(
         <>
           <section id="get-started" className="get-started section-bg">
@@ -7,7 +81,7 @@ export default function FormEditActu(){
             <div className="col-lg-5" data-aos="fade">
               <form
                 className="php-email-form"
-                onSubmit={(event) => registrar(event, newCurso)}
+                onSubmit={handleSubmit}
               >
                 <h3>
                   <i className="bi bi-journals"></i> Añade un nuevo curso
@@ -17,76 +91,124 @@ export default function FormEditActu(){
                   <div className="col-md-12 ">
                     <input
                       type="text"
-                      className="form-control"
+                     
                       name="nombre"
-                      placeholder="Nombre"
-                      value={newCurso.nombre}
-                      onChange={handleInput}
-                      required
+                      placeholder={nombre}
+                      value={values.nombre}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      className={
+                        errors.nombre && touched.nombre
+                          ? "input-error form-control"
+                          : "form-control"
+                      }
                     />
+                    {errors.nombre && touched.nombre && (
+                      <p className="error">{errors.nombre}</p>
+                    )}
                   </div>
 
                   <div className="col-md-12 ">
                     <input
                       type="text"
-                      className="form-control"
+                
                       name="precio"
-                      placeholder="Precio"
-                      value={newCurso.precio}
-                      onChange={handleInput}
-                      required
+                      placeholder={precio}
+                      value={values.precio}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      className={
+                        errors.precio && touched.precio
+                          ? "input-error form-control"
+                          : "form-control"
+                      }
                     />
+                    {errors.precio && touched.precio && (
+                      <p className="error">{errors.precio}</p>
+                    )}
                   </div>
 
                   <div className="col-md-12 ">
                     <input
                       type="text"
-                      className="form-control"
+                 
                       name="hora"
-                      placeholder="Hora"
-                      value={newCurso.hora}
-                      onChange={handleInput}
-                      required
+                      placeholder={hora}
+                      value={values.hora}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      className={
+                        errors.hora && touched.hora
+                          ? "input-error form-control"
+                          : "form-control"
+                      }
                     />
+                    {errors.hora && touched.hora && (
+                      <p className="error">{errors.hora}</p>
+                    )}
                   </div>
 
                   <div className="col-md-12 ">
                     <input
                       type="text"
-                      className="form-control"
+                 
                       name="fecha"
-                      placeholder="Fecha"
-                      value={newCurso.fecha}
-                      onChange={handleInput}
-                      required
+                      placeholder={fecha}
+                      value={values.fecha}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      className={
+                        errors.fecha && touched.fecha
+                          ? "input-error form-control"
+                          : "form-control"
+                      }
                     />
+                    {errors.fecha && touched.fecha && (
+                      <p className="error">{errors.fecha}</p>
+                    )}
                   </div>
 
                   <div className="col-md-12 ">
                     <input
                       type="text"
-                      className="form-control"
+                 
                       name="profesor"
-                      placeholder="Profesor"
-                      value={newCurso.profesor}
-                      onChange={handleInput}
-                      required
+                      placeholder={profesor}
+                      value={values.profesor}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      className={
+                        errors.profesor && touched.profesor
+                          ? "input-error form-control"
+                          : "form-control"
+                      }
                     />
+                    {errors.profesor && touched.profesor && (
+                      <p className="error">{errors.profesor}</p>
+                    )}
                   </div>
 
                   <div className="col-md-12 ">
                     <input
                       type="text"
-                      className="form-control"
+                      
                       name="descripcion"
-                      placeholder="Descripción"
-                      value={newCurso.descripcion}
-                      onChange={handleInput}
-                      required
+                      placeholder={descripcion}
+                      value={values.descripcion}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      className={
+                        errors.descripcion && touched.descripcion
+                          ? "input-error form-control"
+                          : "form-control"
+                      }
                     />
+                    {errors.descripcion && touched.descripcion && (
+                      <p className="error">{errors.descripcion}</p>
+                    )}
                   </div>
 
-                  <button type="submit">Añadir curso</button>
+                  <button type="submit" disabled={isSubmitting}>Añadir curso</button>
                 </div>
               </form>
             </div>
