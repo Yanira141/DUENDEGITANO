@@ -12,7 +12,7 @@ export default function FormEditActu({
   descripcion,
   nombre,
   precio,
-  curso,
+ 
   setCurso,
 }) {
   const { authorization } = useAuthContext();
@@ -36,6 +36,9 @@ export default function FormEditActu({
           showConfirmButton: false,
           timer: 1500,
         });
+        response.json().then((data) => {
+          setCurso(data);
+        })
       } else if (response.status === 409) {
         Swal.fire({
           position: "top-end",

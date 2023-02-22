@@ -27,7 +27,7 @@ export default function EditActu() {
             direccion={actuacion.direccion}
             descripcion={actuacion.descripcion}
             lugar={actuacion.lugar}
-            // actuacion={actuacion}
+            setActuacion={setActuacion}
           />
         ) : (
             <div className="text-center">

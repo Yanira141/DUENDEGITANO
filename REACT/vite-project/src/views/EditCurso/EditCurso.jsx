@@ -29,6 +29,7 @@ export default function EditCurso(){
             descripcion={curso.descripcion}
             nombre={curso.nombre}
             precio={curso.precio}
+            setCurso={setCurso}
           />
         ) : (
             <div className="text-center">

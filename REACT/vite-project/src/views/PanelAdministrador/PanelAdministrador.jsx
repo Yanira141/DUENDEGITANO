@@ -11,6 +11,7 @@ import FormAddGrupo from "../../components/Form/FormAddGrupo/FormAddGrupo";
 import CardOpiniones from "../../components/Card/CardOpiniones/CardOpiniones";
 import { useAuthContext } from "../../context/AuthContext/logInContext";
 import CardActu from "../../components/Card/CardActu/CardActu";
+import SubirImages from "../../components/SubirImages/SubirImages";
 export default function PanelAdministrador() {
   const { authorization } = useAuthContext();
   const [usuarios, setUsuarios] = useState(null);
@@ -174,6 +175,8 @@ export default function PanelAdministrador() {
             telefono={usuarios.telefono}
             email={usuarios.email}
             password={"*****"}
+            setUsuarios={setUsuarios}
+           
           />
         ) : (
           <div className="text-center">
@@ -222,6 +225,7 @@ export default function PanelAdministrador() {
           <CardGrupo grupos={grupos} deleteGrupo={deleteGrupo} />
         </div>
       ))}
+      <SubirImages/>
     </>
   );
 }

@@ -10,7 +10,7 @@ export default function FormEditActu({
   lugar,
   direccion,
   descripcion,
-  actuacion,
+
   setActuacion,
 }) {
   const { authorization } = useAuthContext();
@@ -34,6 +34,9 @@ export default function FormEditActu({
           showConfirmButton: false,
           timer: 1500,
         });
+        response.json().then((data) => {
+          setActuacion(data);
+        })
       } else if (response.status === 409) {
         Swal.fire({
           position: "top-end",

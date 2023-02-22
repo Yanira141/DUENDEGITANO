@@ -26,10 +26,9 @@ export default function EditGrupo(){
         {grupo ? (
           <FormEditGrupo
             horario={grupo.horario}
-           
             descripcion={grupo.descripcion}
             nombre={grupo.nombre}
-           
+            setGrupo={setGrupo}
           />
         ) : (
             <div className="text-center">

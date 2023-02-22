@@ -9,7 +9,7 @@ export default function FormEditGrupo({
   nombre,
   descripcion,
   horario,
-  grupo,
+ 
   setGrupo,
 }) {
   const { authorization } = useAuthContext();
@@ -33,6 +33,9 @@ export default function FormEditGrupo({
           showConfirmButton: false,
           timer: 1500,
         });
+        response.json().then((data) => {
+          setGrupo(data);
+        })
       } else if (response.status === 409) {
         Swal.fire({
           position: "top-end",
