@@ -84,7 +84,7 @@ export default function FormCambio({
               data-aos="fade-up"
             >
               <div className="content">
-                <h3>Modifíca aquí tus datos</h3>
+                <h3>Modifica aquí tus datos</h3>
               </div>
             </div>
 
