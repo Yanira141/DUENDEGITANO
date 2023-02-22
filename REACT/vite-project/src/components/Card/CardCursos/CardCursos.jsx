@@ -28,37 +28,40 @@ export default function CardCursos({ curso, deleteCurso }) {
             </ul>
             {/* <p>{actuacion.descripcion}</p> */}
           </div>
+          <div className="d-flex justify-content-between">
           <div className="d-flex row">
             <Link
               data-aos="fade-up"
               data-aos-delay="200"
               to={`/cursos/${curso.id}`}
-              className="btn-get-started text-dark text-decoration-none text-center"
+              
             >
-              Más detalles
+         <i class="bi bi-plus-circle"></i>
             </Link>
-          </div>
-          <div className="d-flex row">
-            {authorization.rol === 1 && (
-              <button
-                onClick={() => deleteCurso(curso.id)}
-                className="btn-get-started text-dark text-decoration-none"
-              >
-                Borrar
-              </button>
-            )}
-          </div>
+          </div> 
           <div className="d-flex row">
             {authorization.rol === 1 && (
               <Link
                 data-aos="fade-up"
                 data-aos-delay="200"
                 to={`/editcurso/${curso.id}`}
-                className="btn-get-started text-dark text-decoration-none text-center"
+                
               >
-                Editar
+                  <i class="bi bi-pencil"></i>
               </Link>
             )}
+          </div>
+          <div className="d-flex row">
+            {authorization.rol === 1 && (
+              <button
+                onClick={() => deleteCurso(curso.id)}
+                className="basura"
+              >
+                 <i class="bi bi-trash3"></i>
+              </button>
+            )}
+          </div>
+         
           </div>
         </div>
       </div>

@@ -29,27 +29,30 @@ export default function CardActu({ actuacion, deleteActuacion }) {
             </ul>
             <p>{actuacion.descripcion}</p>
           </div>
-          <div className="d-flex row">
-            {authorization.rol === 1 && (
-              <button
-                onClick={() => deleteActuacion(actuacion.id)}
-                className="btn-get-started text-dark text-decoration-none"
-              >
-                Borrar
-              </button>
-            )}
-          </div>
+          <div className="d-flex justify-content-between">
           <div className="d-flex row">
             {authorization.rol === 1 && (
               <Link
                 data-aos="fade-up"
                 data-aos-delay="200"
                 to={`/editactu/${actuacion.id}`}
-                className="btn-get-started text-dark text-decoration-none text-center"
+               
               >
-                Editar
+                 <i class="bi bi-pencil"></i>
               </Link>
             )}
+          </div>
+          <div className="d-flex row">
+            {authorization.rol === 1 && (
+              <button
+                onClick={() => deleteActuacion(actuacion.id)}
+                className="basura"
+              >
+                <i class="bi bi-trash3"></i>
+              </button>
+            )}
+          </div>
+          
           </div>
         </div>
       </div>

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useAuthContext } from "../../../context/AuthContext/logInContext";
 import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
+import "./CardGrupo.css"
 
 export default function CardGrupo({ grupos, deleteGrupo }) {
   const params = useParams();
@@ -50,25 +51,16 @@ export default function CardGrupo({ grupos, deleteGrupo }) {
 
             <p>{grupos.descripcion}</p>
           </div>
+          <div className="d-flex justify-content-between">
           <div className="d-flex row">
             <Link
               data-aos="fade-up"
               data-aos-delay="200"
               to={`/grupos/${grupos.id}`}
-              className="btn-get-started text-dark text-decoration-none text-center"
+             
             >
-              + Info
+             <i class="bi bi-plus-circle"></i>
             </Link>
-          </div>
-          <div className="d-flex row">
-            {authorization.rol === 1 && (
-              <button
-                onClick={() => deleteGrupo(grupos.id)}
-                className="btn-get-started text-dark text-decoration-none"
-              >
-                Borrar
-              </button>
-            )}
           </div>
           <div className="d-flex row">
             {authorization.rol === 1 && (
@@ -76,12 +68,23 @@ export default function CardGrupo({ grupos, deleteGrupo }) {
                 data-aos="fade-up"
                 data-aos-delay="200"
                 to={`/editgrupo/${grupos.id}`}
-                className="btn-get-started text-dark text-decoration-none text-center"
+               
               >
-                Editar
+               <i class="bi bi-pencil"></i>
               </Link>
             )}
           </div>
+          <div className="d-flex row">
+            {authorization.rol === 1 && (
+              <button
+                onClick={() => deleteGrupo(grupos.id)}
+               className="basura"
+              >
+                <i class="bi bi-trash3"></i>
+              </button>
+            )}
+          </div>
+         </div>
         </div>
       </div>
     </>
