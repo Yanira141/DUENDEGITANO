@@ -32,7 +32,6 @@ controller.addUser = async (req, res) => {
   }
 };
 
-
 controller.email = async (req, res) => {
   const { nombre, email, mensaje } = req.body;
   // Si no alguno de estos campos recibidos por el body devolvemos un 400 (bad request)
@@ -40,7 +39,6 @@ controller.email = async (req, res) => {
     return res.status(400).send("Error al recibir el body");
   // Buscamos el usuario en la base de datos
   try {
-   
     const emaildao = await dao.email(req.body);
     if (emaildao) {
       // Para enviar email cuando se registre
@@ -504,10 +502,6 @@ controller.email = async (req, res) => {
   }
 };
 
-
-
-
-
 controller.loginUser = async (req, res) => {
   const { email, password } = req.body;
   // Si no alguno de estos campos recibidos por el body devolvemos un 400 (bad request)
@@ -590,7 +584,7 @@ controller.updateUser = async (req, res) => {
       return res.status(400).send("Error al recibir el body");
     // Actualizamos el usuario
     await dao.updateUser(id, req.body);
-    const user = await dao.getUserById(id)
+    const user = await dao.getUserById(id);
     // Devolvemos la respuesta
     return res.send(user[0]);
   } catch (e) {
@@ -609,7 +603,5 @@ controller.getUser = async (req, res) => {
     console.log(e.message);
   }
 };
-
-
 
 export default controller;

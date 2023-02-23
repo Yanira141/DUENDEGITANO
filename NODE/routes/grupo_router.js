@@ -3,16 +3,19 @@ import express from "express";
 
 const grupoRouter = express.Router();
 
-
 grupoRouter.post("/", grupoController.addGrupo);
-grupoRouter.get("/all", grupoController.getGrupo)
+grupoRouter.get("/all", grupoController.getGrupo);
 grupoRouter.get("/:id", grupoController.getGrupoId);
-grupoRouter.post("/grupodetalle/:id", grupoController.grupoDetalle)
-grupoRouter.delete("/borrargrupodetalle/:id", grupoController.deleteGrupoDetalle)
-grupoRouter.get("/buttondeletegrupo/:id/:idusuario", grupoController.buttonDeleteGrupo)
+grupoRouter.post("/grupodetalle/:id", grupoController.grupoDetalle);
+grupoRouter.delete(
+  "/borrargrupodetalle/:id",
+  grupoController.deleteGrupoDetalle
+);
+grupoRouter.get(
+  "/buttondeletegrupo/:id/:idusuario",
+  grupoController.buttonDeleteGrupo
+);
 grupoRouter.patch("/borrar/:id", grupoController.deleteGrupo);
 grupoRouter.patch("/actualizar/:id", grupoController.updateGrupo);
-
-
 
 export default grupoRouter;

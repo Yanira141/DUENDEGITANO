@@ -98,24 +98,23 @@ cursoQueries.getCurso = async () => {
   }
 };
 
-
-
-
 cursoQueries.deleteCursoDetalle = async (id, idusuario) => {
   // Conectamos con la base de datos y eliminamos el usuario por su id.
-  let conn = null
+  let conn = null;
   try {
-      conn = await db.createConnection()
-      return await db.query('DELETE FROM cursosdetalle WHERE idusuario = ? AND idcurso = ?',[idusuario, id], 'delete', conn)         
+    conn = await db.createConnection();
+    return await db.query(
+      "DELETE FROM cursosdetalle WHERE idusuario = ? AND idcurso = ?",
+      [idusuario, id],
+      "delete",
+      conn
+    );
   } catch (e) {
-      throw new Error(e)
+    throw new Error(e);
   } finally {
-      conn && await conn.end();
+    conn && (await conn.end());
   }
 };
-
-
-
 
 cursoQueries.deleteCurso = async (id, dataObj) => {
   // Conectamos con la base de datos y eliminamos el usuario por su id.
@@ -135,22 +134,23 @@ cursoQueries.deleteCurso = async (id, dataObj) => {
   }
 };
 
-
 cursoQueries.buttonDeleteCurso = async (id, idusuario) => {
   // Conectamos con la base de datos y eliminamos el usuario por su id.
-  let conn = null
+  let conn = null;
   try {
-      conn = await db.createConnection()
-      return await db.query('SELECT * FROM cursosdetalle WHERE idusuario = ? AND idcurso = ?',[idusuario, id], 'select', conn)         
+    conn = await db.createConnection();
+    return await db.query(
+      "SELECT * FROM cursosdetalle WHERE idusuario = ? AND idcurso = ?",
+      [idusuario, id],
+      "select",
+      conn
+    );
   } catch (e) {
-      throw new Error(e)
+    throw new Error(e);
   } finally {
-      conn && await conn.end();
+    conn && (await conn.end());
   }
 };
-
-
-
 
 // Modificar un usuario por su id
 cursoQueries.updateCurso = async (id, cursoData) => {
@@ -184,9 +184,5 @@ cursoQueries.updateCurso = async (id, cursoData) => {
     conn && (await conn.end());
   }
 };
-
-
-
-
 
 export default cursoQueries;

@@ -3,8 +3,7 @@ import express from "express";
 
 const imagenesRouter = express.Router();
 
-
-imagenesRouter.get("/all", imagenesController.getImagenes)
+imagenesRouter.get("/all", imagenesController.getImagenes);
 imagenesRouter.get("/:id", imagenesController.getImagenesId);
 
 export default imagenesRouter;

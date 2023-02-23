@@ -69,9 +69,6 @@ userQueries.addUser = async (userData) => {
   }
 };
 
-
-
-
 userQueries.email = async (userData) => {
   // Conectamos con la base de datos y añadimos el usuario.
   let conn = null;
@@ -83,7 +80,7 @@ userQueries.email = async (userData) => {
       nombre: userData.nombre,
       email: userData.email,
       mensaje: userData.mensaje,
-     
+
       //    tsAlta: moment().format("YYYY-MM-DD HH:mm:ss") comentado por que mi tsalta se genera automaticamente con el current
     };
     return await db.query(
@@ -98,9 +95,6 @@ userQueries.email = async (userData) => {
     conn && (await conn.end());
   }
 };
-
-
-
 
 userQueries.deleteUser = async (id, dataObj) => {
   // Conectamos con la base de datos y eliminamos el usuario por su id.
@@ -153,9 +147,6 @@ userQueries.updateUser = async (id, userData) => {
   }
 };
 
-
-
-
 userQueries.getUser = async () => {
   // Conectamos con la base de datos y buscamos si existe la imagen por el id.
   let conn = null;
@@ -174,9 +165,5 @@ userQueries.getUser = async () => {
     conn && (await conn.end());
   }
 };
-
-
-
-
 
 export default userQueries;

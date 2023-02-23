@@ -31,9 +31,13 @@ grupoQueries.addGrupo = async (grupoData) => {
       nombre: grupoData.nombre,
       descripcion: grupoData.descripcion,
       horario: grupoData.horario,
-     
     };
-    return await db.query("INSERT INTO grupos SET ? ", grupoObj, "insert", conn);
+    return await db.query(
+      "INSERT INTO grupos SET ? ",
+      grupoObj,
+      "insert",
+      conn
+    );
   } catch (e) {
     throw new Error(e);
   } finally {
@@ -95,40 +99,41 @@ grupoQueries.getGrupo = async () => {
   }
 };
 
-
-
 grupoQueries.deleteGrupoDetalle = async (id, idusuario) => {
   // Conectamos con la base de datos y eliminamos el usuario por su id.
-  let conn = null
+  let conn = null;
   try {
-      conn = await db.createConnection()
-      return await db.query('DELETE FROM grupodetalle WHERE idusuario = ? AND idgrupo = ?',[idusuario, id], 'delete', conn)         
+    conn = await db.createConnection();
+    return await db.query(
+      "DELETE FROM grupodetalle WHERE idusuario = ? AND idgrupo = ?",
+      [idusuario, id],
+      "delete",
+      conn
+    );
   } catch (e) {
-      throw new Error(e)
+    throw new Error(e);
   } finally {
-      conn && await conn.end();
+    conn && (await conn.end());
   }
 };
-
-
-
 
 grupoQueries.buttonDeleteGrupo = async (id, idusuario) => {
   // Conectamos con la base de datos y eliminamos el usuario por su id.
-  let conn = null
+  let conn = null;
   try {
-      conn = await db.createConnection()
-      return await db.query('SELECT * FROM grupodetalle WHERE idusuario = ? AND idgrupo = ?',[idusuario, id], 'select', conn)         
+    conn = await db.createConnection();
+    return await db.query(
+      "SELECT * FROM grupodetalle WHERE idusuario = ? AND idgrupo = ?",
+      [idusuario, id],
+      "select",
+      conn
+    );
   } catch (e) {
-      throw new Error(e)
+    throw new Error(e);
   } finally {
-      conn && await conn.end();
+    conn && (await conn.end());
   }
 };
-
-
-
-
 
 grupoQueries.deleteGrupo = async (id, dataObj) => {
   // Conectamos con la base de datos y eliminamos el usuario por su id.
@@ -147,8 +152,6 @@ grupoQueries.deleteGrupo = async (id, dataObj) => {
     conn && (await conn.end());
   }
 };
-
-
 
 // Modificar un usuario por su id
 grupoQueries.updateGrupo = async (id, grupoData) => {
@@ -180,8 +183,5 @@ grupoQueries.updateGrupo = async (id, grupoData) => {
     conn && (await conn.end());
   }
 };
-
-
-
 
 export default grupoQueries;

@@ -1,8 +1,6 @@
 import dao from "../services/dao.js";
 
-
 const controller = {};
-
 
 // controller.addImagenes = async (req, res) => {
 //     const { ruta, titulo, id } = req.body;
@@ -22,43 +20,31 @@ const controller = {};
 //       console.log(e.message);
 //     }
 //   };
-  
 
+controller.getImagenes = async (req, res) => {
+  try {
+    const imagenes = await dao.getImagenes(req.params.id);
 
+    if (imagenes.length <= 0)
+      return res.status(404).send("Las imagenes no existen");
 
-  controller.getImagenes = async (req, res) => {
-    try {
-     
-      const imagenes = await dao.getImagenes(req.params.id);
-      
-      if (imagenes.length <= 0) return res.status(404).send("Las imagenes no existen");
-  
-      return res.send(imagenes );
-    } catch (e) {
-      console.log(e.message);
-    
-    }
-  };
-  
+    return res.send(imagenes);
+  } catch (e) {
+    console.log(e.message);
+  }
+};
 
-  controller.getImagenesId = async (req, res) => {
-    try {
-     
-      const imagenes = await dao.getImagenesId(req.params.id);
-      
-      if (imagenes.length <= 0) return res.status(404).send("Las imagenes no existen");
-  
-      return res.send(imagenes[0] );
-    } catch (e) {
-      console.log(e.message);
-    
-    }
-  };
-  
+controller.getImagenesId = async (req, res) => {
+  try {
+    const imagenes = await dao.getImagenesId(req.params.id);
 
+    if (imagenes.length <= 0)
+      return res.status(404).send("Las imagenes no existen");
 
+    return res.send(imagenes[0]);
+  } catch (e) {
+    console.log(e.message);
+  }
+};
 
-
-
-  
 export default controller;

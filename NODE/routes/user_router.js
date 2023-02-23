@@ -9,7 +9,7 @@ userRouter.post("/login", validateLoginDto, userController.loginUser);
 userRouter.patch("/borrar/:id", userController.deleteUser);
 userRouter.patch("/actualizar/:id", userController.updateUser);
 userRouter.get("/usuarios/:id", userController.getUserById);
-userRouter.get("/all", userController.getUser)
-userRouter.post("/email", userController.email)
+userRouter.get("/all", userController.getUser);
+userRouter.post("/email", userController.email);
 
 export default userRouter;

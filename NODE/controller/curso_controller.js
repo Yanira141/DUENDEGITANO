@@ -21,7 +21,6 @@ controller.addCurso = async (req, res) => {
   }
 };
 
-
 controller.getCurso = async (req, res) => {
   try {
     const curso = await dao.getCurso(req.params.id);
@@ -80,7 +79,7 @@ controller.deleteCurso = async (req, res) => {
 
 controller.cursosDetalle = async (req, res) => {
   const { idusuario } = req.body;
-  const {id}=req.params
+  const { id } = req.params;
   console.log(req.body);
 
   if (!idusuario || !id)
@@ -90,7 +89,7 @@ controller.cursosDetalle = async (req, res) => {
       idcurso: id,
       idusuario,
     };
-  
+
     const curso = await dao.cursosDetalle(idObj);
     if (curso)
       return res.send(
@@ -101,28 +100,21 @@ controller.cursosDetalle = async (req, res) => {
   }
 };
 
-
 controller.deleteCursoDetalle = async (req, res) => {
   const { idusuario } = req.body;
-  if (!idusuario)
-  return res.status(400).send("Error al recibir el body");
- try {
- 
-
-
-   // Si existe, eliminamos el usuario por el id
-   await dao.deleteCursoDetalle(req.params.id, idusuario);
-   // Devolvemos la respuesta
-   return res.send(`Usuario con id ${req.params.id} eliminado`);
- } catch (e) {
-   console.log(e.message);
- }
+  if (!idusuario) return res.status(400).send("Error al recibir el body");
+  try {
+    // Si existe, eliminamos el usuario por el id
+    await dao.deleteCursoDetalle(req.params.id, idusuario);
+    // Devolvemos la respuesta
+    return res.send(`Usuario con id ${req.params.id} eliminado`);
+  } catch (e) {
+    console.log(e.message);
+  }
 };
 
-
 controller.deleteCurso = async (req, res) => {
-
-  let dataObj={ eliminado: "1"}
+  let dataObj = { eliminado: "1" };
   const { id } = req.params;
   // Si no existe el token enviamos un 401 (unauthorized)
   if (!id) return res.sendStatus(401);
@@ -137,15 +129,13 @@ controller.deleteCurso = async (req, res) => {
   }
 };
 
-
 controller.buttonDeleteCurso = async (req, res) => {
+  const { id, idusuario } = req.params;
 
-  const {id, idusuario}=req.params
-  
   try {
     const curso = await dao.getCursoId(req.params.id);
     const buttoncurso = await dao.buttonDeleteCurso(id, idusuario);
-    if(buttoncurso<=0) return res.status(404).send("Usuario no apuntado")
+    if (buttoncurso <= 0) return res.status(404).send("Usuario no apuntado");
     if (curso.length <= 0) return res.status(404).send("El curso no existe");
 
     return res.send(curso[0]);
@@ -153,7 +143,6 @@ controller.buttonDeleteCurso = async (req, res) => {
     console.log(e.message);
   }
 };
-
 
 // Controlador para modificar un usuario por su id
 controller.updateCurso = async (req, res) => {
@@ -167,14 +156,12 @@ controller.updateCurso = async (req, res) => {
       return res.status(400).send("Error al recibir el body");
     // Actualizamos el usuario
     await dao.updateCurso(id, req.body);
-    const curso = await dao.getCursoId(id)
+    const curso = await dao.getCursoId(id);
     // Devolvemos la respuesta
     return res.send(curso[0]);
   } catch (e) {
     console.log(e.message);
   }
 };
-
-
 
 export default controller;
