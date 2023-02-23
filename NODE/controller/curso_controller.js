@@ -164,4 +164,21 @@ controller.updateCurso = async (req, res) => {
   }
 };
 
+
+
+controller.getCursoApuntado = async (req, res) => {
+  try {
+    const curso = await dao.getCursoApuntado(req.params.id);
+
+    if (curso.length <= 0) return res.status(404).send("El curso no existe");
+
+    return res.send(curso);
+  } catch (e) {
+    console.log(e.message);
+  }
+};
+
+
+
+
 export default controller;

@@ -132,4 +132,25 @@ controller.updateGrupo = async (req, res) => {
   }
 };
 
+
+
+
+
+controller.getGrupoApuntado = async (req, res) => {
+  try {
+    const grupo = await dao.getGrupoApuntado(req.params.id);
+
+    if (grupo.length <= 0) return res.status(404).send("El grupo no existe");
+
+    return res.send(grupo);
+  } catch (e) {
+    console.log(e.message);
+  }
+};
+
+
+
+
+
+
 export default controller;

@@ -27,6 +27,7 @@ dao.deleteCursoDetalle = async (id, idusuario) => await cursoQueries.deleteCurso
 dao.deleteCurso = async (id, cursoData) => await cursoQueries.deleteCurso(id, cursoData)
 dao.buttonDeleteCurso = async (id, idusuario) => await cursoQueries.buttonDeleteCurso(id, idusuario)
 dao.updateCurso = async (id, cursoData) => await cursoQueries.updateCurso(id, cursoData);
+dao.getCursoApuntado = async (id) => await cursoQueries.getCursoApuntado(id);
 
 
 //DAO DE ACTUACIONES
@@ -56,6 +57,7 @@ dao.deleteGrupoDetalle = async (id, idusuario) => await grupoQueries.deleteGrupo
 dao.buttonDeleteGrupo = async (id, idusuario) => await grupoQueries.buttonDeleteGrupo(id, idusuario)
 dao.deleteGrupo = async (id, grupoData) => await grupoQueries.deleteGrupo(id, grupoData)
 dao.updateGrupo = async (id, grupoData) => await grupoQueries.updateGrupo(id, grupoData);
+dao.getGrupoApuntado = async (id) => await grupoQueries.getGrupoApuntado(id);
 
 
 export default dao;

@@ -17,5 +17,6 @@ grupoRouter.get(
 );
 grupoRouter.patch("/borrar/:id", grupoController.deleteGrupo);
 grupoRouter.patch("/actualizar/:id", grupoController.updateGrupo);
+grupoRouter.get("/all/:id", grupoController.getGrupoApuntado);
 
 export default grupoRouter;

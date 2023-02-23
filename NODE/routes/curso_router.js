@@ -17,5 +17,6 @@ cursoRouter.get(
   cursoController.buttonDeleteCurso
 );
 cursoRouter.patch("/actualizar/:id", cursoController.updateCurso);
+cursoRouter.get("/all/:id", cursoController.getCursoApuntado);
 
 export default cursoRouter;
