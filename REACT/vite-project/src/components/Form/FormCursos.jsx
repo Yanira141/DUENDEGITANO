@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "../../assets/css/main.css";
 import Swal from "sweetalert2";
-export default function FormCursos() {
+export default function FormCursos({setCursos}) {
   const [newCurso, setNewCurso] = useState({
     nombre: "",
     precio: "",
@@ -35,6 +35,11 @@ export default function FormCursos() {
           title: "Curso registrado correctamente",
           showConfirmButton: false,
           timer: 1500,
+        });
+
+        response.json().then((data) => {
+ 
+          setCursos(data);
         });
       } else if (response.status === 409) {
         Swal.fire({

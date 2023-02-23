@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "../../assets/css/main.css";
 import Swal from "sweetalert2";
-export default function FormProxActuaciones() {
+export default function FormProxActuaciones({setActuacion}) {
   const [newActuacion, setNewActuacion] = useState({
     fecha: "",
     lugar: "",
@@ -35,6 +35,10 @@ export default function FormProxActuaciones() {
           title: "Actuación registrada correctamente",
           showConfirmButton: false,
           timer: 1500,
+        });
+        response.json().then((data) => {
+ 
+          setActuacion(data);
         });
       } else if (response.status === 409) {
         Swal.fire({

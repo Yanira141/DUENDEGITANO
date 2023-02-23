@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import Swal from "sweetalert2";
-export default function FormAddGrupo() {
+export default function FormAddGrupo({setGrupos}) {
   const [newGrupo, setNewGrupo] = useState({
     nombre: "",
     descripcion: "",
@@ -33,6 +33,11 @@ export default function FormAddGrupo() {
           title: "Grupo registrado correctamente",
           showConfirmButton: false,
           timer: 1500,
+        });
+        
+        response.json().then((data) => {
+ 
+          setGrupos(data);
         });
       } else if (response.status === 409) {
         Swal.fire({

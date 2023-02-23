@@ -193,7 +193,7 @@ cursoQueries.getCursoApuntado = async (id) => {
   try {
     conn = await db.createConnection();
     return await db.query(
-      "SELECT * FROM cursosdetalle JOIN curso ON cursosdetalle.idcurso = curso.id WHERE idusuario = ?",
+      "SELECT * FROM cursosdetalle JOIN curso ON cursosdetalle.idcurso = curso.id WHERE idusuario = ? AND eliminado = '0'",
       id,
       "select",
       conn

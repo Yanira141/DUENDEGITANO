@@ -192,7 +192,7 @@ grupoQueries.getGrupoApuntado = async (id) => {
   try {
     conn = await db.createConnection();
     return await db.query(
-      "SELECT * FROM grupodetalle JOIN grupos ON grupodetalle.idgrupo = grupos.id WHERE idusuario = ?",
+      "SELECT * FROM grupodetalle JOIN grupos ON grupodetalle.idgrupo = grupos.id WHERE idusuario = ? AND eliminado = '0'",
       id,
       "select",
       conn

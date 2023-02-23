@@ -93,6 +93,8 @@ export default function PanelAdministrador() {
           showConfirmButton: false,
           timer: 1500,
         });
+        response.json().then((data) => {
+          setGrupos(data);})
       } else if (response.status === 409) {
         Swal.fire({
           position: "top-end",
@@ -123,6 +125,8 @@ export default function PanelAdministrador() {
           showConfirmButton: false,
           timer: 1500,
         });
+        response.json().then((data) => {
+          setCursos(data);})
       } else if (response.status === 409) {
         Swal.fire({
           position: "top-end",
@@ -153,6 +157,8 @@ export default function PanelAdministrador() {
           showConfirmButton: false,
           timer: 1500,
         });
+        response.json().then((data) => {
+          setActuacion(data);})
       } else if (response.status === 409) {
         Swal.fire({
           position: "top-end",
@@ -197,7 +203,7 @@ export default function PanelAdministrador() {
         </div>
       </section> */}
 
-      <FormCursos />
+      <FormCursos setCursos={setCursos}/>
 
       {cursos.map((curso, index) => (
         <div key={index} className="pb-5">
@@ -205,7 +211,7 @@ export default function PanelAdministrador() {
         </div>
       ))}
 
-      <FormProxActuaciones />
+      <FormProxActuaciones setActuacion={setActuacion}/>
       <div className="d-flex flex-column container pb-5">
         {actuacion.map((actuacion, index) => (
           <div key={index}>
@@ -214,7 +220,7 @@ export default function PanelAdministrador() {
         ))}
       </div>
       <div className="pb-5">
-        <FormAddGrupo />
+        <FormAddGrupo setGrupos={setGrupos}/>
       </div>
       {grupos.map((grupos, index) => (
         <div className="pb-5" key={index}>

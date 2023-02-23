@@ -15,7 +15,7 @@ controller.addCurso = async (req, res) => {
     // Si no existe lo registramos
     const addCurso = await dao.addCurso(req.body);
     if (addCurso)
-      return res.send(`Curso ${nombre} con id: ${addCurso} registrado`);
+      return res.send(await dao.getCurso());
   } catch (e) {
     console.log(e.message);
   }
@@ -122,8 +122,9 @@ controller.deleteCurso = async (req, res) => {
   try {
     // Actualizamos el usuario
     await dao.deleteCurso(id, dataObj);
+
     // Devolvemos la respuesta
-    return res.send(`Curso con id ${id} modificado`);
+    return res.send(await dao.getCurso());
   } catch (e) {
     console.log(e.message);
   }
@@ -158,6 +159,7 @@ controller.updateCurso = async (req, res) => {
     await dao.updateCurso(id, req.body);
     const curso = await dao.getCursoId(id);
     // Devolvemos la respuesta
+    
     return res.send(curso[0]);
   } catch (e) {
     console.log(e.message);

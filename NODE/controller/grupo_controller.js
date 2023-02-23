@@ -15,7 +15,7 @@ controller.addGrupo = async (req, res) => {
     // Si no existe lo registramos
     const addGrupo = await dao.addGrupo(req.body);
     if (addGrupo)
-      return res.send(`Grupo ${nombre} con id: ${addGrupo} registrado`);
+      return res.send(await dao.getGrupo());
   } catch (e) {
     console.log(e.message);
   }
@@ -105,8 +105,9 @@ controller.deleteGrupo = async (req, res) => {
   try {
     // Actualizamos el usuario
     await dao.deleteGrupo(id, dataObj);
+
     // Devolvemos la respuesta
-    return res.send(`Grupo con id ${id} modificado`);
+    return res.send(await dao.getGrupo());
   } catch (e) {
     console.log(e.message);
   }

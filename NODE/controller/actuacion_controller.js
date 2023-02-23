@@ -17,7 +17,7 @@ controller.addActuacion = async (req, res) => {
     const addActuacion = await dao.addActuacion(req.body);
     if (addActuacion)
       return res.send(
-        `Actuacion en ${lugar} con id: ${addActuacion} registrada`
+       await dao.getActuacion()
       );
   } catch (e) {
     console.log(e.message);
@@ -50,37 +50,6 @@ controller.getActuacionId = async (req, res) => {
   }
 };
 
-controller.deleteActuacion = async (req, res) => {
-  // OBTENER CABECERA Y COMPROBAR SU AUTENTICIDAD Y CADUCIDAD
-  const { authorization } = req.headers;
-  // Si no existe el token enviamos un 401 (unauthorized)
-  if (!authorization) return res.sendStatus(401);
-  const token = authorization.split(" ")[1];
-
-  try {
-    // codificamos la clave secreta
-    const encoder = new TextEncoder();
-    // verificamos el token con la función jwtVerify. Le pasamos el token y la clave secreta codificada
-    const { payload } = await jwtVerify(
-      token,
-      encoder.encode(process.env.JWT_SECRET)
-    );
-
-    // Verificamos que seamos usuario administrador
-    if (!payload.rol)
-      return res.status(409).send("no tiene permiso de administrador");
-    // Buscamos si el id del usuario existe en la base de datos
-    const user = await dao.getUserbyId(req.params.id);
-    // Si no existe devolvemos un 404 (not found)
-    if (user.length <= 0) return res.status(404).send("el usuario no existe");
-    // Si existe, eliminamos el usuario por el id
-    await dao.deleteUser(req.params.id);
-    // Devolvemos la respuesta
-    return res.send(`Usuario con id ${req.params.id} eliminado`);
-  } catch (e) {
-    console.log(e.message);
-  }
-};
 
 controller.deleteActuaciones = async (req, res) => {
   let dataObj = { eliminado: "1" };
@@ -92,7 +61,7 @@ controller.deleteActuaciones = async (req, res) => {
     // Actualizamos el usuario
     await dao.deleteActuaciones(id, dataObj);
     // Devolvemos la respuesta
-    return res.send(`Actuacion con id ${id} modificada`);
+    return res.send(await dao.getActuacion());
   } catch (e) {
     console.log(e.message);
   }
