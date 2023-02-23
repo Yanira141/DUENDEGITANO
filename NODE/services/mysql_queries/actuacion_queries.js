@@ -8,7 +8,7 @@ actuacionQueries.getActuacionByLugar = async (lugar) => {
   try {
     conn = await db.createConnection();
     return await db.query(
-      "SELECT * FROM actuaciones WHERE lugar = ?",
+      "SELECT * FROM actuaciones WHERE lugar = ? AND eliminado = '0'",
       lugar,
       "select",
       conn

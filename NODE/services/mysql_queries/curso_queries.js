@@ -8,7 +8,7 @@ cursoQueries.getCursoByNombre = async (nombre) => {
   try {
     conn = await db.createConnection();
     return await db.query(
-      "SELECT * FROM curso WHERE nombre = ?",
+      "SELECT * FROM curso WHERE nombre = ? AND eliminado = '0'",
       nombre,
       "select",
       conn
@@ -117,10 +117,6 @@ cursoQueries.deleteCursoDetalle = async (id, idusuario) => {
 
 
 
-
-
-
-
 cursoQueries.deleteCurso = async (id, dataObj) => {
   // Conectamos con la base de datos y eliminamos el usuario por su id.
   let conn = null;
@@ -138,11 +134,6 @@ cursoQueries.deleteCurso = async (id, dataObj) => {
     conn && (await conn.end());
   }
 };
-
-
-
-
-
 
 
 cursoQueries.buttonDeleteCurso = async (id, idusuario) => {

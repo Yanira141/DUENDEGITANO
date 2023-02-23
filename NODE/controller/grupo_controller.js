@@ -1,8 +1,6 @@
 import dao from "../services/dao.js";
-import { jwtVerify } from "jose";
+
 const controller = {};
-
-
 
 controller.addGrupo = async (req, res) => {
     const { nombre, descripcion, horario } = req.body;
@@ -97,8 +95,6 @@ controller.deleteGrupoDetalle = async (req, res) => {
 
 
 
-  
-
 controller.buttonDeleteGrupo = async (req, res) => {
 
   const {id, idusuario}=req.params
@@ -133,8 +129,6 @@ controller.deleteGrupo = async (req, res) => {
     console.log(e.message);
   }
 };
-
-
 
 
 

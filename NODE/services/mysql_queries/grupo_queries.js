@@ -2,13 +2,13 @@ import db from "../mysql.js";
 import utils from "../../utils/utils.js";
 const grupoQueries = {};
 
-grupoQueries.getGrupobyId = async (nombre) => {
+grupoQueries.getGrupoByNombre = async (nombre) => {
   // Conectamos con la base de datos y buscamos si existe el usuario por el email.
   let conn = null;
   try {
     conn = await db.createConnection();
     return await db.query(
-      "SELECT * FROM grupos WHERE nombre = ?",
+      "SELECT * FROM grupos WHERE nombre = ? AND eliminado = '0'",
       nombre,
       "select",
       conn

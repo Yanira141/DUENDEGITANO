@@ -102,9 +102,6 @@ controller.cursosDetalle = async (req, res) => {
 };
 
 
-
-
-
 controller.deleteCursoDetalle = async (req, res) => {
   const { idusuario } = req.body;
   if (!idusuario)
@@ -123,10 +120,6 @@ controller.deleteCursoDetalle = async (req, res) => {
 };
 
 
-
-
-
-
 controller.deleteCurso = async (req, res) => {
 
   let dataObj={ eliminado: "1"}
@@ -143,7 +136,6 @@ controller.deleteCurso = async (req, res) => {
     console.log(e.message);
   }
 };
-
 
 
 controller.buttonDeleteCurso = async (req, res) => {
@@ -182,9 +174,6 @@ controller.updateCurso = async (req, res) => {
     console.log(e.message);
   }
 };
-
-
-
 
 
 

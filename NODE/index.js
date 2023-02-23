@@ -8,7 +8,6 @@ import { fileURLToPath } from "url";
 import { dirname } from "path";
 
 
-import productRouter from "./routes/product_router.js";
 
 import userRouter from "./routes/user_router.js";
 import actuacionRouter from "./routes/actuacion_router.js"
@@ -47,8 +46,6 @@ app.use(logger("dev"));
 app.use(cookieParser());
 
 app.use("/user", userRouter);
-
-app.use("/product", productRouter);
 app.use("/cursos", cursoRouter);
 app.use("/actuacion", actuacionRouter)
 app.use("/imagenes", imagenesRouter)
