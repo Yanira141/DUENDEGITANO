@@ -5,7 +5,7 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 import fileUpload from "express-fileupload";
 import { fileURLToPath } from "url";
-import { dirname } from "path";
+import { dirname, join } from "path";
 
 
 
@@ -51,7 +51,7 @@ app.use("/actuacion", actuacionRouter)
 app.use("/imagenes", imagenesRouter)
 app.use("/grupo", grupoRouter)
 
-
+// app.use(express.static(join(__dirname, "public")))
 
 
 

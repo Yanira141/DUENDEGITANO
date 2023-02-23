@@ -9,9 +9,9 @@ import { useAuthContext } from "../../context/AuthContext/logInContext";
 import CardGrupo from "../../components/Card/CardGrupo/CardGrupo";
 
 export default function PanelUsuario() {
-  const [apuntadoCurso, setApuntadoCurso] = useState([]);
+  const [apuntadoCurso, setApuntadoCurso] = useState(null);
   const { authorization } = useAuthContext();
-  const [perteneceGrupo, setPerteneceGrupo] = useState([])
+  const [perteneceGrupo, setPerteneceGrupo] = useState(null)
   const [usuarios, setUsuarios] = useState(null);
   const params = useParams();
   useEffect(function () {
@@ -58,7 +58,7 @@ export default function PanelUsuario() {
               </div>
             ))
           ) : (
-            <p>Cargando</p>
+            <p>¡Aún no estas apuntado a ningún grupo!</p>
           )}
         </div>
       </section>
@@ -95,7 +95,7 @@ export default function PanelUsuario() {
               </div>
             ))
           ) : (
-            <p>Cargando</p>
+            <p>¡Aún no estas apuntado a ningún curso!</p>
           )}
         </div>
       </section>

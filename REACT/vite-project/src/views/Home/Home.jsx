@@ -8,6 +8,7 @@ import CardProfes from "../../components/Card/CardProfes/CardProfes";
 
 import CardActu from "../../components/Card/CardActu/CardActu";
 import Reviews from "../../components/Reviews/Reviews";
+import Reseñas from "../../components/Reseñas/Reseñas";
 
 export default function Home() {
   const { authorization, logout } = useAuthContext();
@@ -41,6 +42,7 @@ export default function Home() {
             </div>
           </div>
         </section>
+        <Reseñas/>
         <section id="constructions" className="constructions">
           <div className="container" data-aos="fade-up">
             <div className="section-header">
