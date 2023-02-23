@@ -1,11 +1,9 @@
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
 import FormCambio from "../../components/Form/FormCambio/FormCambio";
-
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 import FormDelete from "../../components/Form/FormDelete/FormDelete";
 import FormDescripcion from "../../components/Form/FormDescripcion/FormDescripcion";
-import Eventos from "../../components/Eventos/Eventos";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 export default function PanelUsuario() {
   const [usuarios, setUsuarios] = useState(null);
@@ -45,7 +43,14 @@ export default function PanelUsuario() {
           </div>
         )}
       </div>
-      <Eventos />
+      <section id="constructions" className="constructions">
+        <div className="container" data-aos="fade-up">
+          <div className="section-header">
+            <h2>Próximos eventos</h2>
+            <h6>Estos son los cursos a los que vas a asistir</h6>
+          </div>
+---
+          </div></section>
       <FormDelete />
     </>
   );
