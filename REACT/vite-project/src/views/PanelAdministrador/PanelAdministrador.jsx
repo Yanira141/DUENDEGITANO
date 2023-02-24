@@ -11,6 +11,7 @@ import SubirImages from "../../components/SubirImages/SubirImages";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useAuthContext } from "../../context/AuthContext/logInContext";
+import { Link } from "react-router-dom";
 
 export default function PanelAdministrador() {
   const { authorization } = useAuthContext();
@@ -173,6 +174,7 @@ export default function PanelAdministrador() {
   return (
     <>
       <Breadcrumbs title={"Panel Administrador"} link={"Panel Administrador"} />
+
       <div>
         {usuarios ? (
           <FormCambio
@@ -191,6 +193,7 @@ export default function PanelAdministrador() {
           </div>
         )}
       </div>
+      <Link to="/usuariosadmin">Listado de usuarios</Link>
       {/* <section id="constructions" className="constructions">
         <div className="container" data-aos="fade-up">
           <div className="section-header">

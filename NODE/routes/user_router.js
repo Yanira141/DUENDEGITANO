@@ -11,5 +11,6 @@ userRouter.patch("/actualizar/:id", userController.updateUser);
 userRouter.get("/usuarios/:id", userController.getUserById);
 userRouter.get("/all", userController.getUser);
 userRouter.post("/email", userController.email);
+userRouter.get("/alleliminado", userController.getUserEliminado);
 
 export default userRouter;

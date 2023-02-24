@@ -10,6 +10,7 @@ const dao = {};
 dao.getUserByEmail = async (email) => await userQueries.getUserbyEmail(email);
 dao.getUserById = async (id) => await userQueries.getUserById(id);
 dao.getUser = async () => await userQueries.getUser();
+dao.getUserEliminado = async () => await userQueries.getUserEliminado();
 dao.addUser = async (userData) => await userQueries.addUser(userData);
 dao.email = async (userData) => await userQueries.email(userData);
 dao.updateUser = async (id, userData) => await userQueries.updateUser(id, userData);

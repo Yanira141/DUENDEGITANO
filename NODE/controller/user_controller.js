@@ -513,10 +513,27 @@ controller.getUser = async (req, res) => {
 
     if (user.length <= 0) return res.status(404).send("El usuario no existe");
 
-    return res.send(user[0]);
+    return res.send(user);
   } catch (e) {
     console.log(e.message);
   }
 };
+
+
+
+controller.getUserEliminado = async (req, res) => {
+  try {
+    const user = await dao.getUserEliminado(req.params.id);
+
+    if (user.length <= 0) return res.status(404).send("El usuario no existe");
+
+    return res.send(user);
+  } catch (e) {
+    console.log(e.message);
+  }
+};
+
+
+
 
 export default controller;
