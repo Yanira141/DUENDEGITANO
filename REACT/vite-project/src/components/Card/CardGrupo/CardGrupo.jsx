@@ -75,6 +75,17 @@ export default function CardGrupo({ grupos, deleteGrupo }) {
             )}
           </div>
           <div className="d-flex row">
+              {authorization.rol === 1 && (
+                <Link
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                  to={`/usuariosgrupos/${grupos.id}`}
+                >
+                 <i class="bi bi-eye"></i>
+                </Link>
+              )}
+            </div>
+          <div className="d-flex row">
             {authorization.rol === 1 && (
               <button
                 onClick={() => deleteGrupo(grupos.id)}

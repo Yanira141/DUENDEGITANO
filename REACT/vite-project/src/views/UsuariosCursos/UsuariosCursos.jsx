@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 export default function UsuariosCursos() {
   const params = useParams();
   const [usuarios, setUsuarios] = useState([]);
-
+const [detCurso, setDetCurso] = useState([])
   useEffect(function () {
     async function fetchUsuarios() {
       const response = await fetch(
@@ -15,17 +15,27 @@ export default function UsuariosCursos() {
       const detalles = await response.json();
       setUsuarios(detalles);
     }
+    async function fetchCurso() {
+        const responseCurso = await fetch(
+          `http://localhost:3000/cursos/${params.id}`
+        );
+        const curso = await responseCurso.json();
+        setDetCurso(curso);
+      }
+  
 
     fetchUsuarios();
+    fetchCurso()
   }, []);
 
   return (
     <>
-      <Breadcrumbs title={"Panel usuario"} link={"Panel usuario"} />
+      <Breadcrumbs title={"Panel administrador"} link={"Panel administrador"} />
+      {usuarios && detCurso ? (
       <section id="constructions" className="constructions">
         <div className="container" data-aos="fade-up">
           <div className="section-header">
-            <h2>curso</h2>
+            <h2>{detCurso.nombre}</h2>
             <h6>Estas son las personas que estan apuntadas a este curso</h6>
           </div>
        
@@ -51,6 +61,9 @@ export default function UsuariosCursos() {
       </div>
       </div>
       </section>
+       ) : (
+        <p>Cargando....</p>
+      )}
     </>
   );
 }

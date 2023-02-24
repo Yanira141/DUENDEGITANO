@@ -205,4 +205,28 @@ grupoQueries.getGrupoApuntado = async (id) => {
 };
 
 
+
+
+grupoQueries.getUsuariosGrupos = async (id) => {
+  // Conectamos con la base de datos y buscamos si existe el usuario por el email.
+  let conn = null;
+  try {
+    conn = await db.createConnection();
+    return await db.query(
+      "SELECT *  FROM usuarios JOIN grupodetalle ON usuarios.id = grupodetalle.idusuario where grupodetalle.idgrupo = ?",
+      id,
+      "select",
+      conn
+    );
+  } catch (e) {
+    throw new Error(e);
+  } finally {
+    conn && (await conn.end());
+  }
+};
+
+
+
+
+
 export default grupoQueries;

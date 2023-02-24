@@ -59,6 +59,7 @@ dao.buttonDeleteGrupo = async (id, idusuario) => await grupoQueries.buttonDelete
 dao.deleteGrupo = async (id, grupoData) => await grupoQueries.deleteGrupo(id, grupoData)
 dao.updateGrupo = async (id, grupoData) => await grupoQueries.updateGrupo(id, grupoData);
 dao.getGrupoApuntado = async (id) => await grupoQueries.getGrupoApuntado(id);
+dao.getUsuariosGrupos = async (id) => await grupoQueries.getUsuariosGrupos(id);
 
 
 export default dao;
