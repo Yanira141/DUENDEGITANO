@@ -51,6 +51,17 @@ export default function CardCursos({ curso, deleteCurso }) {
             </div>
             <div className="d-flex row">
               {authorization.rol === 1 && (
+                <Link
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                  to={`/usuarioscursos/${curso.id}`}
+                >
+                 <i class="bi bi-eye"></i>
+                </Link>
+              )}
+            </div>
+            <div className="d-flex row">
+              {authorization.rol === 1 && (
                 <button
                   onClick={() => deleteCurso(curso.id)}
                   className="basura"

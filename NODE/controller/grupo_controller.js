@@ -113,7 +113,6 @@ controller.deleteGrupo = async (req, res) => {
   }
 };
 
-// Controlador para modificar un usuario por su id
 controller.updateGrupo = async (req, res) => {
   const { id } = req.params;
   // Si no existe el token enviamos un 401 (unauthorized)
@@ -133,10 +132,6 @@ controller.updateGrupo = async (req, res) => {
   }
 };
 
-
-
-
-
 controller.getGrupoApuntado = async (req, res) => {
   try {
     const grupo = await dao.getGrupoApuntado(req.params.id);
@@ -148,10 +143,5 @@ controller.getGrupoApuntado = async (req, res) => {
     console.log(e.message);
   }
 };
-
-
-
-
-
 
 export default controller;

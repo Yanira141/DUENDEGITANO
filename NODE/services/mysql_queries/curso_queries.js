@@ -207,4 +207,25 @@ cursoQueries.getCursoApuntado = async (id) => {
 
 
 
+cursoQueries.getUsuariosCursos = async (id) => {
+  // Conectamos con la base de datos y buscamos si existe el usuario por el email.
+  let conn = null;
+  try {
+    conn = await db.createConnection();
+    return await db.query(
+      "SELECT * FROM usuarios JOIN cursosdetalle ON usuarios.id = cursosdetalle.idusuario WHERE cursosdetalle.idcurso = ?",
+      id,
+      "select",
+      conn
+    );
+  } catch (e) {
+    throw new Error(e);
+  } finally {
+    conn && (await conn.end());
+  }
+};
+
+
+
+
 export default cursoQueries;

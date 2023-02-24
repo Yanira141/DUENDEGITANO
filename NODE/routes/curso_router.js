@@ -18,5 +18,6 @@ cursoRouter.get(
 );
 cursoRouter.patch("/actualizar/:id", cursoController.updateCurso);
 cursoRouter.get("/all/:id", cursoController.getCursoApuntado);
+cursoRouter.get("/usuarioscursos/:id", cursoController.getUsuariosCursos);
 
 export default cursoRouter;

@@ -23,6 +23,7 @@ import EditActu from "./views/EditActu/EditActu";
 import EditCurso from "./views/EditCurso/EditCurso";
 import EditGrupo from "./views/EditGrupo/EditGrupo";
 import ScrollToTop from "./ScrollToTop";
+import UsuariosCursos from "./views/UsuariosCursos/UsuariosCursos";
 
 const ROLES = {
   Admin: 1,
@@ -50,6 +51,7 @@ function App() {
             <Route path="editactu/:id" element={<EditActu />} />
             <Route path="editcurso/:id" element={<EditCurso />} />
             <Route path="editgrupo/:id" element={<EditGrupo />} />
+            <Route path="usuarioscursos/:id" element={<UsuariosCursos/>}/>
             <Route element={<PublicRoute />}>
               <Route path="login" element={<IniciaSesion />} />
             </Route>
