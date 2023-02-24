@@ -1,25 +1,39 @@
+import { currentDir } from "../index.js";
 import dao from "../services/dao.js";
+const __dirname = currentDir().__dirname;
 
 const controller = {};
 
-// controller.addImagenes = async (req, res) => {
-//     const { ruta, titulo, id } = req.body;
-//     // Si no alguno de estos campos recibidos por el body devolvemos un 400 (bad request)
-//     if (!ruta || !titulo || !id )
-//       return res.status(400).send("Error al recibir el body");
-//     // Buscamos el usuario en la base de datos
-//     try {
-//       const imagenes = await dao.getCursoByNombre(nombre);
-//       // Si existe el usuario respondemos con un 409 (conflict)
-//       if (curso.length > 0) return res.status(409).send("curso ya registrado");
-//       // Si no existe lo registramos
-//       const addCurso = await dao.addCurso(req.body);
-//       if (addCurso)
-//         return res.send(`Curso ${nombre} con id: ${addCurso} registrado`);
-//     } catch (e) {
-//       console.log(e.message);
-//     }
-//   };
+controller.addImagenes = async (req, res) => {
+  // Buscamos el usuario en la base de datos
+  console.log(req.files);
+  try {
+    if (req.files === null) return;
+    if (!req.files || Object.keys(req.files).length === 0) {
+      return res.status(400).send("No se ha cargado ningún archivo");
+    }
+
+    const images = !req.files.imagen.length
+      ? [req.files.imagen]
+      : req.files.imagen;
+    images.forEach(async (image) => {
+      let uploadPath = __dirname + "/public/images/" + image.name;
+      let BBDDPath = "images/" + image.name;
+      image.mv(uploadPath, (err) => {
+        if (err) return res.status(500).send(err);
+      });
+      // Si no existe lo registramos
+      await dao.addImagenes({
+        titulo: req.body.titulo,
+        ruta: BBDDPath,
+      });
+    });
+    return res.send(`imagen subida`);
+  } catch (e) {
+    console.log(e.message);
+    return res.status(400).send(e.message)
+  }
+};
 
 controller.getImagenes = async (req, res) => {
   try {

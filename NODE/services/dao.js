@@ -46,7 +46,7 @@ dao.getImagenes = async () => await imagenesQueries.getImagenes();
 dao.getImagenesId = async (id) => await imagenesQueries.getImagenesId(id);
 dao.addImage = async (imageData) => await productQueries.addImage(imageData);
 dao.getImageById = async (id) => await productQueries.getImageById(id);
-
+dao.addImagenes = async(imagenData) => await imagenesQueries.addImagenes(imagenData)
 
 //DAO DE GRUPOS
 dao.getGrupoByNombre = async (nombre) => await grupoQueries.getGrupoByNombre(nombre);

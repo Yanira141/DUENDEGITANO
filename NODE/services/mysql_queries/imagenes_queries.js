@@ -39,4 +39,27 @@ imagenesQueries.getImagenes = async () => {
   }
 };
 
+
+imagenesQueries.addImagenes = async (imagenData) => {
+  let conn =null;
+  try{
+    conn = await db.createConnection();
+    let imagenObj={
+      titulo: imagenData.titulo,
+      ruta: imagenData.ruta,
+    }
+    return await db.query(
+      "INSERT INTO imagenes set ?",
+      imagenObj,
+      "insert",
+      conn
+    )
+  
+  } catch(e){
+    throw new Error(e);
+  } finally{
+    conn && (await conn.end())
+  }
+}
+
 export default imagenesQueries;

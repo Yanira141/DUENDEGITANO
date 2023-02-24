@@ -5,5 +5,6 @@ const imagenesRouter = express.Router();
 
 imagenesRouter.get("/all", imagenesController.getImagenes);
 imagenesRouter.get("/:id", imagenesController.getImagenesId);
+imagenesRouter.post("/",  imagenesController.addImagenes)
 
 export default imagenesRouter;

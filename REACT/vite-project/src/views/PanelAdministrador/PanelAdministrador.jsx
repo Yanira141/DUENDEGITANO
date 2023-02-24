@@ -193,7 +193,8 @@ export default function PanelAdministrador() {
           </div>
         )}
       </div>
-      <Link to="/usuariosadmin">Listado de usuarios</Link>
+      <div className="container">
+      <Link className="btn-get-started text-decoration-none" to="/usuariosadmin">Listado de usuarios</Link></div>
       {/* <section id="constructions" className="constructions">
         <div className="container" data-aos="fade-up">
           <div className="section-header">
