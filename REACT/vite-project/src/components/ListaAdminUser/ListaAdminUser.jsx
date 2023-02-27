@@ -1,4 +1,4 @@
-export default function Lista({usuarios}){
+export default function ListaAdminUser({usuarios}){
     return(
         <>
 
@@ -7,7 +7,7 @@ export default function Lista({usuarios}){
       <td scope="col">{usuarios.apellido}</td>
       <td scope="col">{usuarios.email}</td>
       <td scope="col">{usuarios.telefono}</td>
-     
+      <td scope="col">{usuarios.estado}</td>
 
        
         </>

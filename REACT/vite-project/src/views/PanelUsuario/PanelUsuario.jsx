@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useAuthContext } from "../../context/AuthContext/logInContext";
 import CardGrupo from "../../components/Card/CardGrupo/CardGrupo";
+import FormCambioPassword from "../../components/Form/FormCambioPassword/FormCambioPassword";
 
 export default function PanelUsuario() {
   const [apuntadoCurso, setApuntadoCurso] = useState(null);
@@ -73,6 +74,22 @@ export default function PanelUsuario() {
             telefono={usuarios.telefono}
             email={usuarios.email}
             password={"*****"}
+            passwordRepeat={"*****"}
+          />
+        ) : (
+          <div className="text-center">
+            <div className="spinner-border" role="status">
+              <span className="visually-hidden">Loading...</span>
+            </div>
+          </div>
+        )}
+      </div>
+      <div>
+        {usuarios ? (
+          <FormCambioPassword
+          setUsuarios={setUsuarios}
+            password={"*****"}
+            passwordRepeat={"*****"}
           />
         ) : (
           <div className="text-center">

@@ -7,7 +7,7 @@ import CardGrupo from "../../components/Card/CardGrupo/CardGrupo";
 import FormAddGrupo from "../../components/Form/FormAddGrupo/FormAddGrupo";
 import CardActu from "../../components/Card/CardActu/CardActu";
 import SubirImages from "../../components/SubirImages/SubirImages";
-
+import FormCambioPassword from "../../components/Form/FormCambioPassword/FormCambioPassword"
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useAuthContext } from "../../context/AuthContext/logInContext";
@@ -183,6 +183,23 @@ export default function PanelAdministrador() {
             telefono={usuarios.telefono}
             email={usuarios.email}
             password={"*****"}
+            passwordRepeat={"*****"}
+            setUsuarios={setUsuarios}
+          />
+        ) : (
+          <div className="text-center">
+            <div className="spinner-border" role="status">
+              <span className="visually-hidden">Loading...</span>
+            </div>
+          </div>
+        )}
+      </div>
+      <div>
+        {usuarios ? (
+          <FormCambioPassword
+           
+            password={"*****"}
+            passwordRepeat={"*****"}
             setUsuarios={setUsuarios}
           />
         ) : (

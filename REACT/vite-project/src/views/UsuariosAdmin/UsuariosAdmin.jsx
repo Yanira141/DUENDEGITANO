@@ -1,6 +1,7 @@
-import Lista from "../../components/Lista/Lista";
+
 import { useEffect, useState } from "react";
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
+import ListaAdminUser from "../../components/ListaAdminUser/ListaAdminUser";
 
 
 export default function UsuariosAdmin(){
@@ -35,35 +36,7 @@ export default function UsuariosAdmin(){
     return(
         <>
         <Breadcrumbs title={"panel admin"} link={"paneladmin"}/>
-        <section id="constructions" className="constructions">
-        <div className="container" data-aos="fade-up">
-          <div className="section-header">
-            <h2>Alumnos</h2>
-            <h6>Estos son los alumnos registrados en la web.</h6>
-          </div>
-       
-
-      <div className="container pb-5">
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">Nombre</th>
-              <th scope="col">Apellidos</th>
-              <th scope="col">Email</th>
-              <th scope="col">Teléfono</th>
-            </tr>
-          </thead>
-          <tbody>
-            {usuarios.map((usuarios, index) => (
-              <tr key={index}>
-                <Lista usuarios={usuarios} />
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      </div>
-      </section>
+      
 
 
 
@@ -72,7 +45,7 @@ export default function UsuariosAdmin(){
         <div className="container" data-aos="fade-up">
           <div className="section-header">
             <h2>Alumnos</h2>
-            <h6>Estos son los alumnos eliminados en la web.</h6>
+            <h6>Estos son los alumnos apuntados y no apuntados en la academia.</h6>
           </div>
        
 
@@ -84,12 +57,13 @@ export default function UsuariosAdmin(){
               <th scope="col">Apellidos</th>
               <th scope="col">Email</th>
               <th scope="col">Teléfono</th>
+              <th scope="col">Estado</th>
             </tr>
           </thead>
           <tbody>
             {usuariosElim.map((usuariosElim, index) => (
               <tr key={index}>
-                <Lista usuarios={usuariosElim} />
+                <ListaAdminUser usuarios={usuariosElim} />
               </tr>
             ))}
           </tbody>

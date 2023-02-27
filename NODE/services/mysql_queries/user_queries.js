@@ -173,7 +173,7 @@ userQueries.getUserEliminado = async () => {
   try {
     conn = await db.createConnection();
     return await db.query(
-      "SELECT * FROM usuarios where eliminado = '1' ",
+      "SELECT nombre, apellido, email, telefono, if(eliminado = '0' , 'Activo', 'No activo') as estado  FROM usuarios where idrol = 2",
       [],
 
       "select",
@@ -185,6 +185,33 @@ userQueries.getUserEliminado = async () => {
     conn && (await conn.end());
   }
 };
+
+
+
+
+userQueries.getUser = async () => {
+  // Conectamos con la base de datos y buscamos si existe la imagen por el id.
+  let conn = null;
+  try {
+    conn = await db.createConnection();
+    return await db.query(
+      "SELECT * FROM usuarios where eliminado = '0' and idrol = '2'",
+      [],
+
+      "select",
+      conn
+    );
+  } catch (e) {
+    throw new Error(e);
+  } finally {
+    conn && (await conn.end());
+  }
+};
+
+
+
+
+
 
 
 export default userQueries;

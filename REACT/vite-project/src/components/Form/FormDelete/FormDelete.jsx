@@ -1,12 +1,22 @@
-import { useFormik } from "formik";
-import { BasicFormSchema } from "./BasicFormSchema";
+import "./FormDelete.css"
 import { useAuthContext } from "../../../context/AuthContext/logInContext";
 import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
+import { useState } from "react";
 
 export default function FormDelete() {
   const { authorization, logout } = useAuthContext();
   const params = useParams();
+
+  const [visible, setVisible] = useState("d-none");
+
+  function toggleVisible() {
+    if (visible === "d-none") {
+      setVisible("");
+    } else {
+      setVisible("d-none");
+    }
+  }
 
   async function onSubmit(values, actions) {
     fetch(`http://localhost:3000/user/borrar/${params.id}`, {
@@ -43,34 +53,28 @@ export default function FormDelete() {
     actions.resetForm();
   }
 
-  const { isSubmitting, handleBlur, handleChange, handleSubmit } = useFormik({
-    initialValues: {
-      descripcion: "",
-    },
-    validationSchema: BasicFormSchema,
-
-    onSubmit,
-  });
   return (
     <>
       <section id="get-started" className="get-started section-bg">
         <div className="container">
           <div className="row justify-content-between gy-4">
             <div className="col-lg-5" data-aos="fade">
-              <form className="php-email-form" onSubmit={handleSubmit}>
-                <h3>
-                  {" "}
-                  Borra tu cuenta, ¡estaremos encantados si algún día quieres
-                  volver!
-                </h3>
-                <div className="row gy-3">
-                  <div className="col-md-12 "></div>
+              <h3>
+                {" "}
+                Borra tu cuenta, ¡estaremos encantados si algún día quieres
+                volver!
+              </h3>
+              <div className="row gy-3">
+                <div className="col-md-12 "></div>
 
-                  <button type="submit" disabled={isSubmitting}>
-                    Borrar cuenta
-                  </button>
-                </div>
-              </form>
+                <button className="btn-get-started text-decoration-none" onClick={() => toggleVisible()}>Borrar cuenta</button>
+                <div class={`alert alert-danger" role="alert ${visible}`}>
+                <div className="d-flex justify-content-evenly"> ¿Estás seguro?
+                 
+                  <button className="text-decoration-none bordessiono" onClick={() => onSubmit()}><i class="bi bi-check-lg"></i></button>
+                  <button className="text-decoration-none bordessiono" onClick={() => toggleVisible()}><i class="bi bi-x-lg"></i></button>
+                </div></div>
+              </div>
             </div>
 
             <div
