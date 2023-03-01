@@ -12,6 +12,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useAuthContext } from "../../context/AuthContext/logInContext";
 import { Link } from "react-router-dom";
+import "./PanelAdministrador.css"
 
 export default function PanelAdministrador() {
   const { authorization } = useAuthContext();
@@ -65,16 +66,6 @@ export default function PanelAdministrador() {
 
     fetchGrupos();
   }, []);
-
-  // const [descripcion, setDescripcion] = useState([]);
-  // useEffect(function () {
-  //   async function fetchDescripcion() {
-  //     const response = await fetch(`http://localhost:3000/user/all`);
-  //     const detalles = await response.json();
-  //     setDescripcion(detalles);
-  //   }
-  //   fetchDescripcion();
-  // }, []);
 
   async function deleteGrupo(x) {
     fetch(`http://localhost:3000/grupo/borrar/${x}`, {
@@ -177,142 +168,281 @@ export default function PanelAdministrador() {
   return (
     <>
       <Breadcrumbs title={"Panel Administrador"} link={"Panel Administrador"} />
-
-      <div class="accordion container" id="accordionExample">
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingOne">
-            <button
-              class="accordion-button"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseOne"
-              aria-expanded="true"
-              aria-controls="collapseOne"
-            >
-              Modifica tus datos personales
-            </button>
-          </h2>
-          <div
-            id="collapseOne"
-            class="accordion-collapse collapse show"
-            aria-labelledby="headingOne"
-            data-bs-parent="#accordionExample"
-          >
-            <div class="accordion-body">
-            <div>
-        {usuarios ? (
-          <FormCambio
-            nombre={usuarios.nombre}
-            apellido={usuarios.apellido}
-            telefono={usuarios.telefono}
-            email={usuarios.email}
-            password={"*****"}
-            passwordRepeat={"*****"}
-            setUsuarios={setUsuarios}
-          />
-        ) : (
-          <div className="text-center">
-            <div className="spinner-border" role="status">
-              <span className="visually-hidden">Loading...</span>
-            </div>
+      <section id="constructions" className="constructions">
+        <div className="container" data-aos="fade-up">
+          <div className="section-header">
+            <h2>Datos personales</h2>
+            <h6></h6>
           </div>
-        )}
-      </div>
+          <div class="accordion container" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseOne"
+                  aria-expanded="true"
+                  aria-controls="collapseOne"
+                >
+                  Modifica tus datos personales
+                </button>
+              </h2>
+              <div
+                id="collapseOne"
+                class="accordion-collapse collapse show"
+                aria-labelledby="headingOne"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body">
+                  <div>
+                    {usuarios ? (
+                      <FormCambio
+                        nombre={usuarios.nombre}
+                        apellido={usuarios.apellido}
+                        telefono={usuarios.telefono}
+                        email={usuarios.email}
+                        password={"*****"}
+                        passwordRepeat={"*****"}
+                        setUsuarios={setUsuarios}
+                      />
+                    ) : (
+                      <div className="text-center">
+                        <div className="spinner-border" role="status">
+                          <span className="visually-hidden">Loading...</span>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwo"
+                  aria-expanded="false"
+                  aria-controls="collapseTwo"
+                >
+                  Modifica tu contraseña
+                </button>
+              </h2>
+              <div
+                id="collapseTwo"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingTwo"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body">
+                  <div>
+                    {usuarios ? (
+                      <FormCambioPassword
+                        password={"*****"}
+                        passwordRepeat={"*****"}
+                        setUsuarios={setUsuarios}
+                      />
+                    ) : (
+                      <div className="text-center">
+                        <div className="spinner-border" role="status">
+                          <span className="visually-hidden">Loading...</span>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingTwo">
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseTwo"
-              aria-expanded="false"
-              aria-controls="collapseTwo"
-            >
-              Modifica tu contraseña
-            </button>
-          </h2>
-          <div
-            id="collapseTwo"
-            class="accordion-collapse collapse"
-            aria-labelledby="headingTwo"
-            data-bs-parent="#accordionExample"
-          >
-            <div class="accordion-body">
-            
+      </section>
 
-
-            
+      <section id="constructions" className="constructions">
+        <div className="container" data-aos="fade-up">
+          <div className="section-header">
+            <h2>Añade eventos y grupos</h2>
+            <h6></h6>
+          </div>
+          <div class="accordion container" id="accordionPanelsStayOpenExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#panelsStayOpen-collapseOne"
+                  aria-expanded="true"
+                  aria-controls="panelsStayOpen-collapseOne"
+                >
+                  Añade un nuevo curso
+                </button>
+              </h2>
+              <div
+                id="panelsStayOpen-collapseOne"
+                class="accordion-collapse collapse show"
+                aria-labelledby="panelsStayOpen-headingOne"
+              >
+                <div class="accordion-body">
+                  <FormCursos setCursos={setCursos} />
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#panelsStayOpen-collapseTwo"
+                  aria-expanded="false"
+                  aria-controls="panelsStayOpen-collapseTwo"
+                >
+                  Añade una nueva actuación
+                </button>
+              </h2>
+              <div
+                id="panelsStayOpen-collapseTwo"
+                class="accordion-collapse collapse"
+                aria-labelledby="panelsStayOpen-headingTwo"
+              >
+                <div class="accordion-body">
+                  <FormProxActuaciones setActuacion={setActuacion} />
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#panelsStayOpen-collapseThree"
+                  aria-expanded="false"
+                  aria-controls="panelsStayOpen-collapseThree"
+                >
+                  Añade un nuevo grupo
+                </button>
+              </h2>
+              <div
+                id="panelsStayOpen-collapseThree"
+                class="accordion-collapse collapse"
+                aria-labelledby="panelsStayOpen-headingThree"
+              >
+                <div class="accordion-body">
+                  <FormAddGrupo setGrupos={setGrupos} />
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
+      <section id="constructions" className="constructions">
+        <div className="container" data-aos="fade-up">
+          <div className="section-header">
+            <h2>Edita eventos y grupos</h2>
+            <h6></h6>
+          </div>
 
-
-
-
-      <div class="accordion container" id="accordionPanelsStayOpenExample">
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-        Añade un nuevo curso
-      </button>
-    </h2>
-    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
-      <div class="accordion-body">
-        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-      </div>
-    </div>
-  </div>
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-        Añade una nueva actuación
-      </button>
-    </h2>
-    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
-      <div class="accordion-body">
-        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-      </div>
-    </div>
-  </div>
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-        Añade un nuevo grupo
-      </button>
-    </h2>
-    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
-      <div class="accordion-body">
-        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-
-
- 
-      <div>
-        {usuarios ? (
-          <FormCambioPassword
-            password={"*****"}
-            passwordRepeat={"*****"}
-            setUsuarios={setUsuarios}
-          />
-        ) : (
-          <div className="text-center">
-            <div className="spinner-border" role="status">
-              <span className="visually-hidden">Loading...</span>
+          <div
+            class="accordion accordion-flush container"
+            id="accordionFlushExample"
+          >
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingOne">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseOne"
+                  aria-expanded="false"
+                  aria-controls="flush-collapseOne"
+                >
+                  Edita los cursos
+                </button>
+              </h2>
+              <div
+                id="flush-collapseOne"
+                class="accordion-collapse collapse"
+                aria-labelledby="flush-headingOne"
+                data-bs-parent="#accordionFlushExample"
+              >
+                <div class="accordion-body">
+                  {cursos.map((curso, index) => (
+                    <div key={index} className="pb-5">
+                      <CardCursos curso={curso} deleteCurso={deleteCurso} />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingTwo">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseTwo"
+                  aria-expanded="false"
+                  aria-controls="flush-collapseTwo"
+                >
+                  Edita las actuaciones
+                </button>
+              </h2>
+              <div
+                id="flush-collapseTwo"
+                class="accordion-collapse collapse"
+                aria-labelledby="flush-headingTwo"
+                data-bs-parent="#accordionFlushExample"
+              >
+                <div class="accordion-body">
+                  <div className="d-flex flex-column container pb-5">
+                    {actuacion.map((actuacion, index) => (
+                      <div key={index}>
+                        <CardActu
+                          actuacion={actuacion}
+                          deleteActuacion={deleteActuacion}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingThree">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseThree"
+                  aria-expanded="false"
+                  aria-controls="flush-collapseThree"
+                >
+                  Edita los grupos
+                </button>
+              </h2>
+              <div
+                id="flush-collapseThree"
+                class="accordion-collapse collapse"
+                aria-labelledby="flush-headingThree"
+                data-bs-parent="#accordionFlushExample"
+              >
+                <div class="accordion-body">
+                  {grupos.map((grupos, index) => (
+                    <div className="pb-5" key={index}>
+                      <CardGrupo grupos={grupos} deleteGrupo={deleteGrupo} />
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
-        )}
-      </div>
+        </div>
+      </section>
+
       <div className="container">
         <Link
           className="btn-get-started text-decoration-none"
@@ -321,42 +451,7 @@ export default function PanelAdministrador() {
           Listado de usuarios
         </Link>
       </div>
-      {/* <section id="constructions" className="constructions">
-        <div className="container" data-aos="fade-up">
-          <div className="section-header">
-            <h2>Algunos comentarios anónimos de nuestros alumnos</h2>
 
-            <div> */}
-      {/* <CardOpiniones descripcion={usuarios.descripcion} /> */}
-      {/* </div>
-          </div>
-        </div>
-      </section> */}
-
-      <FormCursos setCursos={setCursos} />
-
-      {cursos.map((curso, index) => (
-        <div key={index} className="pb-5">
-          <CardCursos curso={curso} deleteCurso={deleteCurso} />
-        </div>
-      ))}
-
-      <FormProxActuaciones setActuacion={setActuacion} />
-      <div className="d-flex flex-column container pb-5">
-        {actuacion.map((actuacion, index) => (
-          <div key={index}>
-            <CardActu actuacion={actuacion} deleteActuacion={deleteActuacion} />
-          </div>
-        ))}
-      </div>
-      <div className="pb-5">
-        <FormAddGrupo setGrupos={setGrupos} />
-      </div>
-      {grupos.map((grupos, index) => (
-        <div className="pb-5" key={index}>
-          <CardGrupo grupos={grupos} deleteGrupo={deleteGrupo} />
-        </div>
-      ))}
       <SubirImages />
     </>
   );
