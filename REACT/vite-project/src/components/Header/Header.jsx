@@ -33,6 +33,12 @@ export default function Header() {
                       </Link>
                     </li>
                   )}
+
+                  <li>
+                    <Link className="text-decoration-none" to="galeria">
+                      Galería
+                    </Link>
+                  </li>
                   {!authorization.email ? (
                     <li>
                       <Link className="text-decoration-none" to="login">
@@ -89,6 +95,7 @@ export default function Header() {
                       Escuela
                     </Link>
                   </li>
+
                   <li>
                     <Link className="text-decoration-none" to="galeria">
                       Galería
@@ -115,6 +122,7 @@ export default function Header() {
                       </Link>
                     </li>
                   )}
+
                   {!authorization.email ? (
                     <li>
                       <Link className="text-decoration-none" to="login">

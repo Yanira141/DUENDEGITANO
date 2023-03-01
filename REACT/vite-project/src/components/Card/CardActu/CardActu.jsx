@@ -38,7 +38,7 @@ export default function CardActu({ actuacion, deleteActuacion }) {
                 to={`/editactu/${actuacion.id}`}
                
               >
-                 <i class="bi bi-pencil"></i>
+                 <i className="bi bi-pencil"></i>
               </Link>
             )}
           </div>
@@ -48,7 +48,7 @@ export default function CardActu({ actuacion, deleteActuacion }) {
                 onClick={() => deleteActuacion(actuacion.id)}
                 className="basura"
               >
-                <i class="bi bi-trash3"></i>
+                <i className="bi bi-trash3"></i>
               </button>
             )}
           </div>

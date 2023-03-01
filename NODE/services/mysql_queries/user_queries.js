@@ -153,7 +153,7 @@ userQueries.getUser = async () => {
   try {
     conn = await db.createConnection();
     return await db.query(
-      "SELECT * FROM usuarios where eliminado = '0' and idrol = '2'",
+      "SELECT * FROM usuarios where eliminado = '0' and idrol = '2' and descripcion is not null",
       [],
 
       "select",
@@ -165,7 +165,6 @@ userQueries.getUser = async () => {
     conn && (await conn.end());
   }
 };
-
 
 userQueries.getUserEliminado = async () => {
   // Conectamos con la base de datos y buscamos si existe la imagen por el id.
@@ -186,9 +185,6 @@ userQueries.getUserEliminado = async () => {
   }
 };
 
-
-
-
 userQueries.getUser = async () => {
   // Conectamos con la base de datos y buscamos si existe la imagen por el id.
   let conn = null;
@@ -207,11 +203,5 @@ userQueries.getUser = async () => {
     conn && (await conn.end());
   }
 };
-
-
-
-
-
-
 
 export default userQueries;

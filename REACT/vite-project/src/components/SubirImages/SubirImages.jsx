@@ -36,7 +36,7 @@ fetch(`http://localhost:3000/imagenes`, {
             <h2>Subir imágenes</h2>
             <h6>Sube las imágenes al apartado de la galería.</h6>
           </div>
-      <div class="mb-3 container pb-5">
+      <div className="mb-3 container pb-5">
         <form onSubmit={handleInput} method="post" encType="multipart/form-data"  className="php-email-form">
    <div className="pb-5"> <input
         className="form-control "

@@ -1,34 +1,37 @@
 import "./GaleriaFotos.css";
+import { useAuthContext } from "../../context/AuthContext/logInContext";
 
-export default function GaleriaFotos({ imagenes }) {
+
+export default function GaleriaFotos({ imagen, borrarImagen }) {
+  const { authorization } = useAuthContext();
+  const imagenGaleria = {
+    backgroundImage: `url(http://localhost:3000/${imagen.ruta})`,
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center center",
+    backgroundSize: "cover",
+    height: "50vh",
+  };
   return (
     <>
+
+
       <div className=" text-center pb-5">
-        <div className="cardcursos cardgaleria">
-          <img src={`http://localhost:3000/${imagenes.ruta}`} className="card-img-top"  alt="..." />
-            <p>{imagenes.titulo}</p>
+        <div className="cardcursos">
+          <div style={imagenGaleria}></div>
+  
+          <div className="cardgaleria">
+            <h5>{imagen.titulo}</h5>
+            {authorization.rol === 1 && (
+              <button
+                onClick={() => borrarImagen(imagen.id)}
+                className="bordessiono"
+              >
+                <i className="bi bi-trash3"></i>
+              </button>
+            )}
+          </div>
         </div>
       </div>
     </>
   );
 }
-
-
-
-
-
-// import "./GaleriaFotos.css";
-
-// export default function GaleriaFotos({ imagenes }) {
-//   return (
-//     <>
-//       <div className=" text-center pb-5">
-//         <div className="cardcursos">
-//           <img className="card-img-top" style={{background: "url(`http://localhost:3000/${imagenes.ruta}`)"}} alt="..." />
-//         </div>
-//       </div>
-//     </>
-//   );
-// }
-
-

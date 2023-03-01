@@ -62,4 +62,26 @@ imagenesQueries.addImagenes = async (imagenData) => {
   }
 }
 
+
+
+imagenesQueries.deleteImagenes = async (id) => {
+  // Conectamos con la base de datos y eliminamos el usuario por su id.
+  let conn = null;
+  try {
+    conn = await db.createConnection();
+    return await db.query(
+      "DELETE FROM imagenes WHERE id = ? ",
+      [ id],
+      "delete",
+      conn
+    );
+  } catch (e) {
+    throw new Error(e);
+  } finally {
+    conn && (await conn.end());
+  }
+};
+
+
+
 export default imagenesQueries;

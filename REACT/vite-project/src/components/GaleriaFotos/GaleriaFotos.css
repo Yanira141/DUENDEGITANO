@@ -1,0 +1,9 @@
+.bordessiono{
+    border: none;
+    background-color: white;
+}
+
+.cardgaleria{
+    display: flex;
+    justify-content: space-around;
+}

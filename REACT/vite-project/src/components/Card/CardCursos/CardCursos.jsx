@@ -23,10 +23,10 @@ export default function CardCursos({ curso, deleteCurso }) {
                 <i className="bi bi-clock"></i> {curso.hora}
               </li>
               <li className="list-inline-item">
-                <i class="bi bi-person-bounding-box"></i> {curso.profesor}
+                <i className="bi bi-person-bounding-box"></i> {curso.profesor}
               </li>
             </ul>
-            {/* <p>{actuacion.descripcion}</p> */}
+          
           </div>
           <div className="d-flex justify-content-between">
             <div className="d-flex row">
@@ -35,7 +35,7 @@ export default function CardCursos({ curso, deleteCurso }) {
                 data-aos-delay="200"
                 to={`/cursos/${curso.id}`}
               >
-                <i class="bi bi-plus-circle"></i>
+                <i className="bi bi-plus-circle"></i>
               </Link>
             </div>
             <div className="d-flex row">
@@ -45,7 +45,7 @@ export default function CardCursos({ curso, deleteCurso }) {
                   data-aos-delay="200"
                   to={`/editcurso/${curso.id}`}
                 >
-                  <i class="bi bi-pencil"></i>
+                  <i className="bi bi-pencil"></i>
                 </Link>
               )}
             </div>
@@ -56,7 +56,7 @@ export default function CardCursos({ curso, deleteCurso }) {
                   data-aos-delay="200"
                   to={`/usuarioscursos/${curso.id}`}
                 >
-                 <i class="bi bi-eye"></i>
+                 <i className="bi bi-eye"></i>
                 </Link>
               )}
             </div>
@@ -66,7 +66,7 @@ export default function CardCursos({ curso, deleteCurso }) {
                   onClick={() => deleteCurso(curso.id)}
                   className="basura"
                 >
-                  <i class="bi bi-trash3"></i>
+                  <i className="bi bi-trash3"></i>
                 </button>
               )}
             </div>

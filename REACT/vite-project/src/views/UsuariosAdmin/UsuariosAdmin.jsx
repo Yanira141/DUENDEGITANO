@@ -6,17 +6,17 @@ import ListaAdminUser from "../../components/ListaAdminUser/ListaAdminUser";
 
 export default function UsuariosAdmin(){
 
-    const [usuarios, setUsuarios] = useState([]);
+    // const [usuarios, setUsuarios] = useState([]);
 
-    useEffect(function () {
-      async function fetchUser() {
-        const response = await fetch(`http://localhost:3000/user/all`);
-        const detalles = await response.json();
-        setUsuarios(detalles);
-      }
+    // useEffect(function () {
+    //   async function fetchUser() {
+    //     const response = await fetch(`http://localhost:3000/user/all`);
+    //     const detalles = await response.json();
+    //     setUsuarios(detalles);
+    //   }
   
-      fetchUser();
-    }, []);
+    //   fetchUser();
+    // }, []);
 
 
     const [usuariosElim, setUsuariosElim] = useState([]);

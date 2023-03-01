@@ -7,7 +7,7 @@ import CardGrupo from "../../components/Card/CardGrupo/CardGrupo";
 import FormAddGrupo from "../../components/Form/FormAddGrupo/FormAddGrupo";
 import CardActu from "../../components/Card/CardActu/CardActu";
 import SubirImages from "../../components/SubirImages/SubirImages";
-import FormCambioPassword from "../../components/Form/FormCambioPassword/FormCambioPassword"
+import FormCambioPassword from "../../components/Form/FormCambioPassword/FormCambioPassword";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useAuthContext } from "../../context/AuthContext/logInContext";
@@ -95,7 +95,8 @@ export default function PanelAdministrador() {
           timer: 1500,
         });
         response.json().then((data) => {
-          setGrupos(data);})
+          setGrupos(data);
+        });
       } else if (response.status === 409) {
         Swal.fire({
           position: "top-end",
@@ -127,7 +128,8 @@ export default function PanelAdministrador() {
           timer: 1500,
         });
         response.json().then((data) => {
-          setCursos(data);})
+          setCursos(data);
+        });
       } else if (response.status === 409) {
         Swal.fire({
           position: "top-end",
@@ -159,7 +161,8 @@ export default function PanelAdministrador() {
           timer: 1500,
         });
         response.json().then((data) => {
-          setActuacion(data);})
+          setActuacion(data);
+        });
       } else if (response.status === 409) {
         Swal.fire({
           position: "top-end",
@@ -175,7 +178,28 @@ export default function PanelAdministrador() {
     <>
       <Breadcrumbs title={"Panel Administrador"} link={"Panel Administrador"} />
 
-      <div>
+      <div class="accordion container" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button
+              class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseOne"
+              aria-expanded="true"
+              aria-controls="collapseOne"
+            >
+              Modifica tus datos personales
+            </button>
+          </h2>
+          <div
+            id="collapseOne"
+            class="accordion-collapse collapse show"
+            aria-labelledby="headingOne"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+            <div>
         {usuarios ? (
           <FormCambio
             nombre={usuarios.nombre}
@@ -194,10 +218,89 @@ export default function PanelAdministrador() {
           </div>
         )}
       </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseTwo"
+              aria-expanded="false"
+              aria-controls="collapseTwo"
+            >
+              Modifica tu contraseña
+            </button>
+          </h2>
+          <div
+            id="collapseTwo"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingTwo"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+            
+
+
+            
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+      <div class="accordion container" id="accordionPanelsStayOpenExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+        Añade un nuevo curso
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+      <div class="accordion-body">
+        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+        Añade una nueva actuación
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+      <div class="accordion-body">
+        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+        Añade un nuevo grupo
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+      <div class="accordion-body">
+        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+ 
       <div>
         {usuarios ? (
           <FormCambioPassword
-           
             password={"*****"}
             passwordRepeat={"*****"}
             setUsuarios={setUsuarios}
@@ -211,7 +314,13 @@ export default function PanelAdministrador() {
         )}
       </div>
       <div className="container">
-      <Link className="btn-get-started text-decoration-none" to="/usuariosadmin">Listado de usuarios</Link></div>
+        <Link
+          className="btn-get-started text-decoration-none"
+          to="/usuariosadmin"
+        >
+          Listado de usuarios
+        </Link>
+      </div>
       {/* <section id="constructions" className="constructions">
         <div className="container" data-aos="fade-up">
           <div className="section-header">
@@ -224,7 +333,7 @@ export default function PanelAdministrador() {
         </div>
       </section> */}
 
-      <FormCursos setCursos={setCursos}/>
+      <FormCursos setCursos={setCursos} />
 
       {cursos.map((curso, index) => (
         <div key={index} className="pb-5">
@@ -232,7 +341,7 @@ export default function PanelAdministrador() {
         </div>
       ))}
 
-      <FormProxActuaciones setActuacion={setActuacion}/>
+      <FormProxActuaciones setActuacion={setActuacion} />
       <div className="d-flex flex-column container pb-5">
         {actuacion.map((actuacion, index) => (
           <div key={index}>
@@ -241,7 +350,7 @@ export default function PanelAdministrador() {
         ))}
       </div>
       <div className="pb-5">
-        <FormAddGrupo setGrupos={setGrupos}/>
+        <FormAddGrupo setGrupos={setGrupos} />
       </div>
       {grupos.map((grupos, index) => (
         <div className="pb-5" key={index}>

@@ -68,11 +68,11 @@ export default function FormDelete() {
                 <div className="col-md-12 "></div>
 
                 <button className="btn-get-started text-decoration-none" onClick={() => toggleVisible()}>Borrar cuenta</button>
-                <div class={`alert alert-danger" role="alert ${visible}`}>
+                <div className={`alert alert-danger" role="alert ${visible}`}>
                 <div className="d-flex justify-content-evenly"> ¿Estás seguro?
                  
-                  <button className="text-decoration-none bordessiono" onClick={() => onSubmit()}><i class="bi bi-check-lg"></i></button>
-                  <button className="text-decoration-none bordessiono" onClick={() => toggleVisible()}><i class="bi bi-x-lg"></i></button>
+                  <button className="text-decoration-none bordessiono" onClick={() => onSubmit()}><i className="bi bi-check-lg"></i></button>
+                  <button className="text-decoration-none bordessiono" onClick={() => toggleVisible()}><i className="bi bi-x-lg"></i></button>
                 </div></div>
               </div>
             </div>
