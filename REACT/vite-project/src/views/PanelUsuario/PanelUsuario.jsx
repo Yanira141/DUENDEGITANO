@@ -8,11 +8,12 @@ import { useParams } from "react-router-dom";
 import { useAuthContext } from "../../context/AuthContext/logInContext";
 import CardGrupo from "../../components/Card/CardGrupo/CardGrupo";
 import FormCambioPassword from "../../components/Form/FormCambioPassword/FormCambioPassword";
+import "./PanelUsuario.css"
 
 export default function PanelUsuario() {
   const [apuntadoCurso, setApuntadoCurso] = useState(null);
   const { authorization } = useAuthContext();
-  const [perteneceGrupo, setPerteneceGrupo] = useState(null)
+  const [perteneceGrupo, setPerteneceGrupo] = useState(null);
   const [usuarios, setUsuarios] = useState(null);
   const params = useParams();
   useEffect(function () {
@@ -40,18 +41,133 @@ export default function PanelUsuario() {
     fetchPertenece();
     fetchApuntado();
     fetchUsuarios();
-
   }, []);
 
   return (
     <>
       <Breadcrumbs title={"Panel usuario"} link={"Panel usuario"} />
+     
+      
+
+      <section id="constructions" className="constructions">
+        <div className="container" data-aos="fade-up">
+          <div className="section-header">
+            <h2>Datos personales</h2>
+            <h6></h6>
+          </div>
+          <div class="accordion container" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseOne"
+                  aria-expanded="true"
+                  aria-controls="collapseOne"
+                >
+                  Modifica tus datos personales
+                </button>
+              </h2>
+              <div
+                id="collapseOne"
+                class="accordion-collapse collapse show"
+                aria-labelledby="headingOne"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body">
+                  <div>
+                    {usuarios ? (
+                      <FormCambio
+                        nombre={usuarios.nombre}
+                        apellido={usuarios.apellido}
+                        telefono={usuarios.telefono}
+                        email={usuarios.email}
+                        password={"*****"}
+                        passwordRepeat={"*****"}
+                        setUsuarios={setUsuarios}
+                      />
+                    ) : (
+                      <div className="text-center">
+                        <div className="spinner-border" role="status">
+                          <span className="visually-hidden">Loading...</span>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwo"
+                  aria-expanded="false"
+                  aria-controls="collapseTwo"
+                >
+                  Modifica tu contraseña
+                </button>
+              </h2>
+              <div
+                id="collapseTwo"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingTwo"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body">
+                  <div>
+                    {usuarios ? (
+                      <FormCambioPassword
+                        password={"*****"}
+                        passwordRepeat={"*****"}
+                        setUsuarios={setUsuarios}
+                      />
+                    ) : (
+                      <div className="text-center">
+                        <div className="spinner-border" role="status">
+                          <span className="visually-hidden">Loading...</span>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <section id="constructions" className="constructions">
         <div className="container" data-aos="fade-up">
           <div className="section-header">
             <h2>Grupos en los que estoy apuntado</h2>
-            <h6>Estos son los grupos a los que asistes</h6>
+            
           </div>
+      <div class="accordion accordion-flush container" id="accordionFlushExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingOne">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseOne"
+              aria-expanded="false"
+              aria-controls="flush-collapseOne"
+            >
+             Estos son los grupos a los que asistes
+            </button>
+          </h2>
+          <div
+            id="flush-collapseOne"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-headingOne"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              
+       
           {perteneceGrupo ? (
             perteneceGrupo.map((perteneceGrupo, index) => (
               <div key={index}>
@@ -61,50 +177,50 @@ export default function PanelUsuario() {
           ) : (
             <p>¡Aún no estas apuntado a ningún grupo!</p>
           )}
+      
+
+
+            </div>
+          </div>
         </div>
-      </section>
-      <FormDescripcion />
-      <div>
-        {usuarios ? (
-          <FormCambio
-            usuarios={usuarios}
-            setUsuarios={setUsuarios}
-            nombre={usuarios.nombre}
-            apellido={usuarios.apellido}
-            telefono={usuarios.telefono}
-            email={usuarios.email}
-            password={"*****"}
-            passwordRepeat={"*****"}
-          />
-        ) : (
-          <div className="text-center">
-            <div className="spinner-border" role="status">
-              <span className="visually-hidden">Loading...</span>
-            </div>
-          </div>
-        )}
-      </div>
-      <div>
-        {usuarios ? (
-          <FormCambioPassword
-          setUsuarios={setUsuarios}
-            password={"*****"}
-            passwordRepeat={"*****"}
-          />
-        ) : (
-          <div className="text-center">
-            <div className="spinner-border" role="status">
-              <span className="visually-hidden">Loading...</span>
-            </div>
-          </div>
-        )}
-      </div>
-      <section id="constructions" className="constructions">
+       
+       </div></div></section>
+      
+
+
+
+       <section id="constructions" className="constructions">
         <div className="container" data-aos="fade-up">
           <div className="section-header">
             <h2>Cursos en los que estoy apuntado</h2>
-            <h6>Estos son los cursos a los que vas a asistir</h6>
+           
           </div>
+
+
+      <div class="accordion accordion-flush container" id="accordionFlushExample">
+      <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingTwo">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseTwo"
+              aria-expanded="false"
+              aria-controls="flush-collapseTwo"
+            >
+             Estos son los cursos a los que vas a asistir
+            </button>
+          </h2>
+          <div
+            id="flush-collapseTwo"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-headingTwo"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+             
+
+      
           {apuntadoCurso ? (
             apuntadoCurso.map((apuntadoCurso, index) => (
               <div key={index}>
@@ -114,8 +230,21 @@ export default function PanelUsuario() {
           ) : (
             <p>¡Aún no estas apuntado a ningún curso!</p>
           )}
+       
+
+
+            </div>
+          </div>
         </div>
-      </section>
+</div>
+</div></section>
+
+
+
+
+
+<FormDescripcion />
+    
       <FormDelete />
     </>
   );

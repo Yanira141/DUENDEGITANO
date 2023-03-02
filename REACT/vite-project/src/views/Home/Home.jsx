@@ -10,7 +10,6 @@ import CardActu from "../../components/Card/CardActu/CardActu";
 // import Reviews from "../../components/Reviews/Reviews";
 import Reseñas from "../../components/Reseñas/Reseñas";
 
-
 export default function Home() {
   const { authorization, logout } = useAuthContext();
   const [actuacion, setActuacion] = useState([]);
@@ -25,26 +24,18 @@ export default function Home() {
     fetchActuacion();
   }, []);
 
-
-
-
   const [usuarios, setUsuarios] = useState([]);
 
   useEffect(function () {
     async function fetchUser() {
       const response = await fetch(`http://localhost:3000/user/all`);
       const detalles = await response.json();
+
       setUsuarios(detalles);
     }
 
     fetchUser();
   }, []);
-
-
-
-
-
-
 
   return (
     <>
@@ -66,7 +57,6 @@ export default function Home() {
           </div>
         </section>
 
-   
         <section id="constructions" className="constructions">
           <div className="container" data-aos="fade-up">
             <div className="section-header">
@@ -88,21 +78,23 @@ export default function Home() {
         <section id="constructions" className="constructions">
           <div className="container" data-aos="fade-up">
             <div className="section-header">
-              <h2>Reseñas de Google</h2>
+              <h2>Reseñas</h2>
 
-              <h6>Los años nos avalan y las opiniones de nuestros alumnos también</h6>
-            </div>
-            <div className="container d-flex justify-content-around pb-5">
-     
-              {usuarios.map((usuarios, index) => (
-                <div key={index}>
-              <Reseñas usuarios={usuarios}/>
-               </div>
-               ))}
-            
-            </div>
+              <h6>
+                Los años nos avalan y las opiniones de nuestros alumnos también
+              </h6>
+            </div>{" "}
           </div>
         </section>
+        <div className="container ">
+          <div className="d-flex justify-content-center">
+            {usuarios.map((usuarios, index) => (
+              <div className="col-3 pb-5" key={index}>
+                <Reseñas usuarios={usuarios} />
+              </div>
+            ))}
+          </div>
+        </div>
         {!authorization.email ? <FormRegister /> : <div></div>}
       </div>
     </>

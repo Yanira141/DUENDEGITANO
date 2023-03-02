@@ -153,7 +153,7 @@ userQueries.getUser = async () => {
   try {
     conn = await db.createConnection();
     return await db.query(
-      "SELECT * FROM usuarios where eliminado = '0' and idrol = '2' and descripcion is not null",
+      "SELECT * FROM usuarios where eliminado = 0 and idrol = 2 and descripcion is not null",
       [],
 
       "select",

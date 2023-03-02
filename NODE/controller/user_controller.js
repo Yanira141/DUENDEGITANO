@@ -509,7 +509,7 @@ controller.updateUser = async (req, res) => {
 
 controller.getUser = async (req, res) => {
   try {
-    const user = await dao.getUser(req.params.id);
+    const user = await dao.getUser();
 
     if (user.length <= 0) return res.status(404).send("El usuario no existe");
 

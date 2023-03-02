@@ -25,7 +25,7 @@ import EditGrupo from "./views/EditGrupo/EditGrupo";
 import ScrollToTop from "./ScrollToTop";
 import UsuariosCursos from "./views/UsuariosCursos/UsuariosCursos";
 import UsuariosGrupos from "./views/UsuariosGrupos/UsuariosGrupos"
-import UsuariosAdmin from "./views/UsuariosAdmin/UsuariosAdmin";
+
 const ROLES = {
   Admin: 1,
   User: 2,
@@ -54,7 +54,7 @@ function App() {
             <Route path="editgrupo/:id" element={<EditGrupo />} />
             <Route path="usuarioscursos/:id" element={<UsuariosCursos/>}/>
             <Route path="usuariosgrupos/:id" element={<UsuariosGrupos/>}/>
-            <Route path="usuariosadmin" element={<UsuariosAdmin/>}/>
+       
             <Route element={<PublicRoute />}>
               <Route path="login" element={<IniciaSesion />} />
             </Route>
