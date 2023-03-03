@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Hero from "../../components/Hero/Hero";
 import FormRegister from "../../components/Form/FormInscribete";
-
+import "./Home.css"
 import { useAuthContext } from "../../context/AuthContext/logInContext";
 
 import CardProfes from "../../components/Card/CardProfes/CardProfes";
@@ -57,6 +57,7 @@ export default function Home() {
           </div>
         </section>
 
+
         <section id="constructions" className="constructions">
           <div className="container" data-aos="fade-up">
             <div className="section-header">
@@ -83,18 +84,19 @@ export default function Home() {
               <h6>
                 Los años nos avalan y las opiniones de nuestros alumnos también
               </h6>
-            </div>{" "}
-          </div>
-        </section>
-        <div className="container ">
-          <div className="d-flex justify-content-center">
+            </div>
+      
+        <div className="container pb-5">
+          <div className="reseñasDescrip">
             {usuarios.map((usuarios, index) => (
-              <div className="col-3 pb-5" key={index}>
+              <div className="col-3 pb-5 " key={index}>
                 <Reseñas usuarios={usuarios} />
               </div>
             ))}
           </div>
         </div>
+        </div>
+        </section>
         {!authorization.email ? <FormRegister /> : <div></div>}
       </div>
     </>

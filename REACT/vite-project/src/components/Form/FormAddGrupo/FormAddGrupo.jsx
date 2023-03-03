@@ -95,7 +95,7 @@ export default function FormAddGrupo({setGrupos}) {
                   </div>
 
                   <div className="col-md-12 ">
-                    <input
+                    <textarea
                       type="text"
                       className="form-control"
                       name="descripcion"

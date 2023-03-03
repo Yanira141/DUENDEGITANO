@@ -149,11 +149,12 @@ userQueries.updateUser = async (id, userData) => {
 
 userQueries.getUser = async () => {
   // Conectamos con la base de datos y buscamos si existe la imagen por el id.
+  console.log("not like");
   let conn = null;
   try {
     conn = await db.createConnection();
     return await db.query(
-      "SELECT * FROM usuarios where eliminado = 0 and idrol = 2 and descripcion is not null",
+      "SELECT * FROM usuarios where eliminado = '0' and idrol = '2' and descripcion not like '0'",
       [],
 
       "select",
@@ -185,23 +186,23 @@ userQueries.getUserEliminado = async () => {
   }
 };
 
-userQueries.getUser = async () => {
-  // Conectamos con la base de datos y buscamos si existe la imagen por el id.
-  let conn = null;
-  try {
-    conn = await db.createConnection();
-    return await db.query(
-      "SELECT * FROM usuarios where eliminado = '0' and idrol = '2'",
-      [],
+// userQueries.getUser = async () => {
+//   // Conectamos con la base de datos y buscamos si existe la imagen por el id.
+//   let conn = null;
+//   try {
+//     conn = await db.createConnection();
+//     return await db.query(
+//       "SELECT * FROM usuarios where eliminado = '0' and idrol = '2'",
+//       [],
 
-      "select",
-      conn
-    );
-  } catch (e) {
-    throw new Error(e);
-  } finally {
-    conn && (await conn.end());
-  }
-};
+//       "select",
+//       conn
+//     );
+//   } catch (e) {
+//     throw new Error(e);
+//   } finally {
+//     conn && (await conn.end());
+//   }
+// };
 
 export default userQueries;

@@ -175,7 +175,7 @@ export default function FormEditActu({
                   </div>
 
                   <div className="col-md-12 ">
-                    <input
+                    <textarea
                       type="text"
                       name="descripcion"
                       placeholder={descripcion}

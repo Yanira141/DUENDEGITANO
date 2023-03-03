@@ -508,6 +508,7 @@ controller.updateUser = async (req, res) => {
 };
 
 controller.getUser = async (req, res) => {
+ 
   try {
     const user = await dao.getUser();
 

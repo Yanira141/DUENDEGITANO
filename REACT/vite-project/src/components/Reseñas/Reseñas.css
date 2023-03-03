@@ -3,7 +3,7 @@
     height: 200px;
     width: 300px;
     background: white;
-    box-shadow: 1px 12px 33px rgba(0, 0, 0, 0.5);
+    box-shadow: 1px 20px 50px rgba(72, 25, 25, 0.882);
 }
 .bocadillo-cuadrado:before {
     border: 25px solid white;
@@ -14,4 +14,7 @@
     position: absolute;
     bottom: -48px;
     left: calc(50% - 25px)
+}
+.nombreUser{
+    color:  rgb(80, 5, 5);
 }
