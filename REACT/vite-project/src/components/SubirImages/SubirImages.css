@@ -1,0 +1,4 @@
+.inputfotos:focus{
+    box-shadow: 0 0 0 0.25rem rgb(255 0 31 / 30%)!important;
+    border-color: crimson!important;
+}

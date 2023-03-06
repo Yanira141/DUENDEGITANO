@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import "./SubirImages.css"
 
 export default function SubirImages() {
   const [titulo, setTitulo] =useState("")
@@ -23,6 +23,8 @@ fetch(`http://localhost:3000/imagenes`, {
       showConfirmButton: false,
       timer: 1500,
     });
+    setTitulo("")
+    setFile("")
   }
 });
 
@@ -39,14 +41,14 @@ fetch(`http://localhost:3000/imagenes`, {
       <div className="mb-3 container pb-5">
         <form onSubmit={handleInput} method="post" encType="multipart/form-data"  className="php-email-form">
    <div className="pb-5"> <input
-        className="form-control "
+        className="form-control inputfotos"
           type="text"
           name="titulo"
           value={titulo}
           onChange={(e) => setTitulo(e.target.value)}
         /></div>
     <input
-  className="form-control"
+  className="form-control inputfotos"
           type="file"
           name="ruta"
           value={undefined}
