@@ -213,7 +213,7 @@ grupoQueries.getUsuariosGrupos = async (id) => {
   try {
     conn = await db.createConnection();
     return await db.query(
-      "SELECT *  FROM usuarios JOIN grupodetalle ON usuarios.id = grupodetalle.idusuario where grupodetalle.idgrupo = ?",
+      "SELECT *  FROM usuarios JOIN grupodetalle ON usuarios.id = grupodetalle.idusuario where grupodetalle.idgrupo = ? and eliminado = '0'",
       id,
       "select",
       conn

@@ -213,7 +213,7 @@ cursoQueries.getUsuariosCursos = async (id) => {
   try {
     conn = await db.createConnection();
     return await db.query(
-      "SELECT * FROM usuarios JOIN cursosdetalle ON usuarios.id = cursosdetalle.idusuario WHERE cursosdetalle.idcurso = ?",
+      "SELECT * FROM usuarios JOIN cursosdetalle ON usuarios.id = cursosdetalle.idusuario WHERE cursosdetalle.idcurso = ? and eliminado = '0'",
       id,
       "select",
       conn

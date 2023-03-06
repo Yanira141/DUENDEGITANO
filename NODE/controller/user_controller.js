@@ -116,7 +116,7 @@ controller.addUser = async (req, res) => {
           <tr>
             <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:50px 10px 10px;font-family:'Open Sans',sans-serif;" align="left">
               
-        <h1 class="v-font-size" style="margin: 0px; color: #ffffff; line-height: 140%; text-align: center; word-wrap: break-word; font-family: 'Playfair Display',serif; font-size: 15px; ">te recordamos que debes pasar por la escuela a formalizar el pago, para cualquier consulta contáctanos.<br />!GRACIAS POR REGISTRARTE!</h1>
+        <h1 class="v-font-size" style="margin: 0px; color: #ffffff; line-height: 140%; text-align: center; word-wrap: break-word; font-family: 'Playfair Display',serif; font-size: 15px; ">Te recordamos que debes pasar por la escuela a formalizar el pago, para cualquier consulta contáctanos.<br />!GRACIAS POR REGISTRARTE!</h1>
       
             </td>
           </tr>
