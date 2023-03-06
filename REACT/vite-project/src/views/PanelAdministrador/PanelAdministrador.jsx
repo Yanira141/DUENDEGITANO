@@ -187,11 +187,11 @@ export default function PanelAdministrador() {
             <h2>Datos personales</h2>
             <h6></h6>
           </div>
-          <div class="accordion container" id="accordionExample">
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingOne">
+          <div className="accordion container" id="accordionExample">
+            <div className="accordion-item">
+              <h2 className="accordion-header" id="headingOne">
                 <button
-                  class="accordion-button"
+                  className="accordion-button"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#collapseOne"
@@ -203,11 +203,11 @@ export default function PanelAdministrador() {
               </h2>
               <div
                 id="collapseOne"
-                class="accordion-collapse collapse show"
+                className="accordion-collapse collapse show"
                 aria-labelledby="headingOne"
                 data-bs-parent="#accordionExample"
               >
-                <div class="accordion-body">
+                <div className="accordion-body">
                   <div>
                     {usuarios ? (
                       <FormCambio
@@ -230,10 +230,10 @@ export default function PanelAdministrador() {
                 </div>
               </div>
             </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingTwo">
+            <div className="accordion-item">
+              <h2 className="accordion-header" id="headingTwo">
                 <button
-                  class="accordion-button collapsed"
+                  className="accordion-button collapsed"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#collapseTwo"
@@ -245,11 +245,11 @@ export default function PanelAdministrador() {
               </h2>
               <div
                 id="collapseTwo"
-                class="accordion-collapse collapse"
+                className="accordion-collapse collapse"
                 aria-labelledby="headingTwo"
                 data-bs-parent="#accordionExample"
               >
-                <div class="accordion-body">
+                <div className="accordion-body">
                   <div>
                     {usuarios ? (
                       <FormCambioPassword
@@ -278,11 +278,11 @@ export default function PanelAdministrador() {
             <h2>Añade eventos y grupos</h2>
             <h6></h6>
           </div>
-          <div class="accordion container" id="accordionPanelsStayOpenExample">
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+          <div className="accordion container" id="accordionPanelsStayOpenExample">
+            <div className="accordion-item">
+              <h2 className="accordion-header" id="panelsStayOpen-headingOne">
                 <button
-                  class="accordion-button"
+                  className="accordion-button"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#panelsStayOpen-collapseOne"
@@ -294,18 +294,18 @@ export default function PanelAdministrador() {
               </h2>
               <div
                 id="panelsStayOpen-collapseOne"
-                class="accordion-collapse collapse show"
+                className="accordion-collapse collapse show"
                 aria-labelledby="panelsStayOpen-headingOne"
               >
-                <div class="accordion-body">
+                <div className="accordion-body">
                   <FormCursos setCursos={setCursos} />
                 </div>
               </div>
             </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+            <div className="accordion-item">
+              <h2 className="accordion-header" id="panelsStayOpen-headingTwo">
                 <button
-                  class="accordion-button collapsed"
+                  className="accordion-button collapsed"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#panelsStayOpen-collapseTwo"
@@ -317,18 +317,18 @@ export default function PanelAdministrador() {
               </h2>
               <div
                 id="panelsStayOpen-collapseTwo"
-                class="accordion-collapse collapse"
+                className="accordion-collapse collapse"
                 aria-labelledby="panelsStayOpen-headingTwo"
               >
-                <div class="accordion-body">
+                <div className="accordion-body">
                   <FormProxActuaciones setActuacion={setActuacion} />
                 </div>
               </div>
             </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+            <div className="accordion-item">
+              <h2 className="accordion-header" id="panelsStayOpen-headingThree">
                 <button
-                  class="accordion-button collapsed"
+                  className="accordion-button collapsed"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#panelsStayOpen-collapseThree"
@@ -340,10 +340,10 @@ export default function PanelAdministrador() {
               </h2>
               <div
                 id="panelsStayOpen-collapseThree"
-                class="accordion-collapse collapse"
+                className="accordion-collapse collapse"
                 aria-labelledby="panelsStayOpen-headingThree"
               >
-                <div class="accordion-body">
+                <div className="accordion-body">
                   <FormAddGrupo setGrupos={setGrupos} />
                 </div>
               </div>
@@ -360,13 +360,13 @@ export default function PanelAdministrador() {
           </div>
 
           <div
-            class="accordion accordion-flush container"
+            className="accordion accordion-flush container"
             id="accordionFlushExample"
           >
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="flush-headingOne">
+            <div className="accordion-item">
+              <h2 className="accordion-header" id="flush-headingOne">
                 <button
-                  class="accordion-button collapsed"
+                  className="accordion-button collapsed"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#flush-collapseOne"
@@ -378,11 +378,11 @@ export default function PanelAdministrador() {
               </h2>
               <div
                 id="flush-collapseOne"
-                class="accordion-collapse collapse"
+                className="accordion-collapse collapse"
                 aria-labelledby="flush-headingOne"
                 data-bs-parent="#accordionFlushExample"
               >
-                <div class="accordion-body">
+                <div className="accordion-body">
                   {cursos.map((curso, index) => (
                     <div key={index} className="pb-5">
                       <CardCursos curso={curso} deleteCurso={deleteCurso} />
@@ -391,10 +391,10 @@ export default function PanelAdministrador() {
                 </div>
               </div>
             </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="flush-headingTwo">
+            <div className="accordion-item">
+              <h2 className="accordion-header" id="flush-headingTwo">
                 <button
-                  class="accordion-button collapsed"
+                  className="accordion-button collapsed"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#flush-collapseTwo"
@@ -406,11 +406,11 @@ export default function PanelAdministrador() {
               </h2>
               <div
                 id="flush-collapseTwo"
-                class="accordion-collapse collapse"
+                className="accordion-collapse collapse"
                 aria-labelledby="flush-headingTwo"
                 data-bs-parent="#accordionFlushExample"
               >
-                <div class="accordion-body">
+                <div className="accordion-body">
                   <div className="d-flex flex-column container pb-5">
                     {actuacion.map((actuacion, index) => (
                       <div key={index}>
@@ -424,10 +424,10 @@ export default function PanelAdministrador() {
                 </div>
               </div>
             </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="flush-headingThree">
+            <div className="accordion-item">
+              <h2 className="accordion-header" id="flush-headingThree">
                 <button
-                  class="accordion-button collapsed"
+                  className="accordion-button collapsed"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#flush-collapseThree"
@@ -439,11 +439,11 @@ export default function PanelAdministrador() {
               </h2>
               <div
                 id="flush-collapseThree"
-                class="accordion-collapse collapse"
+                className="accordion-collapse collapse"
                 aria-labelledby="flush-headingThree"
                 data-bs-parent="#accordionFlushExample"
               >
-                <div class="accordion-body">
+                <div className="accordion-body">
                   {grupos.map((grupos, index) => (
                     <div className="pb-5" key={index}>
                       <CardGrupo grupos={grupos} deleteGrupo={deleteGrupo} />
@@ -463,11 +463,11 @@ export default function PanelAdministrador() {
             <h6>Estos son los alumnos apuntados y no apuntados en la academia.</h6>
           </div>
 
-      <div class="accordion container" id="accordionExample">
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingThree">
+      <div className="accordion container" id="accordionExample">
+        <div className="accordion-item">
+          <h2 className="accordion-header" id="headingThree">
             <button
-              class="accordion-button collapsed"
+              className="accordion-button collapsed"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#collapseThree"
@@ -479,17 +479,17 @@ export default function PanelAdministrador() {
           </h2>
           <div
             id="collapseThree"
-            class="accordion-collapse collapse"
+            className="accordion-collapse collapse"
             aria-labelledby="headingThree"
             data-bs-parent="#accordionExample"
           >
-            <div class="accordion-body">
+            <div className="accordion-body">
              
  
        
 
       <div className="container pb-5">
-        <table class="table">
+        <table className="table">
           <thead>
             <tr>
               <th scope="col">Nombre</th>

@@ -5,7 +5,7 @@ export default function CardOpiniones({ descripcion }) {
       <div className="container pt-5">
         <div className="notice d-flex flex-column">
           <p>
-            <i class="bi bi-pencil"></i>
+            <i className="bi bi-pencil"></i>
             {descripcion}
           </p>
         </div>

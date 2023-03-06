@@ -2,10 +2,10 @@ export default function Blockquote({frase, nombre}){
     return(
         <>
         <figure>
-  <blockquote class="blockquote">
+  <blockquote className="blockquote">
     <p>{frase}</p>
   </blockquote>
-  <figcaption class="blockquote-footer">
+  <figcaption className="blockquote-footer">
      <cite title="Source Title">{nombre}</cite>
   </figcaption>
 </figure>

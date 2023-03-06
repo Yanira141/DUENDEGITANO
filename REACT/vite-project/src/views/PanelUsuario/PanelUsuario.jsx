@@ -55,11 +55,11 @@ export default function PanelUsuario() {
             <h2>Datos personales</h2>
             <h6></h6>
           </div>
-          <div class="accordion container" id="accordionExample">
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingOne">
+          <div className="accordion container" id="accordionExample">
+            <div className="accordion-item">
+              <h2 className="accordion-header" id="headingOne">
                 <button
-                  class="accordion-button"
+                  className="accordion-button"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#collapseOne"
@@ -71,11 +71,11 @@ export default function PanelUsuario() {
               </h2>
               <div
                 id="collapseOne"
-                class="accordion-collapse collapse show"
+                className="accordion-collapse collapse show"
                 aria-labelledby="headingOne"
                 data-bs-parent="#accordionExample"
               >
-                <div class="accordion-body">
+                <div className="accordion-body">
                   <div>
                     {usuarios ? (
                       <FormCambio
@@ -98,10 +98,10 @@ export default function PanelUsuario() {
                 </div>
               </div>
             </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingTwo">
+            <div className="accordion-item">
+              <h2 className="accordion-header" id="headingTwo">
                 <button
-                  class="accordion-button collapsed"
+                  className="accordion-button collapsed"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#collapseTwo"
@@ -113,11 +113,11 @@ export default function PanelUsuario() {
               </h2>
               <div
                 id="collapseTwo"
-                class="accordion-collapse collapse"
+                className="accordion-collapse collapse"
                 aria-labelledby="headingTwo"
                 data-bs-parent="#accordionExample"
               >
-                <div class="accordion-body">
+                <div className="accordion-body">
                   <div>
                     {usuarios ? (
                       <FormCambioPassword
@@ -145,11 +145,11 @@ export default function PanelUsuario() {
             <h2>Grupos en los que estoy apuntado</h2>
             
           </div>
-      <div class="accordion accordion-flush container" id="accordionFlushExample">
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="flush-headingOne">
+      <div className="accordion accordion-flush container" id="accordionFlushExample">
+        <div className="accordion-item">
+          <h2 className="accordion-header" id="flush-headingOne">
             <button
-              class="accordion-button collapsed"
+              className="accordion-button collapsed"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#flush-collapseOne"
@@ -161,11 +161,11 @@ export default function PanelUsuario() {
           </h2>
           <div
             id="flush-collapseOne"
-            class="accordion-collapse collapse"
+            className="accordion-collapse collapse"
             aria-labelledby="flush-headingOne"
             data-bs-parent="#accordionFlushExample"
           >
-            <div class="accordion-body">
+            <div className="accordion-body">
               
        
           {perteneceGrupo ? (
@@ -197,11 +197,11 @@ export default function PanelUsuario() {
           </div>
 
 
-      <div class="accordion accordion-flush container" id="accordionFlushExample">
-      <div class="accordion-item">
-          <h2 class="accordion-header" id="flush-headingTwo">
+      <div className="accordion accordion-flush container" id="accordionFlushExample">
+      <div className="accordion-item">
+          <h2 className="accordion-header" id="flush-headingTwo">
             <button
-              class="accordion-button collapsed"
+              className="accordion-button collapsed"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#flush-collapseTwo"
@@ -213,11 +213,11 @@ export default function PanelUsuario() {
           </h2>
           <div
             id="flush-collapseTwo"
-            class="accordion-collapse collapse"
+            className="accordion-collapse collapse"
             aria-labelledby="flush-headingTwo"
             data-bs-parent="#accordionFlushExample"
           >
-            <div class="accordion-body">
+            <div className="accordion-body">
              
 
       
