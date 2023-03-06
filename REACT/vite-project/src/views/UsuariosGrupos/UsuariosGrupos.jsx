@@ -40,7 +40,7 @@ export default function UsuariosGrupos() {
             </div>
 
             <div className="container pb-5">
-              <table class="table">
+              <table className="table">
                 <thead>
                   <tr>
                     <th scope="col">Nombre</th>

@@ -130,6 +130,7 @@ userQueries.updateUser = async (id, userData) => {
       email: userData.email,
       password: userData.password ? md5(userData.password) : undefined,
       descripcion: userData.descripcion,
+      telefono: userData.telefono,
     };
     // Eliminamos los campos que no se van a modificar (no llegan por el body)
     userObj = await utils.removeUndefinedKeys(userObj);

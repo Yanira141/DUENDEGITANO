@@ -8,6 +8,7 @@ export default function FormCursos({setCursos}) {
     hora: "",
     fecha: "",
     descripcion: "",
+    profesor: "",
   });
   function handleInput(e) {
     e.preventDefault();
