@@ -1,4 +1,6 @@
+import Blockquote from "../../components/Blockquote/Blockquote";
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
+
 
 export default function CristinaGallo() {
   return (
@@ -12,11 +14,12 @@ export default function CristinaGallo() {
               <div className="col-lg-7 about-img cristi"></div>
 
               <div className="col-lg-7">
-                <h2> </h2>
+             
+
                 <div className="our-story">
+                <Blockquote frase={"Desde que estaba en la barriga de mi madre, escuchaba y sentía la música y el baile."} nombre={"Cristina Gallo"}/>
                   <p className="pt-5">
-                    Desde que estaba en la barriga de su madre, escuchaba y
-                    sentía la música y el baile, y desde muy chiquita ha pasado
+                    Desde muy chiquita ha pasado
                     muchas horas sentada viendo las clases. De ahí surge su
                     gusto por la danza en general, tanto es así que su madre
                     decide apuntarla al Conservatorio para iniciar

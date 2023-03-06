@@ -1,5 +1,6 @@
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
 import "../../assets/css/main.css";
+import Blockquote from "../../components/Blockquote/Blockquote";
 
 export default function SamuelGallo() {
   return (
@@ -15,6 +16,7 @@ export default function SamuelGallo() {
               <div className="col-lg-7">
                 <h2> </h2>
                 <div className="our-story">
+                  <Blockquote frase={" Escogí la especialidad de danza contemporanea, ya que era lo más ralacionado con lo que me gusta que es el Hip-Hop."} nombre={"Samuel Gallo"}/>
                   <p className="pt-5">
                     {" "}
                     Desde pequeño nunca quiso bailar flamenco y por eso nunca
@@ -34,11 +36,7 @@ export default function SamuelGallo() {
                     el conservatorio de danza para estudiar y conocer más el
                     mundo ya que quería dedicarse a esto.
                   </p>
-                  <p>
-                    {" "}
-                    Escogio la especialidad de danza contemporanea, ya que era
-                    lo mas ralacionado con lo que le gusta que es el Hip-Hop.
-                  </p>
+                  
                   <p>
                     {" "}
                     A día de hoy pertenezce a una compañía de Gibraltar, hace

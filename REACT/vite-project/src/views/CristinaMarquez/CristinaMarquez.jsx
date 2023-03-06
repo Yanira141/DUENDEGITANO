@@ -1,3 +1,4 @@
+import Blockquote from "../../components/Blockquote/Blockquote";
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
 
 export default function CristinaMarquez() {
@@ -14,6 +15,7 @@ export default function CristinaMarquez() {
               <div className="col-lg-7">
                 <h2> </h2>
                 <div className="our-story">
+                  <Blockquote frase={"Con una edad muy temprana decidí abrir mi propia escuela que, desde 1988, sigue abierta gracias a la fidelidad del alumnado y sus familiares."} nombre={"Cristina Márquez"}/>
                   <p className="pt-5">
                     Cristina Márquez desde pequeña ha mostrado un interés y un
                     afán por el baile innato, que no le proviene de generaciones
@@ -32,12 +34,7 @@ export default function CristinaMarquez() {
                     convalidando su carrera con la pedagogía existente en la
                     actualidad.
                   </p>
-                  <p>
-                    Posteriormente y con una edad muy temprana decidió abrir su
-                    propia escuela que, desde 1988, sigue abierta gracias a la
-                    fidelidad del alumnado y sus familiares.
-                  </p>
-
+                  
                   <div className="watch-video d-flex align-items-center position-relative"></div>
                 </div>
               </div>
