@@ -76,7 +76,7 @@ export default function FormEditGrupo({
             <div className="col-lg-5" data-aos="fade">
               <form className="php-email-form" onSubmit={handleSubmit}>
                 <h3>
-                  <i className="bi bi-journals"></i> Añade un nuevo grupo
+                  <i className="bi bi-journals"></i>  Editar grupo
                 </h3>
 
                 <div className="row gy-3">
@@ -138,7 +138,7 @@ export default function FormEditGrupo({
                   </div>
 
                   <button type="submit" disabled={isSubmitting}>
-                    Añadir grupo
+                   Guardar cambios
                   </button>
                 </div>
               </form>
@@ -149,7 +149,8 @@ export default function FormEditGrupo({
               data-aos="fade-up"
             >
               <div className="content">
-                <h3>Añade un nuevo grupo</h3>
+                <h3>Grupo</h3>
+                <h6>Ncesitas cambiar algún dato del grupo, edítalo aquí.</h6>
               </div>
             </div>
           </div>

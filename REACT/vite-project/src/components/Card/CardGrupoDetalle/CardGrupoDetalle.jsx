@@ -1,7 +1,7 @@
 import { useAuthContext } from "../../../context/AuthContext/logInContext";
 import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
-
+import "./CardGrupoDetalle.css"
 
 export default function CardGrupoDetalle({
   grupos,
@@ -89,7 +89,7 @@ export default function CardGrupoDetalle({
               <div className="our-story">
                 <button
                   onClick={existeGrupo ? borrarGrupo : apuntarGrupo}
-                  className="btn-get-started text-dark text-decoration-none"
+                  className="btn-get-started text-dark text-decoration-none colorletra"
                 >
                   {existeGrupo ? "Borrarme" : "Apuntarme"}
                 </button>

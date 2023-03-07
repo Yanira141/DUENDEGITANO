@@ -1,7 +1,7 @@
 import { useAuthContext } from "../../context/AuthContext/logInContext";
 import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
-
+import "./CardGrupoDetalle/CardGrupoDetalle.css"
 export default function CardCursoDetalle({
   cursos,
   existeCurso,
@@ -88,7 +88,7 @@ export default function CardCursoDetalle({
               <div className="our-story">
                 <button
                   onClick={existeCurso ? borrarCurso : apuntarCurso}
-                  className="btn-get-started text-dark text-decoration-none"
+                  className="btn-get-started text-dark text-decoration-none colorletra"
                 >
                   {existeCurso ? "Borrarme" : "Apuntarme"}
                 </button>

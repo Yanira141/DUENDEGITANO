@@ -83,7 +83,7 @@ export default function FormEditActu({
             <div className="col-lg-5" data-aos="fade">
               <form className="php-email-form" onSubmit={handleSubmit}>
                 <h3>
-                  <i className="bi bi-journals"></i> Añade un nuevo curso
+                  <i className="bi bi-journals"></i> Editar curso
                 </h3>
 
                 <div className="row gy-3">
@@ -202,7 +202,7 @@ export default function FormEditActu({
                   </div>
 
                   <button type="submit" disabled={isSubmitting}>
-                    Añadir curso
+                   Guardar cambios
                   </button>
                 </div>
               </form>
@@ -214,6 +214,7 @@ export default function FormEditActu({
             >
               <div className="content">
                 <h3>Cursos y talleres</h3>
+                <h6>Necesitas cambiar algún dato del curso, edítalo aquí.</h6>
               </div>
             </div>
           </div>

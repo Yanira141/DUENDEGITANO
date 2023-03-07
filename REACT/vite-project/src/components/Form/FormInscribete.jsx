@@ -1,7 +1,9 @@
 import { useState } from "react";
 import "../../assets/css/main.css";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 export default function FormRegister() {
+  const navigate = useNavigate();
   const [newUsuario, setNewUsuario] = useState({
     nombre: "",
     apellido: "",
@@ -36,6 +38,7 @@ export default function FormRegister() {
           showConfirmButton: false,
           timer: 1500,
         });
+        navigate("/login");
       } else if (response.status === 409) {
         Swal.fire({
           position: "top-end",
