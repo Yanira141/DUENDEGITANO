@@ -64,6 +64,7 @@ export default function FormDescripcion({ descripcion }) {
                     <textarea
                       type="text"
                       name="descripcion"
+                      autoComplete="off"
                       placeholder="Escribenos aquí tus emociones..."
                       value={values.descripcion}
                       onChange={handleChange}

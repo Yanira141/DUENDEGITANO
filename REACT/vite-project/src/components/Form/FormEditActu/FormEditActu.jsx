@@ -102,6 +102,7 @@ export default function FormEditActu({
                     <input
                       type="text"
                       name="hora"
+                      autoComplete="off"
                       placeholder={hora}
                       value={values.hora}
                       onChange={handleChange}
@@ -121,6 +122,7 @@ export default function FormEditActu({
                     <input
                       type="text"
                       name="fecha"
+                      autoComplete="off"
                       placeholder={fecha}
                       value={values.fecha}
                       onChange={handleChange}
@@ -140,6 +142,7 @@ export default function FormEditActu({
                     <input
                       type="text"
                       name="lugar"
+                      autoComplete="off"
                       placeholder={lugar}
                       value={values.lugar}
                       onChange={handleChange}
@@ -159,6 +162,7 @@ export default function FormEditActu({
                     <input
                       type="text"
                       name="direccion"
+                      autoComplete="off"
                       placeholder={direccion}
                       value={values.direccion}
                       onChange={handleChange}
@@ -177,6 +181,7 @@ export default function FormEditActu({
                   <div className="col-md-12 ">
                     <textarea
                       type="text"
+                      autoComplete="off"
                       name="descripcion"
                       placeholder={descripcion}
                       value={values.descripcion}

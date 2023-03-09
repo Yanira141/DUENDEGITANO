@@ -105,6 +105,7 @@ export default function FormContacto() {
                           name="nombre"
                           className="form-control"
                           id="name"
+                          autoComplete="off"
                           placeholder="Introduce tu nombre"
                           value={newEmail.nombre}
                           onChange={handleInput}
@@ -116,6 +117,7 @@ export default function FormContacto() {
                           className="form-control"
                           name="email"
                           id="email"
+                          autoComplete="off"
                           placeholder="Introduce tu email"
                           value={newEmail.email}
                           onChange={handleInput}
@@ -128,6 +130,7 @@ export default function FormContacto() {
                         className="form-control"
                         name="mensaje"
                         type="text"
+                        autoComplete="off"
                         placeholder="¿Cómo te podemos ayudar?"
                         value={newEmail.mensaje}
                         onChange={handleInput}

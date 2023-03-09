@@ -91,6 +91,7 @@ export default function FormCambio({
                     <input
                       type="text"
                       name="nombre"
+                      autoComplete="off"
                       placeholder={nombre}
                       value={values.nombre}
                       onChange={handleChange}
@@ -110,6 +111,7 @@ export default function FormCambio({
                     <input
                       type="text"
                       name="apellido"
+                      autoComplete="off"
                       placeholder={apellido}
                       value={values.apellido}
                       onChange={handleChange}
@@ -128,6 +130,7 @@ export default function FormCambio({
                   <div className="col-md-12">
                     <input
                       type="text"
+                      autoComplete="off"
                       name="telefono"
                       placeholder={telefono}
                       value={values.telefono}
@@ -148,6 +151,7 @@ export default function FormCambio({
                     <input
                       type="email"
                       name="email"
+                      autoComplete="off"
                       placeholder={email}
                       value={values.email}
                       onChange={handleChange}

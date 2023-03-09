@@ -92,6 +92,7 @@ export default function FormEditActu({
                       type="text"
                       name="nombre"
                       placeholder={nombre}
+                      autoComplete="off"
                       value={values.nombre}
                       onChange={handleChange}
                       onBlur={handleBlur}
@@ -110,6 +111,7 @@ export default function FormEditActu({
                     <input
                       type="text"
                       name="precio"
+                      autoComplete="off"
                       placeholder={precio}
                       value={values.precio}
                       onChange={handleChange}
@@ -129,6 +131,7 @@ export default function FormEditActu({
                     <input
                       type="text"
                       name="hora"
+                      autoComplete="off"
                       placeholder={hora}
                       value={values.hora}
                       onChange={handleChange}
@@ -148,6 +151,7 @@ export default function FormEditActu({
                     <input
                       type="text"
                       name="fecha"
+                      autoComplete="off"
                       placeholder={fecha}
                       value={values.fecha}
                       onChange={handleChange}
@@ -167,6 +171,7 @@ export default function FormEditActu({
                     <input
                       type="text"
                       name="profesor"
+                      autoComplete="off"
                       placeholder={profesor}
                       value={values.profesor}
                       onChange={handleChange}
@@ -186,6 +191,7 @@ export default function FormEditActu({
                     <textarea
                       type="text"
                       name="descripcion"
+                      autoComplete="off"
                       placeholder={descripcion}
                       value={values.descripcion}
                       onChange={handleChange}

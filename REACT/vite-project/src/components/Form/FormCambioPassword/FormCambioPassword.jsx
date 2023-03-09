@@ -100,6 +100,7 @@ export default function FormCambioPassword({
                     <input
                       type="password"
                       name="password"
+                      autoComplete="off"
                       placeholder={password}
                       value={values.password}
                       onChange={handleChange}
@@ -119,6 +120,7 @@ export default function FormCambioPassword({
                     <input
                       type="password"
                       name="passwordRepeat"
+                      autoComplete="off"
                       placeholder={password}
                       value={values.passwordRepeat}
                       onChange={handleChange}

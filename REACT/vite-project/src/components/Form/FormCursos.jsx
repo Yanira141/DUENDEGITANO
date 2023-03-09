@@ -85,6 +85,7 @@ export default function FormCursos({setCursos}) {
                       value={newCurso.nombre}
                       onChange={handleInput}
                       required
+                      autoComplete="off"
                     />
                   </div>
 
@@ -97,6 +98,7 @@ export default function FormCursos({setCursos}) {
                       value={newCurso.precio}
                       onChange={handleInput}
                       required
+                      autoComplete="off"
                     />
                   </div>
 
@@ -109,6 +111,7 @@ export default function FormCursos({setCursos}) {
                       value={newCurso.hora}
                       onChange={handleInput}
                       required
+                      autoComplete="off"
                     />
                   </div>
 
@@ -121,6 +124,7 @@ export default function FormCursos({setCursos}) {
                       value={newCurso.fecha}
                       onChange={handleInput}
                       required
+                      autoComplete="off"
                     />
                   </div>
 
@@ -133,6 +137,7 @@ export default function FormCursos({setCursos}) {
                       value={newCurso.profesor}
                       onChange={handleInput}
                       required
+                      autoComplete="off"
                     />
                   </div>
 
@@ -145,6 +150,7 @@ export default function FormCursos({setCursos}) {
                       value={newCurso.descripcion}
                       onChange={handleInput}
                       required
+                      autoComplete="off"
                     />
                   </div>
 

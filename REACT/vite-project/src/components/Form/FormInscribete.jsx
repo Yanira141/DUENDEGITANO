@@ -98,6 +98,7 @@ export default function FormRegister() {
                       value={newUsuario.nombre}
                       onChange={handleInput}
                       required
+                      autoComplete="off"
                     />
                   </div>
 
@@ -110,6 +111,7 @@ export default function FormRegister() {
                       value={newUsuario.apellido}
                       onChange={handleInput}
                       required
+                      autoComplete="off"
                     />
                   </div>
 
@@ -122,6 +124,7 @@ export default function FormRegister() {
                       value={newUsuario.telefono}
                       onChange={handleInput}
                       required
+                      autoComplete="off"
                     />
                   </div>
 
@@ -134,6 +137,7 @@ export default function FormRegister() {
                       value={newUsuario.email}
                       onChange={handleInput}
                       required
+                      autoComplete="off"
                     />
                   </div>
 
@@ -146,6 +150,7 @@ export default function FormRegister() {
                       value={newUsuario.password}
                       onChange={handleInput}
                       required
+                      autoComplete="off"
                     />
                   </div>
 

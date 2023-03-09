@@ -56,6 +56,7 @@ export default function FormLogin() {
                     value={credentials.email}
                     onChange={handleCredentials}
                     required
+                    autoComplete="off"
                   />
                 </div>
 
@@ -68,6 +69,7 @@ export default function FormLogin() {
                     value={credentials.password}
                     onChange={handleCredentials}
                     required
+                    autoComplete="off"
                   />
                 </div>
 

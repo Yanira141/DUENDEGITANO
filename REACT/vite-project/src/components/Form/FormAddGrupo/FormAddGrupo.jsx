@@ -73,6 +73,7 @@ export default function FormAddGrupo({setGrupos}) {
                   <div className="col-md-12 ">
                     <input
                       type="text"
+                      autoComplete="off"
                       className="form-control"
                       name="nombre"
                       placeholder="Nombre"
@@ -85,6 +86,7 @@ export default function FormAddGrupo({setGrupos}) {
                   <div className="col-md-12 ">
                     <input
                       type="text"
+                      autoComplete="off"
                       className="form-control"
                       name="horario"
                       placeholder="Horario"
@@ -97,6 +99,7 @@ export default function FormAddGrupo({setGrupos}) {
                   <div className="col-md-12 ">
                     <textarea
                       type="text"
+                      autoComplete="off"
                       className="form-control"
                       name="descripcion"
                       placeholder="Descripción"

@@ -84,6 +84,7 @@ export default function FormEditGrupo({
                     <input
                       type="text"
                       name="nombre"
+                      autoComplete="off"
                       placeholder={nombre}
                       value={values.nombre}
                       onChange={handleChange}
@@ -103,6 +104,7 @@ export default function FormEditGrupo({
                     <input
                       type="text"
                       name="horario"
+                      autoComplete="off"
                       placeholder={horario}
                       value={values.horario}
                       onChange={handleChange}
@@ -122,6 +124,7 @@ export default function FormEditGrupo({
                     <textarea
                       type="text"
                       name="descripcion"
+                      autoComplete="off"
                       placeholder={descripcion}
                       value={values.descripcion}
                       onChange={handleChange}

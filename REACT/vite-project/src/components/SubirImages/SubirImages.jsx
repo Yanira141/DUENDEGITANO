@@ -43,6 +43,7 @@ fetch(`http://localhost:3000/imagenes`, {
    <div className="pb-5"> <input
         className="form-control inputfotos"
           type="text"
+          autoComplete="off"
           name="titulo"
           value={titulo}
           onChange={(e) => setTitulo(e.target.value)}
